@@ -1,6 +1,6 @@
 
 export function Card({user}){
-    const {first_name, last_name, email, sex, bio, profession, work_place, skills, open_to_work, language, available_for, school, city, user_picture} = user
+    const {first_name, last_name, email, sex, bio, profession, skills, open_to_work, language, available_for, user_picture} = user
     return(
         <div className="Card">
             <div className="CardProfilePicture" style={{backgroundImage: `url(${user_picture})`}}></div>
