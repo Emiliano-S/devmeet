@@ -37,6 +37,7 @@
   overflow: hidden;
   padding: 20px;
   justify-content: start;
+  align-items: center;
   flex-direction: column;
   gap: 5px;
   position: absolute;
@@ -47,6 +48,17 @@
   -moz-border-radius: 20px 20px 0px 0px;
   -ms-border-radius: 20px 20px 0px 0px;
   -o-border-radius: 20px 20px 0px 0px;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .descriptionHandler {
+  width: 50%;
+  height: 10px;
+  background-color: #e8e8e8;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 .CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionNameContainer {
   width: 100%;
@@ -119,7 +131,6 @@
   padding-bottom: 20px;
 }
 .CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionBio {
-  width: 100%;
   display: block;
   -webkit-line-clamp: 0;
   -webkit-box-orient: none;
