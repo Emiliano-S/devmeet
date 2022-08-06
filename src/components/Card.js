@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 export function Card({user, id}){
-    const {first_name, last_name, email, sex, bio, profession, skills, open_to_work, language, available_for, user_picture} = user;
+    const {first_name, last_name, bio, profession, skills, language, available_for, user_picture, } = user;
     const [descriptionClass, setDescriptionClass] = useState("");
 
 
@@ -37,7 +37,19 @@ export function Card({user, id}){
                             })}
                         </div>
                         <div className="CardDescriptionBio">
+                            <div className="CardDescriptionTitle">Descrizione</div>
                             {bio}
+                        </div>
+                        <div className="CardDescriptionCamp">
+                            <div className="CardDescriptionTitle">Lingue</div>
+                            {language.map((lingua, index) => {
+                                return(
+                                    <div key={index} className="LanguageContainer">
+                                        <p className="LanguageSubTitle" >{lingua.lang}</p>
+                                        <p>{lingua.level}</p>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </motion.div>
                 </div>

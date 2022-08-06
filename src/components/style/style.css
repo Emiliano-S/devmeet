@@ -1,0 +1,142 @@
+.CardContainer {
+  width: 100%;
+  height: calc(100% - 116px);
+  position: relative;
+}
+.CardContainer .Card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: #ffffff;
+}
+.CardContainer .Card .CardRelative {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.CardContainer .Card .CardProfilePicture {
+  height: 50%;
+  width: 100%;
+  background-size: cover;
+  align-self: flex-start;
+  position: absolute;
+  top: 0;
+}
+.CardContainer .Card .CardProfileDescriptionContainer {
+  height: 55%;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  padding: 20px;
+  justify-content: start;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  bottom: 0;
+  background-color: #F9FBFF;
+  border-radius: 20px 20px 0px 0px;
+  -webkit-border-radius: 20px 20px 0px 0px;
+  -moz-border-radius: 20px 20px 0px 0px;
+  -ms-border-radius: 20px 20px 0px 0px;
+  -o-border-radius: 20px 20px 0px 0px;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionNameContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionNameContainer .CardName {
+  font-size: 26px;
+  font-weight: bold;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionNameContainer .AvailableForTag {
+  background-color: #FCF347;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionProfessionContainer {
+  width: 100%;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionSkillsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px 0px;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .SkillsContainer {
+  padding: 10px 20px;
+  font-size: 12px;
+  background-color: #EFF0F2;
+  color: #000;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionBio {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionTitle {
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+  display: none;
+}
+.CardContainer .Card .CardProfileDescriptionContainer .CardDescriptionCamp {
+  display: none;
+  flex-direction: column;
+}
+.CardContainer .Card .CardProfileDescriptionContainer.open {
+  height: 90%;
+  top: 40%;
+  overflow: auto;
+}
+.CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionBio, .CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionCamp {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding-bottom: 20px;
+}
+.CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionBio {
+  width: 100%;
+  display: block;
+  -webkit-line-clamp: 0;
+  -webkit-box-orient: none;
+  overflow: visible;
+}
+.CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionTitle {
+  display: block;
+}
+.CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionCamp {
+  display: block;
+}
+.CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionCamp .LanguageContainer {
+  margin-bottom: 20px;
+}
+.CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionCamp .LanguageContainer .LanguageSubTitle {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

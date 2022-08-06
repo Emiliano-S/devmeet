@@ -106,11 +106,55 @@
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+
+
+      }
+
+      .CardDescriptionTitle{
+        padding: 10px 0;
+        font-weight: bold;
+        font-size: 20px;
+        display: none;
+      }
+      .CardDescriptionCamp{
+        display: none;
+        flex-direction: column;
       }
 
       &.open{
         height: 90%;
         top: 40%;
+        overflow: auto;
+
+
+        .CardDescriptionBio, .CardDescriptionCamp{
+          border-bottom: 1px solid rgba(0,0,0,.5);
+          padding-bottom: 20px;
+        }
+
+        .CardDescriptionBio{
+          width: 100%;
+          display: block;
+          -webkit-line-clamp: 0;
+          -webkit-box-orient: none;
+          overflow: visible;
+        }
+
+        .CardDescriptionTitle{
+          display: block;
+        }
+        .CardDescriptionCamp{
+          display: block;
+        
+          .LanguageContainer{
+            margin-bottom: 20px;
+            .LanguageSubTitle{
+              font-weight: bold;
+              font-size: 16px;
+            }
+          }
+        }
       }
 
 
