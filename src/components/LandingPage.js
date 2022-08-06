@@ -3,6 +3,8 @@ import Button from "./Button"
 
 
 const LandingPage = () => {
+   
+
     return (
         <div className="landingPage">
             <div className="logo-and-login-container">
@@ -14,10 +16,10 @@ const LandingPage = () => {
                 </div>
                 <div className="landingPage-login-buttons">
                     <div className="landingPage-login-button">
-                        <Button text={"ACCEDI"} wd={"266px"} bgColor={'yellow'} textColor={'black'} wg={'bold'}/>
+                        <Button lowOp text={"ACCEDI"} wd={"266px"} bgColor={'yellow'} textColor={'black'} wg={'bold'} hg={'50px'}/>
                     </div>
                     <div className="landingPage-login-button">
-                        <Button text={"CREA ACCOUNT"} wd={'266px'} bgColor={'white'} textColor={'black'} wg={'bold'}/>
+                        <Button selectButton text={"CREA ACCOUNT"} wd={'266px'} bgColor={'white'} textColor={'black'} wg={'bold'} hg={'50px'}/>
                     </div>
                 </div>
             </div>
