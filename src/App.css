@@ -22,6 +22,19 @@
   width: auto;
 }
 
+.NavBarBackContainer  {
+width: 50px;
+display: flex;
+justify-content: start;
+}
+
+.NavBarOptionsContainer {
+width: 50px;
+display: flex;
+justify-content: end;
+}
+
+
 /* CSS Card */
 .CardContainer{
   width: 100%;

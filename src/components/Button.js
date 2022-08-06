@@ -11,6 +11,7 @@ const Button = ({ wd, bgColor, text, textColor, wg, hg, lowOp, selectButton }) =
 
    return (
     // LO STILE DEL COMPONENT BUTTON VIENE GESTITO CON bgColor - wd - textColor - wg - hg
+    // <Button text={''} textColor={''} bgColor={''} wd={''} hg={''} wg={''}/>
     <button
        onClick={handleButtonClick}
       style={{

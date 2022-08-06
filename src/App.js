@@ -3,6 +3,7 @@ import './App.css';
 import { CardContainer } from './components/CardContainer';
 import LandingPage from './components/LandingPage';
 import { NavBar } from './components/NavBar';
+import SignUp from './components/SignUp';
 import data from './data/db';
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
   return (
     <div className="App">
         <LandingPage />
-        <NavBar />
+        <SignUp />
+        <NavBar options back={'#'}/>
         <CardContainer data={dbCard}/>
     </div>
   );
