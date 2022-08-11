@@ -9,7 +9,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 50%;
+  width: 100%;
 }
 .container-radio-button input {
   position: absolute;
@@ -28,18 +28,43 @@
   justify-content: center;
 }
 
-.option-container {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-}
-
 .container-radio-button:hover input ~ .checkmark-radio-button {
   background-color: #ccc;
 }
 
 .container-radio-button input:checked ~ .checkmark-radio-button {
   background-color: yellow;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.form-container {
+  width: 90%;
+  margin: 5%;
+}
+
+.form-title-style {
+  padding: 0.8em 0em;
+  font-weight: 600;
+}
+
+.option-container {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.input-form-style {
+  width: 100%;
+  height: 3em;
+  outline: none;
+  border-color: transparent;
+  border-radius: 0.8em;
 }
 
 /*# sourceMappingURL=form.css.map */

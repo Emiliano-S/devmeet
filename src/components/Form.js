@@ -1,62 +1,63 @@
 import React from "react";
 import Button from "./Button";
+import { useState } from 'react'
 
-export default class Form extends React.Component {
-    render() {
-        return (
-            <>
+//installata npm install react-phone-input-2 --save
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
+export default function Form() {
+    const [value, setValue] = useState()
+    return (
+        <>
+            <div className="form-container">
                 <form>
-                    <div className='title-style'>Nome e Cognome</div>
-                    <input className='input' type={'text'}
+                    <div className='form-title-style'>Nome e Cognome</div>
+                    <input className='input-form-style' type={'text'}
                         pattern="[a-z]" required></input>
 
-                    <div className='title-style'>Data di nascita</div>
-                    <input className="input" type="date" style={{ height: '3.5em', width: '100%' }}
+                    <div className='form-title-style'>Data di nascita</div>
+                    <input className="input-form-style" type="date" style={{ height: '3.5em', width: '100%' }}
                         min="1932-01-01" max="2022-12-31" required></input>
 
-                    <div className='title-style'>Sesso</div>
+                    <div className='form-title-style'>Sesso</div>
                     <div className="option-container">
-                        <Button selectButton
-                            name={'gender'}
-                            bgColor={'white'}
-                            wd={'100px'}
-                            hg={'3em'}
-                            text={'Uomo'} />
-                        <Button selectButton
-                            name={'gender'}
-                            bgColor={'white'}
-                            wd={'100px'}
-                            hg={'3em'}
-                            text={'Donna'} />
-                        <Button selectButton
-                            name={'gender'}
-                            bgColor={'white'}
-                            wd={'150px'}
-                            hg={'3em'}
-                            text={'Altro'} />
+
+                        <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Uomo'} />
+                        <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Donna'} />
+                        <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Altro'} />
+
                     </div>
 
-                    <div className='title-style'>Stato, Città</div>
-                    <input type={'text'} className='input' required></input>
+                    <div className='form-title-style'>Recapito telefonico</div>
+                    <PhoneInput
+                        placeholder=''
+                        value={value}
+                        onChange={setValue}
+                    />
 
-                    <div className='title-style'>Sono in cerca di lavoro</div>
+
+                    <div className='form-title-style'>Stato, Città</div>
+                    <input type={'text'} className='input-form-style' required></input>
+
+                    <div className='form-title-style'>Sono in cerca di lavoro</div>
                     <div className="option-container">
                         <Button selectButton
                             name={'work'}
                             bgColor={'white'}
-                            wd={'100px'}
+                            wd={100}
                             hg={'3em'}
                             text={'Remoto'} />
                         <Button selectButton
                             name={'work'}
                             bgColor={'white'}
-                            wd={'100px'}
+                            wd={100}
                             hg={'3em'}
                             text={'In sede'} />
                         <Button selectButton
                             name={'work'}
                             bgColor={'white'}
-                            wd={'225px'}
+                            wd={100}
                             hg={'3em'}
                             text={'Remoto + in sede'} />
                     </div>
@@ -75,7 +76,7 @@ export default class Form extends React.Component {
                             color: 'rgb(54,71,100)'
                         }} />
                 </form>
-            </>
-        )
-    }
+            </div>
+        </>
+    )
 }

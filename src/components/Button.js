@@ -22,7 +22,7 @@ const Button = ({
   return (
     // LO STILE DEL COMPONENT BUTTON VIENE GESTITO CON bgColor - wd - textColor - wg - hg
     // <Button text={''} textColor={''} bgColor={''} wd={''} hg={''} wg={''}/>
-    <div>
+    <div style={{width:'100%'}}>
       {lowOp && (
         <button
           onClick={handleButtonClick}
@@ -49,10 +49,12 @@ const Button = ({
                             hg={''}
                             text={''} /> */}
       {selectButton && (
-        <label class="container-radio-button">
+        <label class="container-radio-button" style={{
+          
+        }}>
         <input type="radio" name={name}/>
         <span class="checkmark-radio-button" style={{
-           width: wd,
+           width: `${wd}%`,
            borderRadius: "6px",
            height: hg,
            border: "none",
