@@ -8,6 +8,7 @@ import cvIcon from "../assets/svg/cvIcon.svg";
 export function Card({user, id}){
     const {first_name, last_name, birthday, bio, profession, skills, language, available_for, user_picture, experiences, linkedin, github, website, cv } = user;
     const [descriptionClass, setDescriptionClass] = useState("");
+    const [gradientShow, setGradientShow] = useState("");
 
 
     const DescriptionOpener = (event, info) =>{
@@ -23,13 +24,24 @@ export function Card({user, id}){
         return Math.floor(ageInMilliseconds/1000/60/60/24/365);
     }
 
+    const CheckScroll = (event, info) =>{
+        console.log(info.offset.y);
+        if(info.offset.y < -3){
+            console.log("ok");
+            setGradientShow("hidden");
+        }else{
+            setGradientShow("");
+        }
+
+    }
+
     return(
             <div className="Card">
                 <div className ="CardRelative">
                     <div className="CardProfilePicture" style={{backgroundImage: `url(${user_picture})`}}></div>
                     <motion.div  className={"CardProfileDescriptionContainer " + descriptionClass} drag="y" dragConstraints={{top: -200, bottom: 0,}} dragElastic={0} onDragEnd={DescriptionOpener}>
                         <div className="descriptionHandler"></div>
-                        <motion.div className="descriptionContainer" drag="y" dragConstraints={{top: -200, bottom: 0}} dragElastic={0}>
+                        <motion.div className="descriptionContainer" drag="y" dragConstraints={{top: -200, bottom: 0}} dragElastic={0} onDragStart={CheckScroll}>
                             <div className="CardDescriptionNameContainer">
                                 <div className="CardName">
                                     {first_name} {last_name}, {GetAge(birthday)}
@@ -95,7 +107,7 @@ export function Card({user, id}){
                         </motion.div>
                         
                     </motion.div>
-                    <div className="DescriptionGradientEffect"></div>
+                    <div className={"DescriptionGradientEffect" + gradientShow}></div>
                 </div>
             </div>
     )
