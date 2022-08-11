@@ -1,4 +1,5 @@
 export function NavBar({options, back}) {
+    //INSERENDO options E back COME PROPS ALLA NAVBAR POSSIAMO AGGIUNGERE IL MENU OPZIONI E LA FRECCIA A SINISTRA
   return (
     <div className="NavBar">
       <div className="NavBarBackContainer">

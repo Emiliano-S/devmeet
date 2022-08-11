@@ -15,7 +15,7 @@ const SignUp = () => {
                 <Button lowOp text={'AZIENDA'} bgColor={'yellow'} textColor={'black'} wd={'266px'} hg={'50px'} wg={'bold'}/>
                 </div>
                 <div className="signUp-button">
-                <Button lowOp text={'PRIVATO'} bgColor={'black'} textColor={'white'} wd={'266px'} hg={'50px'} wg={'bold'}/>
+                <Button lowOp text={'PRIVATO'} bgColor={'#364764'} textColor={'white'} wd={'266px'} hg={'50px'} wg={'bold'}/>
                 </div>
             </div>
             <div className="signUp-already-signed">

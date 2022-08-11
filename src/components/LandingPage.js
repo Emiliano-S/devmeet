@@ -19,7 +19,7 @@ const LandingPage = () => {
                         <Button lowOp text={"ACCEDI"} wd={"266px"} bgColor={'yellow'} textColor={'black'} wg={'bold'} hg={'50px'}/>
                     </div>
                     <div className="landingPage-login-button">
-                        <Button selectButton text={"CREA ACCOUNT"} wd={'266px'} bgColor={'white'} textColor={'black'} wg={'bold'} hg={'50px'}/>
+                        <Button lowOp text={"CREA ACCOUNT"} wd={'266px'} bgColor={'white'} textColor={'black'} wg={'bold'} hg={'50px'}/>
                     </div>
                 </div>
             </div>
