@@ -1,3 +1,7 @@
+import MarioVerde from '../assets/img/userPicture/MarioVerde.png';
+import MaryRose from '../assets/img/userPicture/MaryRose.png';
+
+
 export default[
     {
         first_name: "Mario",
@@ -9,7 +13,7 @@ export default[
         skills: ["React", "JavaScript", "Node.js", "SASS", "Angular", "HTML", "CSS", "PHP"],
         language: ["Inglese", "Italiano"],
         available_for: "Remote",
-        user_picture: "./img/userPicture/MarioVerde.png"
+        user_picture: MarioVerde
     },
     {
         first_name: "Mary",
@@ -21,6 +25,6 @@ export default[
         skills: ["React", "JavaScript", "Angular", "HTML", "CSS"],
         language: ["Inglese", "Italiano"],
         available_for: "Remote & On-site",
-        user_picture: "./img/userPicture/MaryRose.png"
+        user_picture: MaryRose
     }
 ]
