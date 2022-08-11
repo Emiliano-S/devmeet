@@ -17,18 +17,21 @@ export default class Form extends React.Component {
                     <div className='title-style'>Sesso</div>
                     <div className="option-container">
                         <Button selectButton
+                            name={'gender'}
                             bgColor={'white'}
-                            wd={'26%'}
+                            wd={'100px'}
                             hg={'3em'}
                             text={'Uomo'} />
                         <Button selectButton
+                            name={'gender'}
                             bgColor={'white'}
-                            wd={'26%'}
+                            wd={'100px'}
                             hg={'3em'}
                             text={'Donna'} />
                         <Button selectButton
+                            name={'gender'}
                             bgColor={'white'}
-                            wd={'38%'}
+                            wd={'150px'}
                             hg={'3em'}
                             text={'Altro'} />
                     </div>
@@ -39,18 +42,21 @@ export default class Form extends React.Component {
                     <div className='title-style'>Sono in cerca di lavoro</div>
                     <div className="option-container">
                         <Button selectButton
+                            name={'work'}
                             bgColor={'white'}
-                            wd={'26%'}
+                            wd={'100px'}
                             hg={'3em'}
                             text={'Remoto'} />
                         <Button selectButton
+                            name={'work'}
                             bgColor={'white'}
-                            wd={'20%'}
+                            wd={'100px'}
                             hg={'3em'}
                             text={'In sede'} />
                         <Button selectButton
+                            name={'work'}
                             bgColor={'white'}
-                            wd={'45%'}
+                            wd={'225px'}
                             hg={'3em'}
                             text={'Remoto + in sede'} />
                     </div>
