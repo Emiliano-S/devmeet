@@ -12,9 +12,23 @@ export default[
         profession: "Full Stack Developer",
         skills: ["React", "JavaScript", "Node.js", "SASS", "Angular", "HTML", "CSS", "PHP"],
         language: [ "Inglese","Italiano"],
+        experiences: [{
+            society: "Develhope",
+            start_date: "01-01-2022",
+            end_date: "in corso"
+        },
+        {
+            society: "Google",
+            start_date: "22-10-2021",
+            end_date: "15-12-2021"
+        }],
         available_for: "Remote",
         user_picture: MarioVerde,
         city: "Como",
+        linkedin: "https://linkedin.com/",
+        github: "https://github.com/",
+        website: "https://google.com/",
+        cv: "...",
     },
     {
         first_name: "Mary",
@@ -26,8 +40,22 @@ export default[
         profession: "Full Stack Developer",
         skills: ["React", "JavaScript", "Angular", "HTML", "CSS"],
         language: [ "Inglese","Italiano", "Spagnolo"],
+        experiences: [{
+            society: "Develhope",
+            start_date: "01-01-2022",
+            end_date: "in corso"
+        },
+        {
+            society: "Google",
+            start_date: "22-10-2021",
+            end_date: "15-12-2021"
+        }],
         available_for: "Remote & On-site",
         user_picture: MaryRose,
-        city: "Roma"
+        city: "Roma",
+        linkedin: "https://linkedin.com/",
+        github: "https://github.com/",
+        website: "https://google.com/",
+        cv: "...",
     }
 ]

@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import linkedinLogoIcon from "../assets/svg/linkedinLogoIcon.svg";
+import githubLogoIcon from "../assets/svg/githubIcon.svg";
+import websiteIcon from "../assets/svg/websiteIcon.svg";
+import cvIcon from "../assets/svg/cvIcon.svg";
 
 export function Card({user, id}){
-    const {first_name, last_name, birthday, bio, profession, skills, language, available_for, user_picture, } = user;
+    const {first_name, last_name, birthday, bio, profession, skills, language, available_for, user_picture, experiences, linkedin, github, website, cv } = user;
     const [descriptionClass, setDescriptionClass] = useState("");
 
 
@@ -39,7 +43,7 @@ export function Card({user, id}){
                             </div>
                             <div className="CardDescriptionSkillsContainer">
                                 {skills.map((skill, index) =>{
-                                    return <div key={index} className="SkillsContainer">{skill}</div>
+                                    return <div key={index} className="SkillsCards">{skill}</div>
                                 })}
                             </div>
                             <div className="CardDescriptionBio">
@@ -48,17 +52,50 @@ export function Card({user, id}){
                             </div>
                             <div className="CardDescriptionCamp">
                                 <div className="CardDescriptionTitle">Lingue</div>
-                                {language.map((lingua, index) => {
-                                    return(
-                                        <div key={index} className="LanguageContainer">
-                                            <p className="LanguageSubTitle" >{lingua.lang}</p>
-                                            <p>{lingua.level}</p>
-                                        </div>
-                                    )
-                                })}
+                                <div className="LanguageContainer">
+                                    {language.map((lingua, index) => {
+                                        return(
+                                            <div key={index} className="LanguageCards">{lingua}</div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                            <div className="CardDescriptionCamp">
+                                <div className="CardDescriptionTitle">Esperienze lavorative</div>
+                                <div className="ExperiencesContainer">
+                                    {experiences.map((experiences, index) => {
+                                        return(
+                                            <div key={index} className="LanguageCards">{experiences.society} {experiences.start_date} / {experiences.end_date}</div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                            <div className="CardDescriptionCamp">
+                                <div className="CardDescriptionTitle">Link</div>
+                                <div className="LinksContainer">
+                                    {linkedin && <a href={linkedin}>
+                                        <img src={linkedinLogoIcon} alt="My Linkeding!"/>
+                                    </a>  }
+                                    {github && <a href={github}>
+                                        <img src={githubLogoIcon} alt="My GitHub!"/>
+                                    </a>  }
+                                    {website && <a href={website}>
+                                        <img src={websiteIcon} alt="My Website!"/>
+                                    </a>  }
+                                </div>
+                            </div>
+                            <div className="CardDescriptionCamp">
+                                <div className="CardDescriptionTitle">Curriculum Vitae</div>
+                                <div className="CvContainer">
+                                    {cv && <a href={cv}>
+                                        <img src={cvIcon} alt="My Curriculum Vitae!"/> {first_name} {last_name} - {profession}.pdf
+                                    </a>  }
+                                </div>
                             </div>
                         </motion.div>
+                        
                     </motion.div>
+                    <div className="DescriptionGradientEffect"></div>
                 </div>
             </div>
     )
