@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import './components/style/style.css';
 import { CardContainer } from './components/CardContainer';
 import { NavBar } from './components/NavBar';
 import data from './data/db';
