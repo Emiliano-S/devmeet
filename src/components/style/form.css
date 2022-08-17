@@ -67,4 +67,17 @@ body {
   border-radius: 0.8em;
 }
 
+.container-continue-button {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 3rem;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 15%;
+  padding: auto;
+}
+
 /*# sourceMappingURL=form.css.map */
