@@ -1,0 +1,31 @@
+body {
+  background-color: lightgray;
+}
+
+.form-container {
+  width: 90%;
+  margin: 5%;
+}
+
+.form-title-style {
+  padding: 0.8em 0em;
+  font-weight: 600;
+}
+
+.option-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.input-form-style {
+  width: 100%;
+  height: 3em;
+  outline: none;
+  border-color: transparent;
+  border-radius: 0.8em;
+}
+
+/*# sourceMappingURL=form.css.map */

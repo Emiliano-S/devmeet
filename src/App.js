@@ -4,6 +4,7 @@ import { CardContainer } from './components/CardContainer';
 import LandingPage from './components/LandingPage';
 import { NavBar } from './components/NavBar';
 import SignUp from './components/SignUp';
+import Form from './components/Form';
 import data from './data/db';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <SignUp />
         <NavBar options back={'#'}/>
         <CardContainer data={dbCard}/>
+        <Form/>
     </div>
   );
 }
