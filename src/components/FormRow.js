@@ -16,7 +16,7 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email }
     id= {'PasswordCard1'}
 
 
-    LE KEY password, email, data, textType, number GESTISCONO IL TIPO DI INPUT AUTOMATICAMENTE
+    LE KEY password, email, data, textType, number GESTISCONO IL TIPO DI INPUT AUTOMATICAMENTEgit st
     */
 
   return (
