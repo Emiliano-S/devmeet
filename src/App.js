@@ -6,6 +6,7 @@ import { NavBar } from './components/NavBar';
 import SignUp from './components/SignUp';
 import Form from './components/Form';
 import data from './data/db';
+import Login from './components/Login';
 
 function App() {
   const [dbCard, setdbCard] = useState(data);
@@ -17,6 +18,7 @@ function App() {
         <NavBar options back={'#'}/>
         <CardContainer data={dbCard}/>
         <Form/>
+        <Login />
     </div>
   );
 }
