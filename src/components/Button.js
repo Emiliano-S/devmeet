@@ -38,7 +38,7 @@ const Button = ({
   return (
     // LO STILE DEL COMPONENT BUTTON VIENE GESTITO CON bgColor - wd - textColor - wg - hg
     // <Button text={''} textColor={''} bgColor={''} wd={''} hg={''} wg={''}/>
-    <div style={{width:'100%'}}>
+    <div style={{width:'100%',}}>
       {lowOp && (
         <button
           onClick={handleButtonClick}
@@ -80,6 +80,7 @@ const Button = ({
       )}
 
 {submit && (
+  <div className= 'text-login-registration'>
         <button
           onClick={handleButtonClickReset}
           style={{
@@ -95,6 +96,7 @@ const Button = ({
         >
           {text}
         </button>
+        </div>
       )}
     </div>
   );

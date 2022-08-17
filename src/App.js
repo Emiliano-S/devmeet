@@ -19,6 +19,7 @@ function App() {
         <CardContainer data={dbCard}/>
         <Form/>
         <Login />
+        <Login registration />
     </div>
   );
 }
