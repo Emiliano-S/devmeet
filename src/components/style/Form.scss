@@ -80,3 +80,28 @@ body {
   margin-top:15%;
   padding:auto;
 }
+
+.pass-forgot {
+  display: flex;
+  justify-content: end;
+  margin-top:5px;
+  a {
+   color:black;
+   text-decoration-color: yellow;
+   -moz-text-decoration-color: yellow;
+}
+}
+
+.text-login-registration {
+  display: flex;
+  justify-content: center;
+  margin-top:10px;
+  a {
+    color:black;
+    text-decoration-color: yellow;
+    -moz-text-decoration-color: yellow;
+}
+}
+.registration-container {
+  margin-top: 70px;
+}
