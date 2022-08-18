@@ -1,41 +1,3 @@
-.container-radio-button {
-  display: flex;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 100%;
-}
-.container-radio-button input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-.container-radio-button .checkmark-radio-button {
-  position: absolute;
-  display: flex;
-  top: 0;
-  left: 0;
-  background-color: #eee;
-  border-radius: 6px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-.container-radio-button:hover input ~ .checkmark-radio-button {
-  background-color: #ccc;
-}
-
-.container-radio-button input:checked ~ .checkmark-radio-button {
-  background-color: yellow;
-}
-
 body {
   background-color: lightgray;
 }
@@ -52,10 +14,9 @@ body {
 
 .option-container {
   width: 100%;
-  height: 4em;
+  height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   gap: 5%;
 }
 
@@ -65,45 +26,6 @@ body {
   outline: none;
   border-color: transparent;
   border-radius: 0.8em;
-}
-
-.container-continue-button {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 3rem;
-  margin: auto;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin-top: 15%;
-  padding: auto;
-}
-
-.pass-forgot {
-  display: flex;
-  justify-content: end;
-  margin-top: 5px;
-}
-.pass-forgot a {
-  color: black;
-  text-decoration-color: yellow;
-  -moz-text-decoration-color: yellow;
-}
-
-.text-login-registration {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-.text-login-registration p a {
-  color: black;
-  text-decoration-color: yellow;
-  -moz-text-decoration-color: yellow;
-}
-
-.registration-container {
-  margin-top: 70px;
 }
 
 /*# sourceMappingURL=form.css.map */
