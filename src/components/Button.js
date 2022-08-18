@@ -65,11 +65,11 @@ const Button = ({
                             hg={''}
                             text={''} /> */}
       {selectButton && (
-        <label class="container-radio-button" style={{
+        <label className="container-radio-button" style={{
           
         }}>
         <input type="radio" name={name}/>
-        <span class="checkmark-radio-button" style={{
+        <span className="checkmark-radio-button" style={{
            width: `${wd}%`,
            borderRadius: "6px",
            height: hg,
