@@ -5,8 +5,13 @@ import Button from "./Button";
 //installata npm install react-phone-input-2 --save
 import 'react-phone-input-2/lib/style.css'
 import FormRow from "./FormRow";
+import UploadButton from "./UploadButton";
 
 export default function Form() {
+    
+    const handleChange =(event) => {
+        console.log(event.target.value)
+    }
     return (
         <>
             <div className="form-container" >
@@ -76,6 +81,18 @@ export default function Form() {
                         textType
                         text = {"Qualifica"}
                         name = {"Qualifica"} />
+
+                        <UploadButton 
+                        bgColor= {'#364764'}
+                        text= {'CARICA CV'}
+                        textColor = {'white'}
+                        textClicked ={'ELIMINA CV'} />
+
+                        <div style={{width: '100%', display:'flex', flexDirection:'column', paddingTop:'44px', gap:'8px'}}>
+                            <label for="textArea" style={{display:'block'}}>Dicci qualcosa su di te</label>
+                            
+                            <textarea name="textArea" id="textArea" rows='10'style={{resize:'none', borderRadius:'6px', borderColor:'white',}}></textarea>
+                        </div>
 
                     <div className='container-continue-button'>
                     <Button submit
