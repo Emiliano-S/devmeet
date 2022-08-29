@@ -1,10 +1,8 @@
-import devmeetLogo1 from "./assets/devmeet-logo1.svg"
+import devmeetLogo1 from "../assets/svg/devmeet-logo1.svg"
 import Button from "./Button"
 
 
 const LandingPage = () => {
-   
-
     return (
         <div className="landingPage">
             <div className="logo-and-login-container">
