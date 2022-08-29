@@ -72,6 +72,11 @@ export default function Form() {
                             hg={'3em'}
                             text={'Remoto + in sede'} />
                     </div>
+                        <FormRow 
+                        textType
+                        text = {"Qualifica"}
+                        name = {"Qualifica"} />
+
                     <div className='container-continue-button'>
                     <Button submit
                             type='submit'
@@ -83,21 +88,6 @@ export default function Form() {
                             text={'CONTINUA'}
                             textColor={'rgb(54,71,100)'} />
                             </div>
-                    
-                    {/* <input type={'submit'} value={'CONTINUA'}
-                        style={{
-                            backgroundColor: 'yellow',
-                            display: 'block',
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                            marginTop: '15%',
-                            padding: '1em',
-                            border: 'transparent',
-                            width: '50%',
-                            height: '3em',
-                            borderRadius: '0.5em',
-                            color: 'rgb(54,71,100)'
-                        }} /> */}
                 </form>
             </div>
         </>
