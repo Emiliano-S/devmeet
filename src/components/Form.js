@@ -6,49 +6,48 @@ import Button from "./Button";
 import 'react-phone-input-2/lib/style.css'
 import FormRow from "./FormRow";
 import UploadButton from "./UploadButton";
+import { NavBar } from "./NavBar";
 
-export default function Form() {
+export default function Form({user, company}) {
     
-    const handleChange =(event) => {
-        console.log(event.target.value)
-    }
     return (
         <>
+        <NavBar back/>
             <div className="form-container" >
                 <form id="user-info">
-                <FormRow 
+                <FormRow
                 textType
                     text ={'Nome e Cognome'}
                     name ={'Nome'}
                     />
 
-                    <FormRow 
+                    {user && <FormRow
                     data
-                    text ={'Data'}
+                    text ={'Data di nascita'}
                     name ={'Data'}
                     />
-                    <FormRow
-                    password
-                    text ={'Password'}
-                    name={'Password'}
-                    />
+}
+                    { company && <FormRow 
+                    textType
+                    text = {'Nome Azienda'}
+                    name = {'Nome_Compagnia'} />}
 
-                    <div className='form-title-style'>Sesso</div>
+                    { user && <div><div className='form-title-style'>Sesso</div>
                     <div className="option-container">
 
                         <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Uomo'} />
                         <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Donna'} />
                         <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Altro'} />
 
-                    </div>
+                    </div></div>}
 
-                    <FormRow 
+                    <FormRow
                     number
                     text = {'Recapito telefonico'}
                     name = {'Numero'} />
 
 
-                    <FormRow 
+                    <FormRow
                     text ={'Stato e città'}
                     textType
                     name ={'Città'}
@@ -56,7 +55,8 @@ export default function Form() {
                     
                     
 
-                    <div className='form-title-style'>Sono in cerca di lavoro</div>
+                    {user && <div className='form-title-style'>Sono in cerca di lavoro:</div>}
+                    {company && <div className='form-title-style'>Sono in cerca da:</div>}
                     <div className="option-container">
                         <Button selectButton
                             name={'work'}
@@ -77,7 +77,7 @@ export default function Form() {
                             hg={'3em'}
                             text={'Remoto + in sede'} />
                     </div>
-                        <FormRow 
+                        {user && <div><FormRow 
                         textType
                         text = {"Qualifica"}
                         name = {"Qualifica"} />
@@ -86,10 +86,11 @@ export default function Form() {
                         bgColor= {'#364764'}
                         text= {'CARICA CV'}
                         textColor = {'white'}
-                        textClicked ={'ELIMINA CV'} />
+                        textClicked ={'ELIMINA CV'} /></div>}
 
                         <div style={{width: '100%', display:'flex', flexDirection:'column', paddingTop:'44px', gap:'8px'}}>
-                            <label for="textArea" style={{display:'block', fontWeight:'bold'}}>Dicci qualcosa su di te</label>
+                            {user && <label for="textArea" style={{display:'block', fontWeight:'bold'}}>Dicci qualcosa su di te</label>}
+                            {company && <label for="textArea" style={{display:'block', fontWeight:'bold'}}>Descrivi la tua azienda</label>}
                             
                             <textarea name="textArea" id="textArea" rows='10'style={{resize:'none', borderRadius:'6px', borderColor:'white',}}></textarea>
                         </div>

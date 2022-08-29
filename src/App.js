@@ -17,7 +17,8 @@ function App() {
         <SignUp />
         <NavBar options back={'#'}/>
         <CardContainer data={dbCard}/>
-        <Form/>
+        <Form user/>
+        <Form company/>
         <Login />
         <Login registration />
     </div>
