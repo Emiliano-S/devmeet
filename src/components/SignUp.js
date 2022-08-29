@@ -1,5 +1,6 @@
-import Button from "./Button"
-import { NavBar } from "./NavBar"
+import Button from "./Button";
+import { NavBar } from "./NavBar";
+import {Link} from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -12,14 +13,14 @@ const SignUp = () => {
             </div>
             <div className="signUp-buttons">
                 <div className="signUp-button">
-                <Button lowOp text={'AZIENDA'} bgColor={'yellow'} textColor={'black'} wd={'266px'} hg={'50px'} wg={'bold'}/>
+                <Link to='/signUp/regCompany'><Button lowOp text={'AZIENDA'} bgColor={'yellow'} textColor={'black'} wd={'266px'} hg={'50px'} wg={'bold'}/></Link>
                 </div>
                 <div className="signUp-button">
-                <Button lowOp text={'PRIVATO'} bgColor={'#364764'} textColor={'white'} wd={'266px'} hg={'50px'} wg={'bold'}/>
+                <Link to='/signUp/regUser'><Button lowOp text={'PRIVATO'} bgColor={'#364764'} textColor={'white'} wd={'266px'} hg={'50px'} wg={'bold'}/></Link>
                 </div>
             </div>
             <div className="signUp-already-signed">
-                <p>Hai già un account? <a href={'www.google.com'}>Accedi</a></p>
+                <p>Hai già un account? <Link to='/login'>Accedi</Link></p>
             </div>
           </div>
         </div>

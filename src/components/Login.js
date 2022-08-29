@@ -5,7 +5,7 @@ import Button from './Button'
 
 
 
-function Login ({registration}) {
+function Login ({registration, user}) {
     return (
         <div style={{width: '100%', height: '100%'}}>
             <NavBar back />
@@ -26,19 +26,30 @@ function Login ({registration}) {
                 text={'ACCEDI'}
                 wg={'bold'} />
                 <div className='text-login-registration'>
-                    <p>Sei un nuovo utente? <a href='#'>Crea un nuovo account</a></p>
+                    <p>Sei un nuovo utente? <Link to='/signUp'>Crea un nuovo account</Link></p>
                 </div>
                 </div>
              )}
-             {registration && (
+             {registration && user &&  (
                 <div className ='registration-container'>
-                    <Button submit
+                    <Link to='/signUp/user'><Button submit
                     name={'SubmitRegister'}
                     bgColor={'yellow'}
                     wd={'266px'}
                     hg={'50px'}
                     text={'CONTINUA'}
-                    wg={'bold'} />
+                    wg={'bold'} /> </Link>
+                    </div>
+             )}
+             {registration && !user &&  (
+                <div className ='registration-container'>
+                    <Link to='/signUp/company'><Button submit
+                    name={'SubmitRegister'}
+                    bgColor={'yellow'}
+                    wd={'266px'}
+                    hg={'50px'}
+                    text={'CONTINUA'}
+                    wg={'bold'} /> </Link>
                     </div>
              )}
             </form>
