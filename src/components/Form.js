@@ -89,7 +89,7 @@ export default function Form() {
                         textClicked ={'ELIMINA CV'} />
 
                         <div style={{width: '100%', display:'flex', flexDirection:'column', paddingTop:'44px', gap:'8px'}}>
-                            <label for="textArea" style={{display:'block'}}>Dicci qualcosa su di te</label>
+                            <label for="textArea" style={{display:'block', fontWeight:'bold'}}>Dicci qualcosa su di te</label>
                             
                             <textarea name="textArea" id="textArea" rows='10'style={{resize:'none', borderRadius:'6px', borderColor:'white',}}></textarea>
                         </div>
