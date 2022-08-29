@@ -30,7 +30,7 @@ export function Card({user, id}){
                     <div className="CardProfilePicture" style={{backgroundImage: `url(${user_picture})`}}></div>
                     <motion.div  className={"CardProfileDescriptionContainer " + descriptionClass} drag="y" dragConstraints={{top: -200, bottom: 0,}} dragElastic={0} onDragEnd={DescriptionOpener}>
                         <div className="descriptionHandler"></div>
-                        <motion.div className="descriptionContainer" drag="y" dragConstraints={{top: -200, bottom: 0}} dragElastic={0}>
+                        <motion.div className="descriptionContainer" drag="y" dragConstraints={{top: -400, bottom: 0}} dragElastic={0}>
                             <div className="CardDescriptionNameContainer">
                                 <div className="CardName">
                                     {first_name} {last_name}, {GetAge(birthday)}
@@ -94,7 +94,6 @@ export function Card({user, id}){
                                 </div>
                             </div>
                         </motion.div>
-                        
                     </motion.div>
                     <div className="DescriptionGradientEffect"></div>
                 </div>

@@ -127,7 +127,6 @@
   height: 90%;
   top: 40%;
   overflow: auto;
-  padding-bottom: 200px;
 }
 .CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionBio, .CardContainer .Card .CardProfileDescriptionContainer.open .CardDescriptionCamp {
   border-bottom: 1px solid #EFF0F2;
