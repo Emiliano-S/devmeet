@@ -1,7 +1,7 @@
 import { Card } from "./Card";
 
 export function CardContainer({data}){
-
+    
     return(
         <div className="CardContainer">
             {data.map((user, index) =>{
