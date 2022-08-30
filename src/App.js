@@ -30,10 +30,10 @@ function App() {
         <Route path='/signUp/regUser' element={<Login registration user/>} />
         <Route path='/signUp/regCompany' element={<Login registration/>} />
       </Routes>
-        {/* <NavBar options back={'#'}/>
+        {/*
         <CardContainer data={dbCard}/>
 
-        <Login registration /> */}
+        */}
         </BrowserRouter>
     </div>
   );
