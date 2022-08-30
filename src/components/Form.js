@@ -12,7 +12,7 @@ export default function Form({user, company}) {
     
     return (
         <>
-        <NavBar back/>
+        {/* <NavBar back/> */}
             <div className="form-container" >
                 <form id="user-info">
                 <FormRow

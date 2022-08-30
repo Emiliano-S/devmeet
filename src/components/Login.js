@@ -8,7 +8,7 @@ import Button from './Button'
 function Login ({registration, user}) {
     return (
         <div style={{width: '100%', height: '100%'}}>
-            <NavBar back />
+            {/* <NavBar back /> */}
             <div className="form-container" >
             <form id='login-form'>
             <FormRow email text={'Email'} />

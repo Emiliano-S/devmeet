@@ -11,12 +11,16 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom'
 
 
 
+
 function App() {
   const [dbCard, setdbCard] = useState(data);
 
+
   return (
     <div className="App">
+
       <BrowserRouter>
+      <NavBar back/>
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/signUp' element={<SignUp />} />

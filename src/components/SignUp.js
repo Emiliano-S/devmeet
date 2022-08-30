@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 const SignUp = () => {
     return (
         <div className="signUp-container">
-          <NavBar back/>
+          {/* <NavBar back/> */}
           <div className="signUp-profile-choice">
             <div className="signUp-text">
                 <h3>Scegli il profilo</h3>
