@@ -3,9 +3,23 @@
   align-items: center;
   gap: 5px;
   flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 .SkillComponent .SkillSVG {
-  background-color: aqua;
-  border: 1px solid red;
-  width: 40%;
+  display: flex;
+  padding: 5px;
+  max-height: 10%;
+}
+.SkillComponent .SkillSVG .TitleSVG {
+  font-size: 10px;
+  font-weight: 700;
+  color: black;
+  padding: 50px 20px 10px 10px;
+}
+.SkillComponent .SkillSVG .svg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 10px;
 }/*# sourceMappingURL=SkillComponent.css.map */

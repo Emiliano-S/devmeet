@@ -18,84 +18,96 @@ export function SkillComponent() {
             id: `1`,
             title: "Angular",
             description: "",
-            Image: Angular
+            Image: Angular,
+            backgroundColor: "#DD0031",
         },
         {
             id: `2`,
             title: "CSS3",
             description: "",
-            Image: css3
+            Image: css3,
+            backgroundColor: "white",
         },
         {
             id: `3`,
-            tile: "HTML5",
+            title: "HTML5",
             description: "",
-            Image: HTML5
+            Image: HTML5,
+            backgroundColor: "#F16529",
         },
         {
             id: `4`,
-            tile: "JavaScript",
+            title: "JavaScript",
             description: "",
-            Image: js
+            Image: js,
+            backgroundColor: "#F7DF1E",
         },
         {
             id: `5`,
-            tile: "ReactJS",
+            title: "ReactJS",
             description: "",
-            Image: Reactjs
+            Image: Reactjs,
+            backgroundColor: "#61DAFB",
         },
         {
             id: `6`,
-            tile: "TypeScript",
+            title: "TypeScript",
             description: "",
-            Image: typescript
+            Image: typescript,
+            backgroundColor: "#007acc",
         },
         {
             id: `7`,
-            tile: "NodeJS",
+            title: "NodeJS",
             description: "",
-            Image: NodeJS
+            Image: NodeJS,
+            backgroundColor: "#F7DF1E",
         },
         {
             id: `8`,
-            tile: "JAVA",
+            title: "JAVA",
             description: "",
-            Image: JAVA
+            Image: JAVA,
+            backgroundColor: "#F7DF1E",
         },
         {
             id: `9`,
-            tile: "vue",
+            title: "vue",
             description: "",
-            Image: vue
+            Image: vue,
+            backgroundColor: "#41b820",
         },
         {
             id: `10`,
-            tile: "Android",
+            title: "Android",
             description: "",
-            Image: Android
+            Image: Android,
+            backgroundColor: "#A4C639",
         },
         {
             id: `11`,
-            tile: "iOS",
+            title: "iOS",
             description: "",
-            Image: iOS
+            Image: iOS,
+            backgroundColor: "white",
         },
         {
             id: `12`,
-            tile: "Altro",
+            title: "Altro",
             description: "",
-            Image: oth
+            Image: oth,
+            backgroundColor: "grey",
         }]
 
     return (
         <div className="SkillComponent">
 
-            {svgArray.map(({ id, title, description, Image }) => (
+            {svgArray.map(({ id, title, description, Image, backgroundColor }) => (
                 <div className="SkillSVG" key={id}>
-                    <div>
-                        <Image />  {/* Use Image as Component */}
-                        <h1>{title}</h1>
-                        <h2>{description}</h2>
+                    <div className='svg' style={{backgroundColor:`${backgroundColor}`, border: `1px solid ${backgroundColor}`, borderRadius: '10px'}}>
+                        <div className='TitleSVG'><div>{title}</div></div>
+                        <Image/>
+                        <div className='descriptionSVG'>{description}</div>
                     </div>
                 </div>
             ))}
