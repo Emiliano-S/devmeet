@@ -8,6 +8,7 @@ import Form from './components/Form';
 import data from './data/db';
 import Login from './components/Login';
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import { Filterby } from './components/Filterby';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/signUp/user' element={<Form user/>} />
         <Route path='/signUp/regUser' element={<Login registration user/>} />
         <Route path='/signUp/regCompany' element={<Login registration/>} />
+        <Route path='/signUp/FilterBy' element={<Filterby/>}/>
       </Routes>
         {/*
         <CardContainer data={dbCard}/>

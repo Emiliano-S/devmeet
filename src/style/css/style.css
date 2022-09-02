@@ -1,7 +1,9 @@
 
 @import './LandingPage.css';
 @import './form.css';
-@import './SignUp.css';
+@import './signUp.css';
+@import './Filterby.css';
+@import './SkillComponent.css';
 
 
 @font-face {
