@@ -10,6 +10,8 @@ import { ReactComponent as vue } from '../assets/svg/vue.svg'
 import { ReactComponent as Android } from '../assets/svg/android.svg'
 import { ReactComponent as iOS } from '../assets/svg/ios.svg'
 import { ReactComponent as oth } from '../assets/svg/oth.svg'
+import { useState } from 'react'
+import { SkillButton } from './SkillButton'
 
 export function SkillComponent() {
 
@@ -20,6 +22,8 @@ export function SkillComponent() {
             description: "",
             Image: Angular,
             backgroundColor: "#DD0031",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(221,0,49,1) 100%)",
         },
         {
             id: `2`,
@@ -27,6 +31,8 @@ export function SkillComponent() {
             description: "",
             Image: css3,
             backgroundColor: "white",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(199,199,199,1) 100%)",
         },
         {
             id: `3`,
@@ -34,6 +40,8 @@ export function SkillComponent() {
             description: "",
             Image: HTML5,
             backgroundColor: "#F16529",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(241,101,41,1) 100%)",
         },
         {
             id: `4`,
@@ -41,6 +49,8 @@ export function SkillComponent() {
             description: "",
             Image: js,
             backgroundColor: "#F7DF1E",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(247,223,30,1) 100%)",
         },
         {
             id: `5`,
@@ -48,6 +58,8 @@ export function SkillComponent() {
             description: "",
             Image: Reactjs,
             backgroundColor: "#61DAFB",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(97,218,251,1) 100%)",
         },
         {
             id: `6`,
@@ -55,6 +67,8 @@ export function SkillComponent() {
             description: "",
             Image: typescript,
             backgroundColor: "#007acc",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,122,204,1) 100%)",
         },
         {
             id: `7`,
@@ -62,6 +76,8 @@ export function SkillComponent() {
             description: "",
             Image: NodeJS,
             backgroundColor: "#F7DF1E",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(247,223,30,1) 100%)",
         },
         {
             id: `8`,
@@ -69,6 +85,8 @@ export function SkillComponent() {
             description: "",
             Image: JAVA,
             backgroundColor: "#F7DF1E",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(247,223,30,1) 100%)",
         },
         {
             id: `9`,
@@ -76,6 +94,8 @@ export function SkillComponent() {
             description: "",
             Image: vue,
             backgroundColor: "#41b820",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(65,184,32,1) 100%)",
         },
         {
             id: `10`,
@@ -83,6 +103,8 @@ export function SkillComponent() {
             description: "",
             Image: Android,
             backgroundColor: "#A4C639",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(164,198,57,1) 100%)",
         },
         {
             id: `11`,
@@ -90,6 +112,8 @@ export function SkillComponent() {
             description: "",
             Image: iOS,
             backgroundColor: "white",
+            borderColor: "transparent",
+            gradient: 'radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(199,199,199,1) 100%)',
         },
         {
             id: `12`,
@@ -97,22 +121,27 @@ export function SkillComponent() {
             description: "",
             Image: oth,
             backgroundColor: "grey",
+            borderColor: "transparent",
+            gradient: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(199,199,199,1) 100%)",
         }]
 
+        const shuffle = svgArray => [...svgArray].sort(() => Math.random() - 0.5);
+        const newList = shuffle(svgArray);
+
     return (
-        <div className="SkillComponent">
-
-            {svgArray.map(({ id, title, description, Image, backgroundColor }) => (
-                <div className="SkillSVG" key={id}>
-                    <div className='svg' style={{backgroundColor:`${backgroundColor}`, border: `1px solid ${backgroundColor}`, borderRadius: '10px'}}>
-                        <div className='TitleSVG'><div>{title}</div></div>
-                        <Image/>
-                        <div className='descriptionSVG'>{description}</div>
-                    </div>
-                </div>
-            ))}
-
-        </div>
+        <>
+            <div className="SkillComponent">
+                {newList.map(({ id, title, description, Image, backgroundColor, borderColor, gradient }) =>
+                (<SkillButton
+                    key={id}
+                    borderColor={borderColor}
+                    title={title}
+                    description={description}
+                    backgroundColor={backgroundColor}
+                    gradient={gradient}
+                    Image={Image} />))}
+            </div>
+        </>
     )
 }
 
