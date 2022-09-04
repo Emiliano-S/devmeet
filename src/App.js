@@ -30,7 +30,7 @@ function App() {
         <Route path='/signUp/user' element={<Form user/>} />
         <Route path='/signUp/regUser' element={<Login registration user/>} />
         <Route path='/signUp/regCompany' element={<Login registration/>} />
-        <Route path='/signUp/FilterBy' element={<Filterby/>}/>
+        <Route path='/FilterBy' element={<Filterby/>}/>
       </Routes>
         {/*
         <CardContainer data={dbCard}/>
