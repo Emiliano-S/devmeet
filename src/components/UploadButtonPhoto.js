@@ -45,7 +45,7 @@ const UploadButtonPhoto = ({
               cursor: "pointer",
             }}
           >
-            <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end' }}>
+            <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end', fontWeight: "bold" }}>
               {text}
             </div>
             <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
@@ -73,7 +73,7 @@ const UploadButtonPhoto = ({
               marginTop: "22px",
             }}
           >
-            <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end' }}>
+            <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end', fontWeight: "bold" }}>
               {textClicked}
             </div>
             <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
