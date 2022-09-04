@@ -1,10 +1,10 @@
 .SkillComponent {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 8px 10px;
-  justify-content: space-between;
+  gap: 5px 5px;
+  justify-content: space-around;
 }
 .SkillComponent .ButtonSVG {
   -o-box-shadow: 5px 5px 10px 0px #000000;
@@ -12,17 +12,24 @@
 }
 .SkillComponent .SkillSVG {
   display: flex;
-  max-height: 10%;
-}
-.SkillComponent .SkillSVG .TitleSVG {
-  font-size: 10px;
-  font-weight: 700;
-  color: black;
-  padding: 50px 20px 5px 5px;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
 }
 .SkillComponent .SkillSVG .svg {
   display: flex;
   flex-direction: row;
+  height: 80%;
+  width: 99%;
+  margin-top: 2px;
   align-items: center;
-  padding-right: 10px;
+}
+.SkillComponent .SkillSVG .TitleSVG {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }/*# sourceMappingURL=SkillComponent.css.map */

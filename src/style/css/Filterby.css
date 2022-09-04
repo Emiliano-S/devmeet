@@ -1,6 +1,9 @@
 body {
   background-color: #F9F9F9;
 }
+body .FilterBy {
+  margin: 5%;
+}
 body .Container-Filter {
   display: flex;
   flex-direction: column;
