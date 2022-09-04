@@ -9,7 +9,7 @@ export function AddPhoto({user, company}) {
             {user && <>
                 <div>
                     <p style={{ color: "#364764", fontWeight: "bold" }}>Aggiungi foto</p></div>
-                <UploadButtonPhoto
+                <UploadButtonPhoto registration user
                     bgColor={'#FCF347'}
                     text={'CARICA UNA FOTO'}
                     textColor={'#364764'}
@@ -26,11 +26,11 @@ export function AddPhoto({user, company}) {
             {company && <>
                 <div>
                     <p style={{ color: "#364764", fontWeight: "bold" }}>Aggiungi logo azienda</p></div>
-                <UploadButtonPhoto
+                <UploadButtonPhoto registration company
                     bgColor={'#FCF347'}
-                    text={'CARICA LOGO'}
+                    text={'CARICA UN LOGO'}
                     textColor={'#364764'}
-                    textClicked={'ELIMINA LOGO'} />
+                    textClicked={'CAMBIA IL LOGO'} />
                 <div className="container-continue-button">
                     <Link to='/signUp/Addphoto/#'><Button lowOp text={'CARICA IN SEGUITO'} bgColor={'#FCF347'} textColor={'#364764'} wd={'266px'} hg={'50px'} wg={'bold'} /></Link>
                 </div>

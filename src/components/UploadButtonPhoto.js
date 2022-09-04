@@ -1,6 +1,7 @@
 import { useState } from "react"
 import UserPicture from '../assets/img/userPicture/MarioVerde.png'
 import Placeholder from '../assets/svg/Placeholder.svg'
+import Logoholder from '../assets/svg/Logoholder.svg'
 import Cloud from '../assets/svg/Cloud.svg'
 import Remove from '../assets/svg/Remove.svg'
 
@@ -12,6 +13,8 @@ const UploadButtonPhoto = ({
   wg,
   textClicked,
   hg,
+  user,
+  company
 }) => {
 
   const [active, setActive] = useState(true);
@@ -27,9 +30,12 @@ const UploadButtonPhoto = ({
     <div style={{ width: '100%', display: "flex", justifyContent: "center", marginTop: '22px' }}>
       {active &&
         <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <div style={{display: "flex", justifyContent: "center", paddingBottom: "44px", borderRadius:"5px"}}>
-            <img src={Placeholder} />
-          </div>
+          {user && <div style={{display: "flex", justifyContent: "center", paddingBottom: "44px", borderRadius:"5px"}}>
+            <img src={Placeholder}/>
+          </div>}
+          {company && <div style={{display: "flex", justifyContent: "center", paddingBottom: "44px", borderRadius:"5px"}}>
+            <img src={Logoholder}/>
+          </div>}
           <button
             onClick={handleButtonClick}
             style={{
