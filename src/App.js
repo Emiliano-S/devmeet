@@ -32,7 +32,8 @@ function App() {
         <Route path='/signUp/regUser' element={<Login registration user/>} />
         <Route path='/signUp/regCompany' element={<Login registration/>} />
         <Route path='/FilterBy' element={<Filterby/>}/>
-        <Route path='/signUp/addPhoto' element={<AddPhoto/>}/>
+        <Route path='/signUp/regUser/addPhoto' element={<AddPhoto registration user/>}/>
+        <Route path='/signUp/regCompany/addLogo' element={<AddPhoto registration company/>}/>
       </Routes>
         {/*
         <CardContainer data={dbCard}/>
