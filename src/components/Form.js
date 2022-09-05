@@ -1,10 +1,13 @@
 import React from "react";
 import Button from "./Button";
-import { useState } from 'react'
+import { useState } from 'react';
+import Country from "./Country";
 
 //installata npm install react-phone-input-2 --save
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+
+
 
 export default function Form() {
     const [value, setValue] = useState()
@@ -22,11 +25,9 @@ export default function Form() {
 
                     <div className='form-title-style'>Sesso</div>
                     <div className="option-container">
-
-                        <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Uomo'} />
-                        <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Donna'} />
-                        <Button selectButton name={'gender'} bgColor={'white'} wd={100} hg={'3em'} text={'Altro'} />
-
+                        <Button selectButton bgColor={'white'} wd={'26%'} hg={'3em'} text={'Uomo'} />
+                        <Button selectButton bgColor={'white'} wd={'26%'} hg={'3em'} text={'Donna'} />
+                        <Button selectButton bgColor={'white'} wd={'38%'} hg={'3em'} text={'Altro'} />
                     </div>
 
                     <div className='form-title-style'>Recapito telefonico</div>
@@ -36,28 +37,25 @@ export default function Form() {
                         onChange={setValue}
                     />
 
-
                     <div className='form-title-style'>Stato, Città</div>
-                    <input type={'text'} className='input-form-style' required></input>
+                        <Country />
+
 
                     <div className='form-title-style'>Sono in cerca di lavoro</div>
                     <div className="option-container">
                         <Button selectButton
-                            name={'work'}
                             bgColor={'white'}
-                            wd={100}
+                            wd={'26%'}
                             hg={'3em'}
                             text={'Remoto'} />
                         <Button selectButton
-                            name={'work'}
                             bgColor={'white'}
-                            wd={100}
+                            wd={'20%'}
                             hg={'3em'}
                             text={'In sede'} />
                         <Button selectButton
-                            name={'work'}
                             bgColor={'white'}
-                            wd={100}
+                            wd={'45%'}
                             hg={'3em'}
                             text={'Remoto + in sede'} />
                     </div>
