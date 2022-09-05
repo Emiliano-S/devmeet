@@ -18,7 +18,7 @@ export function AddPhoto({user, company}) {
                     bgColor={'#364764'}
                     text={'SCATTA UNA FOTO'}
                     textColor={'white'}
-                    textClicked={'SCATTA NUOVA FOTO'} />
+                    textClicked={'SCATTA UNA FOTO'} />
                 <div className="container-continue-button">
                     <Link to='/signUp/Addphoto/#'><Button lowOp text={'CARICA IN SEGUITO'} bgColor={'#FCF347'} textColor={'#364764'} wd={'266px'} hg={'50px'} wg={'bold'} /></Link>
                 </div>
