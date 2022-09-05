@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const Button = ({
   wd,
   bgColor,
@@ -6,6 +8,7 @@ const Button = ({
   wg,
   hg,
   lowOp,
+  submit,
   selectButton,
   name,
 }) => {
@@ -18,6 +21,19 @@ const Button = ({
       event.target.style.backgroundColor = "yellow";
     }
   };
+
+   function handleButtonClickReset  (event)  {
+    event.target.style.opacity = 0.5;
+    setTimeout(() => {
+
+      event.target.disabled = true;
+      setTimeout(() => {
+        event.target.style.opacity = 1;
+        event.target.disabled = false;
+      }, 1000)
+    },100)
+  };
+
 
   return (
     // LO STILE DEL COMPONENT BUTTON VIENE GESTITO CON bgColor - wd - textColor - wg - hg
@@ -61,6 +77,24 @@ const Button = ({
            cursor: "pointer",
         }}>{text}</span>
       </label>
+      )}
+
+{submit && (
+        <button
+          onClick={handleButtonClickReset}
+          style={{
+            backgroundColor: bgColor,
+            width: wd,
+            color: textColor,
+            fontWeight: wg,
+            borderRadius: "6px",
+            height: hg,
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          {text}
+        </button>
       )}
     </div>
   );

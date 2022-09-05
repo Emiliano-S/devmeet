@@ -3,25 +3,34 @@ import Button from "./Button";
 import { useState } from 'react';
 import Country from "./Country";
 
+
 //installata npm install react-phone-input-2 --save
-import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import FormRow from "./FormRow";
 
 
 
 export default function Form() {
-    const [value, setValue] = useState()
     return (
         <>
-            <div className="form-container">
-                <form>
-                    <div className='form-title-style'>Nome e Cognome</div>
-                    <input className='input-form-style' type={'text'}
-                        pattern="[a-z]" required></input>
+            <div className="form-container" >
+                <form id="user-info">
+                <FormRow 
+                textType
+                    text ={'Nome e Cognome'}
+                    name ={'Nome'}
+                    />
 
-                    <div className='form-title-style'>Data di nascita</div>
-                    <input className="input-form-style" type="date" style={{ height: '3.5em', width: '100%' }}
-                        min="1932-01-01" max="2022-12-31" required></input>
+                    <FormRow 
+                    data
+                    text ={'Data'}
+                    name ={'Data'}
+                    />
+                    <FormRow
+                    password
+                    text ={'Password'}
+                    name={'Password'}
+                    />
 
                     <div className='form-title-style'>Sesso</div>
                     <div className="option-container">
@@ -30,11 +39,16 @@ export default function Form() {
                         <Button selectButton bgColor={'white'} wd={'38%'} hg={'3em'} text={'Altro'} />
                     </div>
 
-                    <div className='form-title-style'>Recapito telefonico</div>
-                    <PhoneInput
-                        placeholder=''
-                        value={value}
-                        onChange={setValue}
+                    <FormRow 
+                    number
+                    text = {'Recapito telefonico'}
+                    name = {'Numero'} />
+
+
+                    <FormRow 
+                    text ={'Stato e città'}
+                    textType
+                    name ={'Città'}
                     />
 
                     <div className='form-title-style'>Stato, Città</div>
@@ -59,7 +73,19 @@ export default function Form() {
                             hg={'3em'}
                             text={'Remoto + in sede'} />
                     </div>
-                    <input type={'submit'} value={'CONTINUA'}
+                    <div className='container-continue-button'>
+                    <Button submit
+                            type='submit'
+                            form='user-info'
+                            value='Submit'
+                            bgColor={'yellow'}
+                            wd={'50%'}
+                            hg={'3em'}
+                            text={'CONTINUA'}
+                            textColor={'rgb(54,71,100)'} />
+                            </div>
+                    
+                    {/* <input type={'submit'} value={'CONTINUA'}
                         style={{
                             backgroundColor: 'yellow',
                             display: 'block',
@@ -72,7 +98,7 @@ export default function Form() {
                             height: '3em',
                             borderRadius: '0.5em',
                             color: 'rgb(54,71,100)'
-                        }} />
+                        }} /> */}
                 </form>
             </div>
         </>
