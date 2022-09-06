@@ -125,6 +125,7 @@ const MakePhotoButton = ({
               height: '50px',
               border: "none",
               cursor: "pointer",
+              marginBottom: "22px",
             }}
           >
             <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end', fontWeight: "bold" }}>
@@ -153,7 +154,7 @@ const MakePhotoButton = ({
               </>
             }
             <div style={{height: "240", width: "240", borderRadius: "50%"}}>
-              <div style={{height: "240", width: "240", borderRadius: "50%"}} ref={stripRef}  />
+              <div style={{height: "240", width: "240", marginBottom: "22px"}} ref={stripRef}  />
             </div>
             <button
               onClick={takePhoto}
@@ -168,10 +169,11 @@ const MakePhotoButton = ({
                 height: '50px',
                 border: "none",
                 cursor: "pointer",
+                marginBottom: "22px"
               }}
             >
               {photo &&
-                <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end', fontWeight: "bold", }}>
+                <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end', fontWeight: "bold",  }}>
                   SCATTA
                 </div>
               }
@@ -181,7 +183,7 @@ const MakePhotoButton = ({
                 </div>
               }
               <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
-                <img src={CloudWhite} alt="-" />
+                <img src={Camera} alt="-" />
               </div>
             </button>
             {!photo &&
@@ -198,14 +200,14 @@ const MakePhotoButton = ({
                   height: '50px',
                   border: "none",
                   cursor: "pointer",
-                  marginTop: "20px"
+                  marginBottom: "22px"
                 }}
               >
                 <div style={{ width: '60%', display: 'flex', justifyContent: 'center', fontWeight: "bold", paddingLeft: "40px" }}>
                   SALVA
                 </div>
                 <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
-                  <img src={Camera} alt="-" />
+                  <img src={CloudWhite} alt="-" />
                 </div>
               </button>}
           </>
