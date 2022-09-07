@@ -72,7 +72,7 @@ const MakePhotoButton = ({
     const link = document.createElement("a");
     link.href = data;
     link.setAttribute("download", "myWebcam");
-    link.innerHTML = `<img src='${data}' alt='thumbnail'/>`;
+    link.innerHTML = `<img style="border-radius: 50%" src='${data}' alt='thumbnail'/>`;
     if (strip.firstChild != null) {
       setTimeout(() => {
         strip.removeChild(strip.firstChild);
