@@ -6,7 +6,7 @@
   color: #364764;
 }
 .calendarComponentContainer #firstP {
-  padding: 45px 0 20px 20px;
+  padding: 35px 0 20px 20px;
 }
 .calendarComponentContainer .calendarDiv {
   width: 100%;
@@ -15,9 +15,11 @@
   justify-content: center;
   align-items: center;
   border: none;
+  margin-top: 17px;
 }
 .calendarComponentContainer #secondP {
-  padding: 25px 0 15px 20px;
+  padding: 35px 0 15px 20px;
+  margin-top: 25px;
 }
 .calendarComponentContainer .containerAppuntamenti {
   width: 100%;
@@ -128,7 +130,7 @@
 .react-calendar__navigation {
   display: flex;
   height: 44px;
-  margin-bottom: 1em;
+  margin-bottom: 0,5em;
   font-size: medium;
 }
 .react-calendar__navigation button {
@@ -152,6 +154,8 @@
   padding: 0.5em;
 }
 .react-calendar__month-view__weekNumbers .react-calendar__tile {
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,14 +175,14 @@
 }
 .react-calendar__tile {
   width: 100%;
-  padding: 10px 6.6667px;
+  padding: 15px ;
   background: none;
   text-align: center;
   line-height: 16px;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 75%;
-  border-bottom-left-radius: 75%;
-  border-bottom-right-radius: 50%;
+  border-radius: 100%;
+}
+.react-calendar__tile > abbr {
+  font-size: 16px;
 }
 .react-calendar__tile:disabled {
   background-color: #f0f0f0;

@@ -37,7 +37,7 @@
                 align-items: center;
                 border: none;
                 border-radius: 5px;
-                .texts {
+                .texts { 
                     display: flex;
                     flex-direction: column;
                 }
@@ -65,10 +65,6 @@
                 align-items: center;
                 border: none;
                 border-radius: 5px;
-                .texts {
-                    display: flex;
-                    flex-direction: column;
-                }
                 #placeholderJob2 {
                     background-color: #EFEFEF;
                     justify-self: flex-start;
