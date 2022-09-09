@@ -10,6 +10,7 @@ import Login from './components/Login';
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
 import { Filterby } from './components/Filterby';
 import { AddPhoto } from './components/AddPhoto';
+import { Skills } from './components/Skills';
 
 
 
@@ -32,6 +33,7 @@ function App() {
         <Route path='/signUp/regUser' element={<Login registration user/>} />
         <Route path='/signUp/regCompany' element={<Login registration/>} />
         <Route path='/FilterBy' element={<Filterby/>}/>
+        <Route path='/skills' element={<Skills />}/>
         <Route path='/signUp/regUser/addPhoto' element={<AddPhoto registration user/>}/>
         <Route path='/signUp/regCompany/addLogo' element={<AddPhoto registration company/>}/>
       </Routes>

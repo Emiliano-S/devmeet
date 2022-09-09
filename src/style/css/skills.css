@@ -1,0 +1,87 @@
+.skillsPageContainer {
+  width: 100%;
+  height: calc(100vh - 50px);
+  min-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 40px 0px;
+  gap: 10px;
+  color: #364764;
+}
+.skillsPageContainer .skillsContainer, .skillsPageContainer .lavoroContainer {
+  height: 50%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.skillsPageContainer .skillsContainer h3, .skillsPageContainer .lavoroContainer h3 {
+  padding: 0 20px;
+}
+.skillsPageContainer .skillsContainer input, .skillsPageContainer .lavoroContainer input {
+  width: calc(100% - 40px);
+  margin: 0px 20px;
+}
+.skillsPageContainer input[type=search] {
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding-left: 40px;
+  background: url("../../assets/svg/iconSearch.svg") no-repeat scroll 7px 7px;
+  background-color: #ffffff;
+}
+.skillsPageContainer .skillsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding: 10px 20px;
+}
+.skillsPageContainer .skillsList .skill {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: stretch;
+  font-size: 14px;
+  background-color: #f0eff1;
+  padding: 10px 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.skillsPageContainer .skillsList .skill span {
+  flex-grow: 2;
+}
+.skillsPageContainer .skillsList .skill .selectYears {
+  background: none;
+  border: none;
+}
+.skillsPageContainer .skillsList .skill .skillRemove {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  cursor: pointer;
+  right: -10px;
+  top: -10px;
+  background: url("../../assets/svg/skillRemove.svg") no-repeat scroll 7px 7px;
+  background-color: #FCF347;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+/*# sourceMappingURL=skills.css.map */
