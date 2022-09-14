@@ -9,6 +9,8 @@ export function Skills(){
     const [editMode, setEditMode] = useState(false);
     const [mySkills, setMySkills] = useState([]);
     const dropdownRef = useRef();
+    const elementRef = useRef([]);
+
 
     useEffect(()=>{
         const checkIfClickedOutside = (target) =>{
@@ -25,7 +27,7 @@ export function Skills(){
     const skillSelectionHandler = (skill) =>{
         setSelectedSkills(skill);
         if(!mySkills.some(e => e.name === skill)){
-            setMySkills(prevSkill => [...prevSkill, {"name":skill,"age":1}]);
+            setMySkills(prevSkill => [...prevSkill, {name: skill,age: 1}]);
         }
         console.log(mySkills)
         setDropdownSearchValue("");
@@ -35,6 +37,17 @@ export function Skills(){
     const filteredSkills = skillsArray.filter(skill => {
         return skill.match(new RegExp(dropdownSearchValue, "i"));
     })
+
+    const handleYearsChange = () =>{
+       setMySkills(mySkills.map(skill => {
+            console.log(elementRef.current[elementRef.current.attributes[2].value]);
+            if(skill.name === elementRef.current.id){
+                const newSkill = {...skill, age: elementRef.current.value};
+                return newSkill;
+            }
+            return skill;
+       }));
+    }
 
     return(
         <div className="skillsPageContainer">
@@ -72,12 +85,12 @@ export function Skills(){
                         value={selectedSkill || "Cerca Skills"}
                         />
                     )}
-                <div class="skillsList">
-                    {mySkills.map((element) => {
+                <div className="skillsList">
+                    {mySkills.map((element, i) => {
                         return(
-                        <div class="skill">
+                        <div className="skill" key={element.name}>
                             <span>{element.name}</span>
-                            <select class="selectYears">
+                            <select className="selectYears" id={element.name} myRefId={i} ref={element => {elementRef.current[i] = element}} onChange={handleYearsChange}>
                                 <option value='1'>1</option>
                                 <option value='2'>2</option>
                                 <option value='3'>3</option>
@@ -85,7 +98,7 @@ export function Skills(){
                                 <option value='5'>5</option>
                                 <option value='5p'>5+</option>
                             </select>
-                            <div class="skillRemove"></div>
+                            <div className="skillRemove"></div>
                         </div>)
                     })}
                 </div>
@@ -93,7 +106,7 @@ export function Skills(){
             <div className="lavoroContainer">
                 <h3>Sede di lavoro</h3>
                 <input type="search" id='sedeSearch' placeholder="Città"/>
-                <div class="cityList">
+                <div className="cityList">
 
                 </div>
             </div>
