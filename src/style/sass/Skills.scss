@@ -79,7 +79,32 @@
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
-}
+            }
         }
     }
+    .dropdown-wrapper-search{
+        position: relative;
+        z-index: 2;
+        .dropdown-list-search{
+            position: absolute;
+            width: calc(100% - 40px);
+            left: 20px;
+            right: 20px;
+            background: #fff;
+            max-height: 200px;
+            overflow: auto;
+            padding: 10px;
+            ul{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 5px;
+                li{
+                    list-style: none;
+                }
+            }
+        }
+    }
+    
 }
