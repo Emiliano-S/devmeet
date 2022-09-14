@@ -38,11 +38,11 @@ export function Skills(){
         return skill.match(new RegExp(dropdownSearchValue, "i"));
     })
 
-    const handleYearsChange = () =>{
+    const handleYearsChange = (i) =>{
        setMySkills(mySkills.map(skill => {
-            console.log(elementRef.current[elementRef.current.attributes[2].value]);
-            if(skill.name === elementRef.current.id){
-                const newSkill = {...skill, age: elementRef.current.value};
+            console.log(elementRef.current[i]);
+            if(skill.name === elementRef.current[i].id){
+                const newSkill = {...skill, age: elementRef.current[i].value};
                 return newSkill;
             }
             return skill;
@@ -90,7 +90,7 @@ export function Skills(){
                         return(
                         <div className="skill" key={element.name}>
                             <span>{element.name}</span>
-                            <select className="selectYears" id={element.name} myRefId={i} ref={element => {elementRef.current[i] = element}} onChange={handleYearsChange}>
+                            <select className="selectYears" id={element.name} ref={element => {elementRef.current[i] = element}} onChange={()=>{handleYearsChange(i)}}>
                                 <option value='1'>1</option>
                                 <option value='2'>2</option>
                                 <option value='3'>3</option>
