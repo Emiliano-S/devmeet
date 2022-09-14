@@ -49,6 +49,11 @@ export function Skills(){
        }));
     }
 
+    const handleSkillRemove = (i) =>{
+        console.log(i);
+        setMySkills(currentMySkills => currentMySkills.filter((skill, index) => index !== i));
+    }
+
     return(
         <div className="skillsPageContainer">
             <div className="skillsContainer">
@@ -98,7 +103,7 @@ export function Skills(){
                                 <option value='5'>5</option>
                                 <option value='5p'>5+</option>
                             </select>
-                            <div className="skillRemove"></div>
+                            <div className="skillRemove" onClick={()=>{handleSkillRemove(i)}}></div>
                         </div>)
                     })}
                 </div>
