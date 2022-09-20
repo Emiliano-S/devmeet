@@ -8,6 +8,7 @@ export function InputArrayFilter({ array, contentType, showAges }) {
   const dropdownRef = useRef();
   const elementRef = useRef([]);
 
+  /* Controllo se viene effettuato clic fuori dal droplist */
   useEffect(() => {
     const checkIfClickedOutside = (target) => {
       if (
@@ -24,12 +25,13 @@ export function InputArrayFilter({ array, contentType, showAges }) {
     };
   }, [editMode]);
 
+  /*Funzione per inserire il valore selezionato */
   const valueSelectionHandler = (value) => {
     setSelectedValue(value);
     if (!myValue.some((e) => e.name === value)) {
       setMyValue((prevValue) => [
         ...prevValue,
-        { name: value, age: "Junior 0-2 anni" },
+        showAges ? { name: value, age: "Junior 0-2 anni" } : { name: value },
       ]);
     }
     console.log(myValue);
@@ -37,10 +39,12 @@ export function InputArrayFilter({ array, contentType, showAges }) {
     setEditMode(false);
   };
 
+  /*Filtraggio dell'array da mostrare nel dropList*/
   const filteredValues = array.filter((value) => {
     return value.match(new RegExp(dropdownSearchValue, "i"));
   });
 
+  /*Funzione per modificare di anni per le skills*/
   const handleYearsChange = (i) => {
     setMyValue(
       myValue.map((value) => {
@@ -53,6 +57,7 @@ export function InputArrayFilter({ array, contentType, showAges }) {
     );
   };
 
+  /*Funzione per rimuovere il valore selezionato dall'elenco*/
   const handleValueRemove = (i) => {
     setMyValue((currentMyValue) =>
       currentMyValue.filter((value, index) => index !== i)
