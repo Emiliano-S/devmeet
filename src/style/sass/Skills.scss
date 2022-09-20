@@ -37,7 +37,8 @@
     background: url("../../assets/svg/iconSearch.svg") no-repeat scroll 7px 7px;
     background-color: #ffffff;
   }
-  .skillsList {
+
+  .skillList {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -82,6 +83,54 @@
         background-position: center;
         background-size: 40%;
         background-color: #fcf347;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+    }
+  }
+
+  .comuniList {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    .comuniRow {
+      position: relative;
+      .comuni {
+        display: flex;
+        width: max-content;
+        justify-content: flex-start;
+        align-items: stretch;
+        font-size: 14px;
+        background-color: #f0eff1;
+        padding: 10px 30px 10px 10px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        span {
+          flex-grow: 2;
+        }
+      }
+      .comuniRemove {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 8px;
+        bottom: 0;
+        right: 0px;
+        cursor: pointer;
+        background: url("../../assets/svg/xRemove.svg") no-repeat scroll;
+        background-position: center;
+        background-size: 40%;
         border-radius: 50%;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
