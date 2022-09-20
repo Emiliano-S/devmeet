@@ -1,110 +1,117 @@
-.skillsPageContainer{
-    width: 100%;
-    height: calc(100vh - 50px);
-    min-height: max-content;
+.skillsPageContainer {
+  width: 100%;
+  height: calc(100vh - 50px);
+  min-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 40px 0px;
+  gap: 10px;
+  color: #364764;
+  .skillsContainer,
+  .lavoroContainer {
+    height: 50%;
+    gap: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: stretch;
-    padding: 40px 0px;
-    gap: 10px;
-    color: #364764;
-    .skillsContainer, .lavoroContainer{
-        height: 50%;
-        gap: 10px;
+    h3 {
+      padding: 0 20px;
+    }
+    input {
+      width: calc(100% - 40px);
+      margin: 0px 20px;
+    }
+  }
+  input[type="search"] {
+    border: none;
+    min-height: 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding-left: 40px;
+    background: url("../../assets/svg/iconSearch.svg") no-repeat scroll 7px 7px;
+    background-color: #ffffff;
+  }
+  .skillsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 10px 20px;
+    .skillRow {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      .skill {
         display: flex;
-        flex-direction: column;
+        width: calc(100% - 34px);
         justify-content: flex-start;
         align-items: stretch;
-        h3{
-            padding: 0 20px;
-        }
-        input{
-            width: calc(100% - 40px);
-            margin:0px 20px;
-        }
-    }
-    input[type='search']{
-        border: none;
-        min-height: 40px;
+        font-size: 14px;
+        background-color: #f0eff1;
+        padding: 10px 10px;
         border-radius: 10px;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         -ms-border-radius: 10px;
         -o-border-radius: 10px;
-        padding-left: 40px;
-        background: url("../../assets/svg/iconSearch.svg") no-repeat scroll 7px 7px;
-        background-color: #ffffff;
+        span {
+          flex-grow: 2;
+        }
+        .selectYears {
+          background: none;
+          border: none;
+          font-size: 10px;
+        }
+      }
+      .skillRemove {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background: url("../../assets/svg/trashcan.svg") no-repeat scroll;
+        background-position: center;
+        background-size: 40%;
+        background-color: #fcf347;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
     }
-    .skillsList{
+  }
+  .dropdown-wrapper-search {
+    position: relative;
+    z-index: 2;
+    .dropdown-list-search {
+      position: absolute;
+      width: calc(100% - 40px);
+      left: 20px;
+      right: 20px;
+      background: #fff;
+      max-height: 200px;
+      overflow: auto;
+      padding: 10px;
+      ul {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: stretch;
-        gap: 20px;
-        overflow: scroll;
-        overflow-x: hidden;
-        padding: 10px 20px;
-        .skill{
-            display: flex;
-            position: relative;
-            justify-content: flex-start;
-            align-items: stretch;
-            font-size: 14px;
-            background-color: #f0eff1;
-            padding: 10px 20px;
-            border-radius: 10px;
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            -ms-border-radius: 10px;
-            -o-border-radius: 10px;
-            span{
-                flex-grow: 2;
-            }
-            .selectYears{
-                background: none;
-                border: none;
-            }
-            .skillRemove{
-                width: 24px;
-                height: 24px;
-                position: absolute;
-                cursor: pointer;
-                right: -10px;
-                top: -10px;
-                background: url('../../assets/svg/skillRemove.svg') no-repeat scroll 7px 7px;
-                background-color: #FCF347;
-                border-radius: 50%;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -o-border-radius: 50%;
-            }
+        align-items: flex-start;
+        gap: 5px;
+        li {
+          list-style: none;
         }
+      }
     }
-    .dropdown-wrapper-search{
-        position: relative;
-        z-index: 2;
-        .dropdown-list-search{
-            position: absolute;
-            width: calc(100% - 40px);
-            left: 20px;
-            right: 20px;
-            background: #fff;
-            max-height: 200px;
-            overflow: auto;
-            padding: 10px;
-            ul{
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: 5px;
-                li{
-                    list-style: none;
-                }
-            }
-        }
-    }
-    
+  }
 }
