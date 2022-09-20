@@ -5,6 +5,7 @@ export function InputArrayFilter({ array, contentType, showAges }) {
   const [dropdownSearchValue, setDropdownSearchValue] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [myValue, setMyValue] = useState([]);
+  const [placeHolderClicked, setPlaceHolderClicked] = useState("");
   const dropdownRef = useRef();
   const elementRef = useRef([]);
 
@@ -34,7 +35,7 @@ export function InputArrayFilter({ array, contentType, showAges }) {
         showAges ? { name: value, age: "Junior 0-2 anni" } : { name: value },
       ]);
     }
-    console.log(myValue);
+    setPlaceHolderClicked("clicked");
     setDropdownSearchValue("");
     setEditMode(false);
   };
@@ -68,13 +69,16 @@ export function InputArrayFilter({ array, contentType, showAges }) {
     <>
       {editMode ? (
         <div ref={dropdownRef} className="dropdown-wrapper-search">
-          <input
-            type="search"
-            name="dropdown-input"
-            autoFocus
-            onChange={(e) => setDropdownSearchValue(e.target.value)}
-            value={dropdownSearchValue}
-          />
+          <div className="input-search-container">
+            <input
+              type="search"
+              name="dropdown-input"
+              autoFocus
+              onChange={(e) => setDropdownSearchValue(e.target.value)}
+              value={dropdownSearchValue}
+            />
+            <span className="search-placeholder clicked">{`Cerca ${contentType}`}</span>
+          </div>
           <div className="dropdown-list-search">
             <ul>
               {filteredValues.map((value) => {
@@ -91,13 +95,15 @@ export function InputArrayFilter({ array, contentType, showAges }) {
           </div>
         </div>
       ) : (
-        <input
-          type="search"
-          id={`${contentType}Search`}
-          placeholder={`Cerca ${contentType}s`}
-          onFocus={() => setEditMode(true)}
-          value={selectedValue || `Cerca ${contentType}`}
-        />
+        <div className="input-search-container">
+          <input
+            type="search"
+            id={`${contentType}Search`}
+            onFocus={() => setEditMode(true)}
+            value={selectedValue}
+          />
+          <span className={"search-placeholder " + placeHolderClicked} >{`Cerca ${contentType}`}</span>
+        </div>
       )}
       <div className={`${contentType}List`}>
         {myValue.map((element, i) => {

@@ -28,17 +28,31 @@
   width: calc(100% - 40px);
   margin: 0px 20px;
 }
-.skillsPageContainer input[type=search] {
+.skillsPageContainer .input-search-container {
+  position: relative;
+}
+.skillsPageContainer .input-search-container input[type=search] {
   border: none;
-  min-height: 40px;
+  min-height: 50px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   padding-left: 40px;
-  background: url("../../assets/svg/iconSearch.svg") no-repeat scroll 7px 7px;
+  background: url("../../assets/svg/iconSearch.svg") no-repeat scroll 7px 14px;
   background-color: #ffffff;
+  padding-top: 10px;
+}
+.skillsPageContainer .input-search-container .search-placeholder {
+  position: absolute;
+  top: 15px;
+  left: 60px;
+  font-size: 16px;
+}
+.skillsPageContainer .input-search-container .search-placeholder.clicked {
+  top: 10px;
+  font-size: 12px;
 }
 .skillsPageContainer .skillList {
   display: flex;
