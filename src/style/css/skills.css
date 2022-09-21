@@ -198,6 +198,7 @@
 }
 .skillsPageContainer .dropdown-wrapper-search .dropdown-list-search ul li {
   list-style: none;
+  width: 100%;
 }
 
 /*# sourceMappingURL=skills.css.map */
