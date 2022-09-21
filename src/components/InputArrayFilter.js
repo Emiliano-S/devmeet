@@ -67,7 +67,6 @@ export function InputArrayFilter({ array, contentType, showAges }) {
           currentMyValue.filter((value, index) => index !== i)
         );
       }, 600);
-      clearTimeout(remove);
     } else {
       setMyValue((currentMyValue) =>
         currentMyValue.filter((value, index) => index !== i)
