@@ -69,6 +69,19 @@
       gap: 10px;
       justify-content: space-between;
       align-items: center;
+      transition: transform 1s ease-in-out;
+      -webkit-transition: transform 1s ease-in-out;
+      -moz-transition: transform 1s ease-in-out;
+      -ms-transition: transform 1s ease-in-out;
+      -o-transition: transform 1s ease-in-out;
+
+      &.skillRemoved {
+        transform: translateX(-1000px);
+        -webkit-transform: translateX(-1000px);
+        -moz-transform: translateX(-1000px);
+        -ms-transform: translateX(-1000px);
+        -o-transform: translateX(-1000px);
+      }
       .skill {
         display: flex;
         width: calc(100% - 34px);

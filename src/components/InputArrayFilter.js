@@ -60,6 +60,7 @@ export function InputArrayFilter({ array, contentType, showAges }) {
 
   /*Funzione per rimuovere il valore selezionato dall'elenco*/
   const handleValueRemove = (i) => {
+    console.log(elementRef);
     setMyValue((currentMyValue) =>
       currentMyValue.filter((value, index) => index !== i)
     );
@@ -75,7 +76,7 @@ export function InputArrayFilter({ array, contentType, showAges }) {
               name="dropdown-input"
               autoFocus
               onChange={(e) => setDropdownSearchValue(e.target.value)}
-              value={dropdownSearchValue}
+              defaultValue={dropdownSearchValue}
             />
             <span className="search-placeholder clicked">{`Cerca ${contentType}`}</span>
           </div>
@@ -100,9 +101,11 @@ export function InputArrayFilter({ array, contentType, showAges }) {
             type="search"
             id={`${contentType}Search`}
             onFocus={() => setEditMode(true)}
-            value={selectedValue}
+            defaultValue={selectedValue}
           />
-          <span className={"search-placeholder " + placeHolderClicked} >{`Cerca ${contentType}`}</span>
+          <span
+            className={"search-placeholder " + placeHolderClicked}
+          >{`Cerca ${contentType}`}</span>
         </div>
       )}
       <div className={`${contentType}List`}>
