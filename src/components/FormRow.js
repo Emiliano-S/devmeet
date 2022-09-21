@@ -3,7 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import useSWR from "swr";
 import data from "../data/db";
 
-function FormRow({ text, textType, id, name, ph, data, password, number, email }) {
+function FormRow({ text, textType, id, name, ph, data, password, number, email, dropdown, options}) {
     const [value, setValue] = useState()
 
 
@@ -88,6 +88,11 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email }
                         value={value}
                         onChange={setValue}
                     /> </div>)}
+
+        {dropdown && (<div>
+          <div className= "form-title-style">{text}</div>
+            {options}
+          </div>)}
     </div>
   );
 }
