@@ -1,10 +1,9 @@
-import devmeetLogo1 from "./assets/devmeet-logo1.svg"
+import devmeetLogo1 from "../assets/svg/devmeet-logo1.svg"
 import Button from "./Button"
+import {Link} from 'react-router-dom'
 
 
 const LandingPage = () => {
-   
-
     return (
         <div className="landingPage">
             <div className="logo-and-login-container">
@@ -16,10 +15,10 @@ const LandingPage = () => {
                 </div>
                 <div className="landingPage-login-buttons">
                     <div className="landingPage-login-button">
-                        <Button lowOp text={"ACCEDI"} wd={"266px"} bgColor={'yellow'} textColor={'black'} wg={'bold'} hg={'50px'}/>
+                        <Link to='/login'><Button lowOp text={"ACCEDI"} wd={"266px"} bgColor={'yellow'} textColor={'black'} wg={'bold'} hg={'50px'}/></Link>
                     </div>
                     <div className="landingPage-login-button">
-                        <Button lowOp text={"CREA ACCOUNT"} wd={'266px'} bgColor={'white'} textColor={'black'} wg={'bold'} hg={'50px'}/>
+                        <Link to='/signUp'><Button lowOp text={"CREA ACCOUNT"} wd={'266px'} bgColor={'white'} textColor={'black'} wg={'bold'} hg={'50px'}/></Link>
                     </div>
                 </div>
             </div>

@@ -1,21 +1,34 @@
+import navBackArrow from "../assets/svg/backNav.svg";
+import navOption from "../assets/svg/optionsNav.svg";
+import navLogo from "../assets/img/logoNav.png";
+import {useNavigate, useLocation} from 'react-router-dom';
+
+
+
 export function NavBar({options, back}) {
+  const navigate = useNavigate();
+  const location = useLocation()
+
     //INSERENDO options E back COME PROPS ALLA NAVBAR POSSIAMO AGGIUNGERE IL MENU OPZIONI E LA FRECCIA A SINISTRA
+    if (location.pathname === "/") {
+      return null
+    }
   return (
     <div className="NavBar">
       <div className="NavBarBackContainer">
-       {back &&  <a href={back}><img
+       {back &&  <button onClick={() => navigate(-1, {replace:true})} style={{border:'none', backgroundColor:'Transparent', cursor:'pointer', backgroundRepeat: 'no-repeat'}}><img
           className="NavBarBackArrow"
-          src="./img/backNav.svg"
+          src={navBackArrow}
           alt="Go back!"
-        /></a>}
+        /></button>}
       </div>
       <div className="NavBarLogoContainer">
-        <img className="NavBarLogo" src="./img/logoNav.png" alt="devmeet" />
+        <img className="NavBarLogo" src={navLogo} alt="devmeet" />
       </div>
       <div className="NavBarOptionsContainer">
         {options && <img
           className="NavBarOptions"
-          src="./img/optionsNav.svg"
+          src={navOption}
           alt="Options"
         />}
       </div>
