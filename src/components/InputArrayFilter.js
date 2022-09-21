@@ -60,10 +60,19 @@ export function InputArrayFilter({ array, contentType, showAges }) {
 
   /*Funzione per rimuovere il valore selezionato dall'elenco*/
   const handleValueRemove = (i) => {
-    console.log(elementRef);
-    setMyValue((currentMyValue) =>
-      currentMyValue.filter((value, index) => index !== i)
-    );
+    if (contentType === "skill") {
+      elementRef.current[i].parentNode.parentNode.className += " skillRemoved";
+      const remove = setTimeout(() => {
+        setMyValue((currentMyValue) =>
+          currentMyValue.filter((value, index) => index !== i)
+        );
+      }, 600);
+      clearTimeout(remove);
+    } else {
+      setMyValue((currentMyValue) =>
+        currentMyValue.filter((value, index) => index !== i)
+      );
+    }
   };
 
   return (
