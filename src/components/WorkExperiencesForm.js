@@ -10,6 +10,10 @@ const workObject = {
     dataFine: "",
 };
 
+const convertData = (data) =>{
+    return data.split('-').reverse().join('/');
+}
+
 export function WorkExperiencesForm({contentType}){
     const [work, setWork] = useState(workObject);
     const [worksExperience, setWorksExperience] = useState([]);
@@ -18,7 +22,7 @@ export function WorkExperiencesForm({contentType}){
     const handleChange = (e) =>{
         const {name, value} = e.target;
         setWork((prev) =>{
-            return {...prev, [name]: value};
+            return {...prev, [name]: (name === "dataInizio" || name === "dataFine") ? convertData(value) : value };
         });
     };
 
