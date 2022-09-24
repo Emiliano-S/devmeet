@@ -3,7 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import useSWR from "swr";
 import data from "../data/db";
 
-function FormRow({ text, textType, id, name, ph, data, password, number, email }) {
+function FormRow({ text, textType, id, name, ph, data, password, number, email, handleChange, notRequired = false }) {
     const [value, setValue] = useState()
 
 
@@ -20,9 +20,9 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email }
     */
 
   return (
-    <div>
+    <div className="FormRowContainer">
       {data && (
-        <div>
+        <>
           <div className="form-title-style">{text}</div>
           <input
             type="date"
@@ -34,12 +34,13 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email }
             min="1932-01-01"
             max="2022-12-31"
             style={{ height: "3.5em", width: "100%" }}
+            onChange={handleChange}
           ></input>
-        </div>
+        </>
       )}
 
       {textType && (
-        <div>
+        <>
           <div className="form-title-style">{text}</div>
           <input
             type="text"
@@ -47,14 +48,15 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email }
             className="input-form-style"
             id={id}
             name={name}
-            required
+            required={!notRequired}
             placeholder={ph}
+            onChange={handleChange}
           ></input>
-        </div>
+        </>
       )}
 
       {password && (
-        <div>
+        <>
           <div className="form-title-style">{text}</div>
           <input
             type='password'
@@ -64,11 +66,12 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email }
             name={name}
             required
             placeholder={ph}
+            onChange={handleChange}
           ></input>
-        </div>
+        </>
       )}
       {email && (
-        <div>
+        <>
           <div className="form-title-style">{text}</div>
           <input
             type='email'
@@ -77,17 +80,20 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email }
             name={name}
             required
             placeholder={ph}
+            onChange={handleChange}
           ></input>
-        </div>
+        </>
       )}
-      
-        {number && (<div>
+        {number && (
+        <>
             <div className="form-title-style">{text}</div>
             <PhoneInput
                         placeholder=''
                         value={value}
                         onChange={setValue}
-                    /> </div>)}
+                    />
+        </>
+      )}
     </div>
   );
 }

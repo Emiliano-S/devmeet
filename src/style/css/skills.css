@@ -23,16 +23,13 @@
 .skillsPageContainer .lavoroContainer h3 {
   padding: 0 20px;
 }
-.skillsPageContainer .skillsContainer input,
-.skillsPageContainer .lavoroContainer input {
-  width: calc(100% - 40px);
-  margin: 0px 20px;
-}
 .skillsPageContainer .input-search-container {
   position: relative;
 }
 .skillsPageContainer .input-search-container input[type=search] {
   border: none;
+  width: calc(100% - 40px);
+  margin: 0 20px;
   min-height: 50px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -198,6 +195,26 @@
 }
 .skillsPageContainer .dropdown-wrapper-search .dropdown-list-search ul li {
   list-style: none;
+  width: 100%;
+}
+
+.worksExperienceForm {
+  padding: 0 20px;
+}
+.worksExperienceForm .form-title-style {
+  font-size: 12px;
+  font-weight: normal;
+  color: #364764;
+}
+
+.container-df-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+.container-df-row .FormRowContainer {
   width: 100%;
 }
 

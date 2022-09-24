@@ -20,15 +20,13 @@
     h3 {
       padding: 0 20px;
     }
-    input {
-      width: calc(100% - 40px);
-      margin: 0px 20px;
-    }
   }
   .input-search-container {
     position: relative;
     input[type="search"] {
       border: none;
+      width: calc(100% - 40px);
+      margin: 0 20px;
       min-height: 50px;
       border-radius: 10px;
       -webkit-border-radius: 10px;
@@ -201,5 +199,25 @@
         }
       }
     }
+  }
+}
+
+.worksExperienceForm{
+  padding: 0 20px;
+  .form-title-style{
+    font-size: 12px;
+    font-weight: normal;
+    color: #364764;
+  }
+}
+
+.container-df-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  .FormRowContainer{
+    width: 100%;
   }
 }
