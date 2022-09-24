@@ -1,7 +1,7 @@
 import navBackArrow from "../assets/svg/backNav.svg";
 import navOption from "../assets/svg/optionsNav.svg";
 import navLogo from "../assets/img/logoNav.png";
-import {useNavigate, useLocation} from 'react-router-dom';
+import {useNavigate, useLocation, Link} from 'react-router-dom';
 
 
 
@@ -26,11 +26,11 @@ export function NavBar({options, back}) {
         <img className="NavBarLogo" src={navLogo} alt="devmeet" />
       </div>
       <div className="NavBarOptionsContainer">
-        {options && <img
+        {options && <Link to="/settings"><button style={{border:'none', backgroundColor:'Transparent', cursor:'pointer', backgroundRepeat: 'no-repeat'}}><img
           className="NavBarOptions"
           src={navOption}
           alt="Options"
-        />}
+        /> </button> </Link>}
       </div>
     </div>
   );
