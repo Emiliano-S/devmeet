@@ -1,7 +1,7 @@
-import {NavBar} from './NavBar'
-import FormRow from './FormRow'
+import {NavBar} from '../components/NavBar'
+import FormRow from '../components/FormRow'
 import { Link } from 'react-router-dom'
-import Button from './Button'
+import Button from '../components/Button'
 
 
 

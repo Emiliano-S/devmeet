@@ -1,4 +1,4 @@
-import { WorkExperiencesForm } from "./WorkExperiencesForm";
+import { WorkExperiencesForm } from "../components/WorkExperiencesForm";
 
 
 export function WorkExperiences() {

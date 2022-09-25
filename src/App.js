@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import './App.css';
-import { CardContainer } from './components/CardContainer';
-import LandingPage from './components/LandingPage';
+import { CardContainer } from './pages/CardContainer';
+import LandingPage from './pages/LandingPage';
 import { NavBar } from './components/NavBar';
-import SignUp from './components/SignUp';
-import Form from './components/Form';
+import SignUp from './pages/SignUp';
+import Form from './pages/Form';
 import data from './data/db';
-import Login from './components/Login';
+import Login from './pages/Login';
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
-import { Filterby } from './components/Filterby';
-import { AddPhoto } from './components/AddPhoto';
-import { Skills } from './components/Skills';
-import { WorkExperiences } from './components/WorkExperiences';
-import { LinksLanguages } from './components/LinksLanguages';
-import Settings from './components/Settings';
+import { Filterby } from './pages/Filterby';
+import { AddPhoto } from './pages/AddPhoto';
+import { Skills } from './pages/Skills';
+import { WorkExperiences } from './pages/WorkExperiences';
+import { LinksLanguages } from './pages/LinksLanguages';
+import Settings from './pages/Settings';
 
 const userSingUp = {
   nomeCognome: "",

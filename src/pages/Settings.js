@@ -1,6 +1,6 @@
-import Button from "./Button";
-import SettingsRow from "./SettingsRow";
-import UploadButton from "./UploadButton";
+import Button from "../components/Button";
+import SettingsRow from "../components/SettingsRow";
+import UploadButton from "../components/UploadButton";
 
 
 const Settings = () => {

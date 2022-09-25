@@ -1,5 +1,5 @@
-import { LanguagesForm } from "./LanguagesForm";
-import { LinksForm } from "./LinksForm";
+import { LanguagesForm } from "../components/LanguagesForm";
+import { LinksForm } from "../components/LinksForm";
 
 export function LinksLanguages(){
     return(

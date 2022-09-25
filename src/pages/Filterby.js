@@ -1,4 +1,4 @@
-import { SkillComponent } from "./SkillComponent";
+import { SkillComponent } from "../components/SkillComponent";
 
 export function Filterby() {
     return (

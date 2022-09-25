@@ -1,12 +1,12 @@
 import React from "react";
-import Button from "./Button";
+import Button from "../components/Button";
 
 
 //installata npm install react-phone-input-2 --save
 import 'react-phone-input-2/lib/style.css'
-import FormRow from "./FormRow";
-import UploadButton from "./UploadButton";
-import { NavBar } from "./NavBar";
+import FormRow from "../components/FormRow";
+import UploadButton from "../components/UploadButton";
+import { NavBar } from "../components/NavBar";
 
 export default function Form({user, company}) {
     

@@ -1,4 +1,4 @@
-import { InputArrayFilter } from "./InputArrayFilter";
+import { InputArrayFilter } from "../components/InputArrayFilter";
 import skillsArray from "../data/dbSkills.json";
 import comuniArray from "../data/dbComuni.json";
 
