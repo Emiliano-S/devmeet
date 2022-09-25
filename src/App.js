@@ -14,7 +14,23 @@ import { Skills } from './components/Skills';
 import { WorkExperiences } from './components/WorkExperiences';
 import { LinksLanguages } from './components/LinksLanguages';
 
-
+const userSingUp = {
+  nomeCognome: "",
+  dataNascita: "",
+  sesso: "",
+  recTel: "",
+  citta: "",
+  tipologiaLavoro: "",
+  qualifica: "",
+  cv: "",
+  bio: "",
+  skills: [],
+  sedeLavoro: [],
+  esperienzeLavorative: [],
+  link: {},
+  lingue: [],
+  foto: ""
+}
 
 
 function App() {
@@ -35,9 +51,9 @@ function App() {
         <Route path='/signUp/regUser' element={<Login registration user/>} />
         <Route path='/signUp/regCompany' element={<Login registration/>} />
         <Route path='/FilterBy' element={<Filterby/>}/>
-        <Route path='/skills' element={<Skills />}/>
-        <Route path='/workExperiences' element={<WorkExperiences />}/>
-        <Route path='/linksLanguages' element={<LinksLanguages />} />
+        <Route path='/singUp/regUser/skills' element={<Skills />}/>
+        <Route path='/singUp/regUser/workExperiences' element={<WorkExperiences />}/>
+        <Route path='/singUp/regUser/linksLanguages' element={<LinksLanguages />} />
         <Route path='/signUp/regUser/addPhoto' element={<AddPhoto registration user/>}/>
         <Route path='/signUp/regCompany/addLogo' element={<AddPhoto registration company/>}/>
       </Routes>
