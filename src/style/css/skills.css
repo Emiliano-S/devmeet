@@ -10,7 +10,7 @@
   gap: 10px;
   color: #364764;
 }
-.skillsPageContainer .skillsContainer,
+.skillsPageContainer .skillsContainer, .skillsPageContainer .lingueContainer,
 .skillsPageContainer .lavoroContainer {
   height: 50%;
   gap: 10px;
@@ -19,7 +19,7 @@
   justify-content: flex-start;
   align-items: stretch;
 }
-.skillsPageContainer .skillsContainer h3,
+.skillsPageContainer .skillsContainer h3, .skillsPageContainer .lingueContainer h3,
 .skillsPageContainer .lavoroContainer h3 {
   padding: 0 20px;
 }
@@ -55,7 +55,7 @@
   top: 10px;
   font-size: 12px;
 }
-.skillsPageContainer .skillList {
+.skillsPageContainer .skillList, .skillsPageContainer .lingueList {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -65,7 +65,7 @@
   overflow-x: hidden;
   padding: 10px 20px;
 }
-.skillsPageContainer .skillList .skillRow {
+.skillsPageContainer .skillList .skillRow, .skillsPageContainer .skillList .lingueRow, .skillsPageContainer .lingueList .skillRow, .skillsPageContainer .lingueList .lingueRow {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -77,14 +77,14 @@
   -ms-transition: transform 1s ease-in-out;
   -o-transition: transform 1s ease-in-out;
 }
-.skillsPageContainer .skillList .skillRow.skillRemoved {
+.skillsPageContainer .skillList .skillRow.skillRemoved, .skillsPageContainer .skillList .skillRow.lingueRemoved, .skillsPageContainer .skillList .lingueRow.skillRemoved, .skillsPageContainer .skillList .lingueRow.lingueRemoved, .skillsPageContainer .lingueList .skillRow.skillRemoved, .skillsPageContainer .lingueList .skillRow.lingueRemoved, .skillsPageContainer .lingueList .lingueRow.skillRemoved, .skillsPageContainer .lingueList .lingueRow.lingueRemoved {
   transform: translateX(-1000px);
   -webkit-transform: translateX(-1000px);
   -moz-transform: translateX(-1000px);
   -ms-transform: translateX(-1000px);
   -o-transform: translateX(-1000px);
 }
-.skillsPageContainer .skillList .skillRow .skill {
+.skillsPageContainer .skillList .skillRow .skill, .skillsPageContainer .skillList .skillRow .lingue, .skillsPageContainer .skillList .lingueRow .skill, .skillsPageContainer .skillList .lingueRow .lingue, .skillsPageContainer .lingueList .skillRow .skill, .skillsPageContainer .lingueList .skillRow .lingue, .skillsPageContainer .lingueList .lingueRow .skill, .skillsPageContainer .lingueList .lingueRow .lingue {
   display: flex;
   width: calc(100% - 34px);
   justify-content: flex-start;
@@ -98,15 +98,16 @@
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-.skillsPageContainer .skillList .skillRow .skill span {
+.skillsPageContainer .skillList .skillRow .skill span, .skillsPageContainer .skillList .skillRow .lingue span, .skillsPageContainer .skillList .lingueRow .skill span, .skillsPageContainer .skillList .lingueRow .lingue span, .skillsPageContainer .lingueList .skillRow .skill span, .skillsPageContainer .lingueList .skillRow .lingue span, .skillsPageContainer .lingueList .lingueRow .skill span, .skillsPageContainer .lingueList .lingueRow .lingue span {
   flex-grow: 2;
 }
-.skillsPageContainer .skillList .skillRow .skill .selectYears {
+.skillsPageContainer .skillList .skillRow .skill .selectYears, .skillsPageContainer .skillList .skillRow .skill .selectLanguages, .skillsPageContainer .skillList .skillRow .lingue .selectYears, .skillsPageContainer .skillList .skillRow .lingue .selectLanguages, .skillsPageContainer .skillList .lingueRow .skill .selectYears, .skillsPageContainer .skillList .lingueRow .skill .selectLanguages, .skillsPageContainer .skillList .lingueRow .lingue .selectYears, .skillsPageContainer .skillList .lingueRow .lingue .selectLanguages, .skillsPageContainer .lingueList .skillRow .skill .selectYears, .skillsPageContainer .lingueList .skillRow .skill .selectLanguages, .skillsPageContainer .lingueList .skillRow .lingue .selectYears, .skillsPageContainer .lingueList .skillRow .lingue .selectLanguages, .skillsPageContainer .lingueList .lingueRow .skill .selectYears, .skillsPageContainer .lingueList .lingueRow .skill .selectLanguages, .skillsPageContainer .lingueList .lingueRow .lingue .selectYears, .skillsPageContainer .lingueList .lingueRow .lingue .selectLanguages {
   background: none;
   border: none;
   font-size: 10px;
+  text-align: right;
 }
-.skillsPageContainer .skillList .skillRow .skillRemove {
+.skillsPageContainer .skillList .skillRow .skillRemove, .skillsPageContainer .skillList .skillRow .lingueRemove, .skillsPageContainer .skillList .lingueRow .skillRemove, .skillsPageContainer .skillList .lingueRow .lingueRemove, .skillsPageContainer .lingueList .skillRow .skillRemove, .skillsPageContainer .lingueList .skillRow .lingueRemove, .skillsPageContainer .lingueList .lingueRow .skillRemove, .skillsPageContainer .lingueList .lingueRow .lingueRemove {
   width: 24px;
   height: 24px;
   cursor: pointer;
