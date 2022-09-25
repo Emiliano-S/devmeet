@@ -76,7 +76,32 @@ export default function Form({user, company}) {
                             wd={100}
                             hg={'3em'}
                             text={'Remoto + in sede'} />
+
                     </div>
+                    {company && <div>
+                        <FormRow
+                        textType
+                        text = {'Sito Aziendale'}
+                        name = {'Sito Aziendale'} />
+                        <FormRow 
+                        dropdown
+                        text = {'Numero dipendenti'}
+                        name = {'Numero dipendenti'}
+                        options = { <select type="dropdown"  className="input-form-style" >
+                        <option> 0 - 10</option>
+                        <option> 10 - 50</option>
+                        <option> 50 - 100</option>
+                        <option> 100 - 200</option>
+                        <option> 200 - 500</option>
+                        <option> 500+</option>
+                        </select>
+                        } />
+                        <FormRow 
+                        textType
+                        text = {'Settore attività aziendale'}
+                        name = {'Settore attività aziendale'}
+                        />
+                        </div>}
                         {user && <div><FormRow 
                         textType
                         text = {"Qualifica"}
@@ -90,7 +115,7 @@ export default function Form({user, company}) {
 
                         <div style={{width: '100%', display:'flex', flexDirection:'column', paddingTop:'44px', gap:'8px'}}>
                             {user && <label for="textArea" style={{display:'block', fontWeight:'bold'}}>Dicci qualcosa su di te</label>}
-                            {company && <label for="textArea" style={{display:'block', fontWeight:'bold'}}>Descrivi la tua azienda</label>}
+                            {company && <label for="textArea" style={{display:'block', fontWeight:'bold'}}>Descrivi la tua azienda (possibile RAL e benefit)</label>}
                             
                             <textarea name="textArea" id="textArea" rows='10'style={{resize:'none', borderRadius:'6px', borderColor:'white',}}></textarea>
                         </div>

@@ -3,7 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import useSWR from "swr";
 import data from "../data/db";
 
-function FormRow({ text, textType, id, name, ph, data, password, number, email, handleChange, notRequired = false }) {
+function FormRow({ text, textType, id, name, ph, data, password, number, email, dropdown, options, handleChange, notRequired = false }) {
     const [value, setValue] = useState()
 
 
@@ -16,7 +16,7 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email, 
     id= {'PasswordCard1'}
 
 
-    LE KEY password, email, data, textType, number GESTISCONO IL TIPO DI INPUT AUTOMATICAMENTEgit st
+    LE KEY password, email, data, textType, number GESTISCONO IL TIPO DI INPUT AUTOMATICAMENTE
     */
 
   return (
@@ -91,9 +91,12 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email, 
                         placeholder=''
                         value={value}
                         onChange={setValue}
-                    />
-        </>
-      )}
+                    /> </>)}
+
+        {dropdown && (<div>
+          <div className= "form-title-style">{text}</div>
+            {options}
+          </div>)}
     </div>
   );
 }

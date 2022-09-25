@@ -13,6 +13,7 @@ import { AddPhoto } from './components/AddPhoto';
 import { Skills } from './components/Skills';
 import { WorkExperiences } from './components/WorkExperiences';
 import { LinksLanguages } from './components/LinksLanguages';
+import Settings from './components/Settings';
 
 const userSingUp = {
   nomeCognome: "",
@@ -56,6 +57,7 @@ function App() {
         <Route path='/singUp/regUser/linksLanguages' element={<LinksLanguages />} />
         <Route path='/signUp/regUser/addPhoto' element={<AddPhoto registration user/>}/>
         <Route path='/signUp/regCompany/addLogo' element={<AddPhoto registration company/>}/>
+        <Route path='/settings' element ={<Settings />} />
       </Routes>
         {/*
         <CardContainer data={dbCard}/>
