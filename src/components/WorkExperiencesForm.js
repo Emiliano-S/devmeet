@@ -46,61 +46,61 @@ export function WorkExperiencesForm({contentType}){
 
     return(
         <>
-           <div className="skillsContainer">
-                <h3>Esperienze lavorative</h3>
-                <form className="worksExperienceForm" onSubmit={handleSubmit}>
-                    <FormRow
-                        textType
-                        text={'Nome azienda'}
-                        name={'name'}
-                        handleChange={handleChange}
-                        notRequired={true}
-                    />
-                    <FormRow
-                        textType
-                        text={'Qualifica'}
-                        name={'qualifica'}
-                        handleChange={handleChange}
-                    />
-                    <div className="container-df-row">
+            <div className="skillsContainer">
+                    <h3>Esperienze lavorative</h3>
+                    <form className="worksExperienceForm" onSubmit={handleSubmit}>
                         <FormRow
-                            data
-                            text={'Data Inizio'}
-                            name={'dataInizio'}
+                            textType
+                            text={'Nome azienda'}
+                            name={'name'}
                             handleChange={handleChange}
+                            notRequired={true}
                         />
                         <FormRow
-                            data
-                            text={'Data fine'}
-                            name={'dataFine'}
+                            textType
+                            text={'Qualifica'}
+                            name={'qualifica'}
                             handleChange={handleChange}
                         />
-                    </div>
-                    <div style={{width: '100%', display: "flex", justifyContent: "center", paddingTop: '20px'}}>
-                        <button
-                        type="submit"
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            backgroundColor: 'rgb(54, 71, 100)',
-                            width: '266px',
-                            color: '#FFFFFF',
-                            fontWeight: "",
-                            borderRadius: "6px",
-                            height: '50px',
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                        >
-                            <div style={{width: '60%', display: 'flex', justifyContent:'flex-end'}}>
-                            AGGIUNGI
-                            </div>
-                            <div style= {{width: '40%', display: 'flex', justifyContent:'center'}}>
-                                <img src={Add} alt="+" />
-                            </div>
-                        </button>
-                    </div>
-                </form>
+                        <div className="container-df-row">
+                            <FormRow
+                                data
+                                text={'Data Inizio'}
+                                name={'dataInizio'}
+                                handleChange={handleChange}
+                            />
+                            <FormRow
+                                data
+                                text={'Data fine'}
+                                name={'dataFine'}
+                                handleChange={handleChange}
+                            />
+                        </div>
+                        <div style={{width: '100%', display: "flex", justifyContent: "center", paddingTop: '20px'}}>
+                            <button
+                            type="submit"
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                backgroundColor: 'rgb(54, 71, 100)',
+                                width: '266px',
+                                color: '#FFFFFF',
+                                fontWeight: "",
+                                borderRadius: "6px",
+                                height: '50px',
+                                border: "none",
+                                cursor: "pointer",
+                            }}
+                            >
+                                <div style={{width: '60%', display: 'flex', justifyContent:'flex-end'}}>
+                                AGGIUNGI
+                                </div>
+                                <div style= {{width: '40%', display: 'flex', justifyContent:'center'}}>
+                                    <img src={Add} alt="+" />
+                                </div>
+                            </button>
+                        </div>
+                    </form>
             </div>
             <div className="lavoroContainer">
                 <div className={`${contentType}List`}>

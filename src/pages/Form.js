@@ -7,9 +7,11 @@ import FormRow from "../components/FormRow";
 import UploadButton from "../components/UploadButton";
 import { NavBar } from "../components/NavBar";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Form({ user, company, userArr }) {
   const [arrUser, setArrUser] = useState(userArr);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +24,7 @@ export default function Form({ user, company, userArr }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/singUp/regUser/skills", { state: {arr: arrUser} })
   };
 
   return (
@@ -29,9 +32,9 @@ export default function Form({ user, company, userArr }) {
       {/* <NavBar back/> */}
       <div className="form-container">
         <form id="user-info" onSubmit={handleSubmit}>
-          <FormRow textType text={"Nome e Cognome"} name={"Nome"} />
+          <FormRow textType text={"Nome e Cognome"} name={"nomeCognome"} handleChange={handleChange} />
 
-          {user && <FormRow data text={"Data di nascita"} name={"Data"} />}
+          {user && <FormRow data text={"Data di nascita"} name={"dataNascita"} handleChange={handleChange}/>}
           {company && (
             <FormRow textType text={"Nome Azienda"} name={"Nome_Compagnia"} />
           )}
@@ -42,35 +45,38 @@ export default function Form({ user, company, userArr }) {
               <div className="option-container">
                 <Button
                   selectButton
-                  name={"gender"}
+                  name={"sesso"}
                   bgColor={"white"}
                   wd={100}
                   hg={"3em"}
                   text={"Uomo"}
+                  handleChange={handleChange}
                 />
                 <Button
                   selectButton
-                  name={"gender"}
+                  name={"sesso"}
                   bgColor={"white"}
                   wd={100}
                   hg={"3em"}
                   text={"Donna"}
+                  handleChange={handleChange}
                 />
                 <Button
                   selectButton
-                  name={"gender"}
+                  name={"sesso"}
                   bgColor={"white"}
                   wd={100}
                   hg={"3em"}
                   text={"Altro"}
+                  handleChange={handleChange}
                 />
               </div>
             </div>
           )}
 
-          <FormRow number text={"Recapito telefonico"} name={"Numero"} />
+          <FormRow number text={"Recapito telefonico"} name={"recTel"} handleChange={handleChange} />
 
-          <FormRow text={"Stato e città"} textType name={"Città"} />
+          <FormRow text={"Stato e città"} textType name={"citta"} handleChange={handleChange}/>
 
           {user && (
             <div className="form-title-style">Sono in cerca di lavoro:</div>
@@ -79,27 +85,30 @@ export default function Form({ user, company, userArr }) {
           <div className="option-container">
             <Button
               selectButton
-              name={"work"}
+              name={"tipologiaLavoro"}
               bgColor={"white"}
               wd={100}
               hg={"3em"}
               text={"Remoto"}
+              handleChange={handleChange}
             />
             <Button
               selectButton
-              name={"work"}
+              name={"tipologiaLavoro"}
               bgColor={"white"}
               wd={100}
               hg={"3em"}
               text={"In sede"}
+              handleChange={handleChange}
             />
             <Button
               selectButton
-              name={"work"}
+              name={"tipologiaLavoro"}
               bgColor={"white"}
               wd={100}
               hg={"3em"}
               text={"Remoto + in sede"}
+              handleChange={handleChange}
             />
           </div>
           {company && (
@@ -133,7 +142,7 @@ export default function Form({ user, company, userArr }) {
           )}
           {user && (
             <div>
-              <FormRow textType text={"Qualifica"} name={"Qualifica"} />
+              <FormRow textType text={"Qualifica"} name={"qualifica"} handleChange={handleChange} />
 
               <UploadButton
                 bgColor={"#364764"}
@@ -171,7 +180,7 @@ export default function Form({ user, company, userArr }) {
             )}
 
             <textarea
-              name="textArea"
+              name="bio"
               id="textArea"
               rows="10"
               style={{
@@ -179,21 +188,22 @@ export default function Form({ user, company, userArr }) {
                 borderRadius: "6px",
                 borderColor: "white",
               }}
+              onChange={handleChange}
             ></textarea>
           </div>
 
           <div className="container-continue-button">
-            <Button
-              submit
-              type="submit"
-              form="user-info"
-              value="Submit"
-              bgColor={"yellow"}
-              wd={"50%"}
-              hg={"3em"}
-              text={"CONTINUA"}
-              textColor={"rgb(54,71,100)"}
-            />
+              <Button
+                submit
+                type="submit"
+                form="user-info"
+                value="Submit"
+                bgColor={"yellow"}
+                wd={"50%"}
+                hg={"3em"}
+                text={"CONTINUA"}
+                textColor={"rgb(54,71,100)"}
+              />
           </div>
         </form>
       </div>

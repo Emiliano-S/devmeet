@@ -89,7 +89,7 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email, 
             <div className="form-title-style">{text}</div>
             <PhoneInput
                         placeholder=''
-                        value={value}
+                        name={value}
                         onChange={setValue}
                     /> </>)}
 

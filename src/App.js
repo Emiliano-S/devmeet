@@ -15,7 +15,7 @@ import { WorkExperiences } from "./pages/WorkExperiences";
 import { LinksLanguages } from "./pages/LinksLanguages";
 import Settings from "./pages/Settings";
 
-const userSingUp = {
+const userSignUp = {
   nomeCognome: "",
   dataNascita: "",
   sesso: "",
@@ -47,7 +47,7 @@ function App() {
           <Route path="/signUp/company" element={<Form company />} />
           <Route
             path="/signUp/user"
-            element={<Form user userArr={userSingUp} />}
+            element={<Form user userArr={userSignUp} />}
           />
           <Route path="/signUp/regUser" element={<Login registration user />} />
           <Route path="/signUp/regCompany" element={<Login registration />} />

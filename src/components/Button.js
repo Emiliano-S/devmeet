@@ -11,6 +11,7 @@ const Button = ({
   submit,
   selectButton,
   name,
+  handleChange,
 }) => {
   // USARE lowOp PER I PULSANTI CHE FANNO CAMBIARE PAGINA
   // USARE selectButton PER I PULSANTI A SCELTA MULTIPLA (Da fixare)
@@ -68,7 +69,7 @@ const Button = ({
         <label className="container-radio-button" style={{
           
         }}>
-        <input type="radio" name={name}/>
+        <input type="radio" name={name} value={text} onClick={handleChange}/>
         <span className="checkmark-radio-button" style={{
            width: `${wd}%`,
            borderRadius: "6px",
