@@ -7,7 +7,7 @@ import SignUp from './components/SignUp';
 import Form from './components/Form';
 import data from './data/db';
 import Login from './components/Login';
-import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import {Routes, Route, BrowserRouter, useLocation} from 'react-router-dom'
 import { Filterby } from './components/Filterby';
 import { AddPhoto } from './components/AddPhoto';
 import { ProfileSettings } from './components/ProfileSettings';
@@ -17,7 +17,6 @@ import { ProfileSettings } from './components/ProfileSettings';
 
 function App({user}) {
   const [dbCard, setdbCard] = useState(data);
-
 
   return (
     <div className="App">
