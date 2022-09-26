@@ -14,7 +14,8 @@ import { Skills } from './pages/Skills';
 import { WorkExperiences } from './pages/WorkExperiences';
 import { LinksLanguages } from './pages/LinksLanguages';
 import Settings from './pages/Settings';
-import BottomNavbar from './components/BottomNavbar'
+import BottomNavbar1 from './components/BottomNavbar1';
+import BottomNavbar2 from './components/BottomNavbar2'
 
 const userSingUp = {
   nomeCognome: "",
@@ -59,7 +60,10 @@ function App() {
           <Route path='/signUp/regUser/addPhoto' element={<AddPhoto registration user />} />
           <Route path='/signUp/regCompany/addLogo' element={<AddPhoto registration company />} />
           <Route path='/settings' element={<Settings />} />
-          <Route path='/bottomNavbar' element={<BottomNavbar />} />
+          {/* navbar con le notifiche */}
+          <Route path='/bottomNavbar1' element={<BottomNavbar1 />} />
+          {/* navbar con il cerca */}
+          <Route path='/bottomNavbar2' element={<BottomNavbar2 />} />
         </Routes>
         {/*
         <CardContainer data={dbCard}/>
