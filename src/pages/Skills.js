@@ -8,7 +8,6 @@ import {
   useParams,
 } from "react-router-dom";
 import { useState } from "react";
-import { useEffect } from "react";
 import Button from "../components/Button";
 
 export function Skills() {
@@ -16,10 +15,6 @@ export function Skills() {
   const { arr } = state;
   const [toPopulate, setToPopulate] = useState(arr);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log(toPopulate);
-  }, [toPopulate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

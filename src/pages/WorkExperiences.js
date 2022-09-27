@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Button from "../components/Button";
 import { WorkExperiencesForm } from "../components/WorkExperiencesForm";
 
 export function WorkExperiences() {
