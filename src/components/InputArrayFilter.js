@@ -1,11 +1,18 @@
 import { useRef, useEffect, useState } from "react";
 
-export function InputArrayFilter({ array, contentType, showAges }) {
+export function InputArrayFilter({
+  array,
+  contentType,
+  showAges,
+  toPopulate,
+  objKey,
+}) {
   const [selectedValue, setSelectedValue] = useState("");
   const [dropdownSearchValue, setDropdownSearchValue] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [myValue, setMyValue] = useState([]);
   const [placeHolderClicked, setPlaceHolderClicked] = useState("");
+  const elementToPopulate = toPopulate;
   const dropdownRef = useRef();
   const elementRef = useRef([]);
 
@@ -32,12 +39,13 @@ export function InputArrayFilter({ array, contentType, showAges }) {
     if (!myValue.some((e) => e.name === value)) {
       setMyValue((prevValue) => [
         ...prevValue,
-        showAges ?
-        contentType === 'skill' ?
-          { name: value, age: "Junior 0-2 anni" }
-          : {name: value, livello: "A1 - Livello base"}
-        : { name: value },
+        showAges
+          ? contentType === "skill"
+            ? { name: value, age: "Junior 0-2 anni" }
+            : { name: value, livello: "A1 - Livello base" }
+          : { name: value },
       ]);
+      toPopulate((prevValue) => ({ ...prevValue, [objKey]: myValue }));
     }
     setPlaceHolderClicked("clicked");
     setDropdownSearchValue("");
@@ -65,7 +73,9 @@ export function InputArrayFilter({ array, contentType, showAges }) {
   /*Funzione per rimuovere il valore selezionato dall'elenco*/
   const handleValueRemove = (i) => {
     if (contentType === "skill" || contentType === "lingue") {
-      elementRef.current[i].parentNode.parentNode.className += ` ${contentType}Removed`;
+      elementRef.current[
+        i
+      ].parentNode.parentNode.className += ` ${contentType}Removed`;
       const remove = setTimeout(() => {
         setMyValue((currentMyValue) =>
           currentMyValue.filter((value, index) => index !== i)
@@ -127,41 +137,58 @@ export function InputArrayFilter({ array, contentType, showAges }) {
             <div className={`${contentType}Row`} key={element.name}>
               <div className={contentType}>
                 <span>{element.name}</span>
-                {showAges ? 
-                  contentType === 'skill' ?
-                  (<select
-                    className="selectYears"
-                    id={element.name}
-                    ref={(element) => {
-                      elementRef.current[i] = element;
-                    }}
-                    onChange={() => {
-                      handleYearsChange(i);
-                    }}
-                    autoFocus
-                  >
-                    <option value="Junior 0-2 anni">Junior 0-2 anni</option>
-                    <option value="Mid-level 3-6 anni">Mid-level 3-6 anni</option>
-                    <option value="Senior 6+ anni">Senior 6+ anni</option>
-                  </select>):
-                  (<select
-                    className="selectLanguages"
-                    id={element.name}
-                    ref={(element) => {
-                      elementRef.current[i] = element;
-                    }}
-                    onChange={() => {
-                      handleYearsChange(i);
-                    }}
-                    autoFocus
-                  >
-                    <option value="A1 - Livello base">A1 - Livello base</option>
-                    <option value="A2 - Livello elementare">A2 - Livello elementare </option>
-                    <option value="B1 - Livello intermedio">B1 - Livello intermedio</option>
-                    <option value="B2 - Livello intermedio superiore">B1 - Livello intermedio superiore</option>
-                    <option value="C1 - Livello avanzato">C1 - Livello avanzato</option>
-                    <option value="C2 - Madrelingua">Madrelingua</option>
-                  </select>) : <></>}
+                {showAges ? (
+                  contentType === "skill" ? (
+                    <select
+                      className="selectYears"
+                      id={element.name}
+                      ref={(element) => {
+                        elementRef.current[i] = element;
+                      }}
+                      onChange={() => {
+                        handleYearsChange(i);
+                      }}
+                      autoFocus
+                    >
+                      <option value="Junior 0-2 anni">Junior 0-2 anni</option>
+                      <option value="Mid-level 3-6 anni">
+                        Mid-level 3-6 anni
+                      </option>
+                      <option value="Senior 6+ anni">Senior 6+ anni</option>
+                    </select>
+                  ) : (
+                    <select
+                      className="selectLanguages"
+                      id={element.name}
+                      ref={(element) => {
+                        elementRef.current[i] = element;
+                      }}
+                      onChange={() => {
+                        handleYearsChange(i);
+                      }}
+                      autoFocus
+                    >
+                      <option value="A1 - Livello base">
+                        A1 - Livello base
+                      </option>
+                      <option value="A2 - Livello elementare">
+                        A2 - Livello elementare{" "}
+                      </option>
+                      <option value="B1 - Livello intermedio">
+                        B1 - Livello intermedio
+                      </option>
+                      <option value="B2 - Livello intermedio superiore">
+                        B1 - Livello intermedio superiore
+                      </option>
+                      <option value="C1 - Livello avanzato">
+                        C1 - Livello avanzato
+                      </option>
+                      <option value="C2 - Madrelingua">Madrelingua</option>
+                    </select>
+                  )
+                ) : (
+                  <></>
+                )}
               </div>
               <div
                 className={`${contentType}Remove`}

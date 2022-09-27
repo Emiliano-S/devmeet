@@ -2,12 +2,18 @@ import { InputArrayFilter } from "../components/InputArrayFilter";
 import skillsArray from "../data/dbSkills.json";
 import comuniArray from "../data/dbComuni.json";
 import { useLocation, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export function Skills() {
   const { state } = useLocation();
   const { arr } = state;
+  const [toPopulate, setToPopulate] = useState(arr);
 
-  console.log(arr);
+  useEffect(() => {
+    console.log(toPopulate);
+  }, [toPopulate]);
+
   return (
     <div className="skillsPageContainer">
       <div className="skillsContainer">
@@ -16,6 +22,8 @@ export function Skills() {
           array={skillsArray}
           contentType="skill"
           showAges={true}
+          toPopulate={setToPopulate}
+          objKey="skills"
         />
       </div>
       <div className="lavoroContainer">
@@ -24,6 +32,8 @@ export function Skills() {
           array={comuniArray}
           contentType="comuni"
           showAges={false}
+          toPopulate={setToPopulate}
+          objKey="sedeLavoro"
         />
       </div>
     </div>
