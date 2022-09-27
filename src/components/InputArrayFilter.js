@@ -12,7 +12,6 @@ export function InputArrayFilter({
   const [editMode, setEditMode] = useState(false);
   const [myValue, setMyValue] = useState([]);
   const [placeHolderClicked, setPlaceHolderClicked] = useState("");
-  const elementToPopulate = toPopulate;
   const dropdownRef = useRef();
   const elementRef = useRef([]);
 
@@ -80,12 +79,14 @@ export function InputArrayFilter({
         setMyValue((currentMyValue) =>
           currentMyValue.filter((value, index) => index !== i)
         );
+        toPopulate((prevValue) => ({ ...prevValue, [objKey]: myValue }));
         clearTimeout(remove);
       }, 600);
     } else {
       setMyValue((currentMyValue) =>
         currentMyValue.filter((value, index) => index !== i)
       );
+      toPopulate((prevValue) => ({ ...prevValue, [objKey]: myValue }));
     }
   };
 
