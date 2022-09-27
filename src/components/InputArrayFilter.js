@@ -15,6 +15,10 @@ export function InputArrayFilter({
   const dropdownRef = useRef();
   const elementRef = useRef([]);
 
+  useEffect(() => {
+    toPopulate((prevValue) => ({ ...prevValue, [objKey]: myValue }));
+  }, [myValue]);
+
   /* Controllo se viene effettuato clic fuori dal droplist */
   useEffect(() => {
     const checkIfClickedOutside = (target) => {
@@ -44,7 +48,6 @@ export function InputArrayFilter({
             : { name: value, livello: "A1 - Livello base" }
           : { name: value },
       ]);
-      toPopulate((prevValue) => ({ ...prevValue, [objKey]: myValue }));
     }
     setPlaceHolderClicked("clicked");
     setDropdownSearchValue("");
@@ -79,14 +82,12 @@ export function InputArrayFilter({
         setMyValue((currentMyValue) =>
           currentMyValue.filter((value, index) => index !== i)
         );
-        toPopulate((prevValue) => ({ ...prevValue, [objKey]: myValue }));
         clearTimeout(remove);
       }, 600);
     } else {
       setMyValue((currentMyValue) =>
         currentMyValue.filter((value, index) => index !== i)
       );
-      toPopulate((prevValue) => ({ ...prevValue, [objKey]: myValue }));
     }
   };
 
