@@ -6,26 +6,26 @@ import AppointmentButtons from "./AppointmentButtons";
 
 const AppNotifications = () => {
 // for the on click of the buttons
-    const [addApp1, setAddApp1] = useState(notificationsDb[0]);
-    const [addApp2, setAddApp2] = useState(notificationsDb[1]);
+    const [notification, setNotification] = useState(notificationsDb);
+    const [appointment, setAppointment] = useState([]);
+    const [show, setShow] = useState(false)
 
-        const appAdder1 = (event) => {
-            setAddApp1(addApp1 => {
-                return {...addApp1, accepted : !addApp1.accepted }
-            })
-        }
+    const acceptAppointment = (accepted, notificationId) => {
+        setAppointment(prev => {
+            return [...prev, notification[notificationId]]
+        })
+    }
+
+    const buttonsShower = (id) => {
+        setShow(!show);
+    }
+
+    const declineAppointment = (id) =>{
         
-
-        const appAdder2 = (event) => {
-            setAddApp2((addApp2) => {
-                return {...addApp2, accepted : true}
-            })
-        }
-
+    }
 // buttons appear
     const [showButtons1, setShowButtons1] = useState(false);
     const [showButtons2, setShowButtons2] = useState(false);
-    
 
     const buttonsShower1 = (event) => {
         setShowButtons1(!showButtons1)
@@ -37,6 +37,7 @@ const AppNotifications = () => {
 // end buttons part
 
 
+
     return (
         <>
             <div className="container13">
@@ -46,50 +47,70 @@ const AppNotifications = () => {
 
 
             <div className="containerAppuntamenti">
-                <div className="appuntamento" key={addApp1.id} onClick={buttonsShower1}>
-                    <div id="placeholderJob">
-                        <img src={addApp1.logo} id="foto-azienda" alt="azienda"/>
-                    </div>
-                    <div className="texts">
-                        <p><b>{addApp1.name}</b></p>
-                        <p style={{fontSize: 13}}>{addApp1.appointment}</p>
-                    </div>
-                </div>
-                    {showButtons1 && <AppointmentButtons appAdder1={appAdder1} />}
-                <div className="appuntamento" key={addApp2.id} onClick={buttonsShower2}>
-                    <div id="placeholderJob">
-                        <img src={addApp2.logo} id="foto-azienda" alt="azienda"/>
-                    </div>
-                    <div className="texts">
-                        <p><b>{addApp2.name}</b></p>
-                        <p style={{fontSize: 13}}>{addApp2.appointment}</p>
-                    </div>
-                </div>
-                    {showButtons2 && <AppointmentButtons appAdder2={appAdder2}/>}
+                {notification.map((element, index) =>{
+                    return(
+                        <>
+                             <div className="appuntamento" key={element.id} onClick={() => {buttonsShower(index)}}>
+                                <div id="placeholderJob">
+                                    <img src={element.logo} id="foto-azienda" alt="azienda"/>
+                                </div>
+                                <div className="texts">
+                                    <p><b>{element.name}</b></p>
+                                    <p style={{fontSize: 13}}>{element.appointment}</p>
+                                </div>
+                            </div>
+                            {show &&
+                                <>
+                                    <button
+                                    style={{
+                                    backgroundColor: "yellow",
+                                    width: "50%",
+                                    color: "rgb(54, 71, 100)",
+                                    borderRadius: "6px",
+                                    height: "3rem",
+                                    border: "none",
+                                    cursor: "pointer",
+                                    }}
+                                    onClick={() => {acceptAppointment(true, index)}}
+                                    >
+                                    ACCETTA
+                                    </button>
+                                    <button
+                                    style={{
+                                    backgroundColor: "#364764",
+                                    width: "50%",
+                                    color: "#ffff",
+                                    borderRadius: "6px",
+                                    height: "3rem",
+                                    border: "none",
+                                    cursor: "pointer",
+                                    }}
+                                    onClick={() => {declineAppointment(index)}}
+                                    >
+                                    RIFIUTA
+                                    </button>
+                                </>
+                            }
+                        </>
+                )})}
             </div>
 
                 <p id="firstP">Prossimi appuntamenti</p>
                 {/* sezione appuntamenti accettati */}
-
                 <div className="containerAppuntamenti">
-                    {addApp1.accepted && <div className="appuntamento" key={addApp1.id} >
-                            <div id="placeholderJob">
-                                <img src={addApp1.logo} id="foto-azienda" alt="azienda"/>
-                            </div>
-                            <div className="texts">
-                                <p><b>{addApp1.name}</b></p>
-                                <p style={{fontSize: 13}}>{addApp1.appointment}</p>
-                            </div>
-                    </div>}
-                    {addApp2.accepted && <div className="appuntamento" key={addApp2.id} >
-                            <div id="placeholderJob">
-                                <img src={addApp2.logo} id="foto-azienda" alt="azienda"/>
-                            </div>
-                            <div className="texts">
-                                <p><b>{addApp2.name}</b></p>
-                                <p style={{fontSize: 13}}>{addApp2.appointment}</p>
-                            </div>
-                    </div>}
+                        {appointment.length > 0 ? appointment.map((element,id) =>{
+                            return(
+                                <div className="appuntamento" key={element.id} >
+                                        <div id="placeholderJob">
+                                            <img src={element.logo} id="foto-azienda" alt="azienda"/>
+                                        </div>
+                                        <div className="texts">
+                                            <p><b>{element.name}</b></p>
+                                            <p style={{fontSize: 13}}>{element.appointment}</p>
+                                        </div>
+                                </div>
+                            )
+                        }): <p style={{color:'#000'}}>Non ci sono appuntamenti</p>}
                 </div>
             </div>
         </>

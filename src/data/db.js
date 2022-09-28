@@ -12,7 +12,8 @@ export default[
         skills: ["React", "JavaScript", "Node.js", "SASS", "Angular", "HTML", "CSS", "PHP"],
         language: ["Inglese", "Italiano"],
         available_for: "Remote",
-        user_picture: MarioVerde
+        user_picture: MarioVerde,
+        show_button: false
     },
     {
         name: "Mary Rose",
@@ -23,6 +24,7 @@ export default[
         skills: ["React", "JavaScript", "Angular", "HTML", "CSS"],
         language: ["Inglese", "Italiano"],
         available_for: "Remote & On-site",
-        user_picture: MaryRose
+        user_picture: MaryRose,
+        show_button: false
     }
 ]
