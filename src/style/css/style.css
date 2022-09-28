@@ -3,6 +3,8 @@
 @import './form.css';
 @import './SignUp.css';
 @import './Calendar.css';
+@import './AppNotifications.css';
+@import './Appointments.css';
 
 
 @font-face {

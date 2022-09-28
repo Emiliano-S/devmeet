@@ -1,27 +1,31 @@
-.calendarComponentContainer {
-  background-color: #EFEFEF;
+body {
+  background-color: #F9F9F9;
+}
+body .containerCalendarCard {
+  width: 100vw;
+  height: 100vh;
+}
+body .containerCalendarCard .calendarComponentContainer {
   font-family: "DM Sans Bold";
   font-weight: bold;
   font-size: 23px;
   color: #364764;
 }
-.calendarComponentContainer #firstP {
-  padding: 35px 0 20px 20px;
+body .containerCalendarCard .calendarComponentContainer #firstP {
+  padding: 45px 0 20px 20px;
 }
-.calendarComponentContainer .calendarDiv {
+body .containerCalendarCard .calendarComponentContainer .calendarDiv {
   width: 100%;
-  height: 290px;
+  height: 340px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
-  margin-top: 17px;
 }
-.calendarComponentContainer #secondP {
-  padding: 35px 0 15px 20px;
-  margin-top: 25px;
+body .containerCalendarCard .calendarComponentContainer #secondP {
+  padding: 25px 0 15px 20px;
 }
-.calendarComponentContainer .containerAppuntamenti {
+body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,7 +36,7 @@
   font-weight: normal;
   font-size: 16px;
 }
-.calendarComponentContainer .containerAppuntamenti .appuntamento1 {
+body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .appuntamento {
   width: 90%;
   height: 70px;
   background-color: #364764;
@@ -42,55 +46,26 @@
   border: none;
   border-radius: 5px;
 }
-.calendarComponentContainer .containerAppuntamenti .appuntamento1 .texts {
+body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .appuntamento .texts {
   display: flex;
   flex-direction: column;
 }
-.calendarComponentContainer .containerAppuntamenti .appuntamento1 #placeholderJob1 {
+body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .appuntamento #placeholderJob {
   background-color: #EFEFEF;
   justify-self: flex-start;
   margin: 0 10px 0 10px;
-  display: grid;
-  place-items: center;
-  border-radius: 100%;
-  width: 55px;
-  height: 55px;
-}
-.calendarComponentContainer .containerAppuntamenti .appuntamento1 #placeholderJob1 #azienda1 {
-  width: 60%;
-  height: 60%;
-}
-.calendarComponentContainer .containerAppuntamenti .appuntamento2 {
-  width: 90%;
-  height: 70px;
-  background-color: #364764;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  border: none;
-  border-radius: 5px;
-}
-.calendarComponentContainer .containerAppuntamenti .appuntamento2 .texts {
-  display: flex;
-  flex-direction: column;
-}
-.calendarComponentContainer .containerAppuntamenti .appuntamento2 #placeholderJob2 {
-  background-color: #EFEFEF;
-  justify-self: flex-start;
-  margin: 0 10px 0 10px;
-  display: grid;
-  place-items: center;
   border-radius: 100%;
   width: 55px;
   height: 55px;
 }
-.calendarComponentContainer .containerAppuntamenti .appuntamento2 #placeholderJob2 #azienda2 {
-  width: 75%;
-  height: 50%;
+body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .appuntamento #placeholderJob #foto-azienda {
+  width: 70%;
 }
 
-/*# sourceMappingURL=Calendar.css.map */
-
+/*# sourceMappingURL=calendar.css.map */
 /* CSS della libreria */
 .react-calendar {
   width: 350px;

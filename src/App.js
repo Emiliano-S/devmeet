@@ -9,6 +9,7 @@ import data from './data/db';
 import Login from './components/Login';
 import ReactCalendar from './components/ReactCalendar';
 import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import AppNotifications from './components/AppNotifications';
 
 
 
@@ -32,6 +33,7 @@ function App() {
        <CardContainer data={dbCard}/>
        
        <ReactCalendar />
+       <AppNotifications />
        <Login registration />
        </BrowserRouter>
    </div>

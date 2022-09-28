@@ -1,84 +1,65 @@
-.calendarComponentContainer {
-    background-color: #EFEFEF;
-    font-family: "DM Sans Bold";
-    font-weight: bold;
-    font-size: 23px;
-    color: #364764;
-        #firstP {
-            padding: 45px 0 20px 20px;
-        }
-        .calendarDiv {
-            width: 100%;
-            height: 290px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-        } 
-        #secondP {
-            padding: 25px 0 15px 20px;
-        }  
-        .containerAppuntamenti {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            padding-bottom: 100px;
-            color: white;
-            font-weight: normal;
-            font-size: 16px;
-            .appuntamento1 {
-                width: 90%;
-                height: 70px;
-                background-color:#364764;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                border: none;
-                border-radius: 5px;
-                .texts { 
-                    display: flex;
-                    flex-direction: column;
-                }
-                #placeholderJob1 {
-                    background-color: #EFEFEF;
-                    justify-self: flex-start;
-                    margin: 0 10px 0 10px;
-                    display: grid;
-                    place-items: center;
-                    border-radius: 100%;
-                    width: 55px;
-                    height: 55px;
-                    #azienda1 {
-                        width: 60%;
-                        height: 60%;
-                    }
-                }
+body {
+    background-color: #F9F9F9;
+    .containerCalendarCard {
+        width: 100vw;
+        height: 100vh;
+        .calendarComponentContainer {
+            font-family: "DM Sans Bold";
+            font-weight: bold;
+            font-size: 23px;
+            color: #364764;
+            #firstP {
+                padding: 45px 0 20px 20px;
             }
-            .appuntamento2 {
-                width: 90%;
-                height: 70px;
-                background-color:#364764;
+            .calendarDiv {
+                width: 100%;
+                height: 340px;
                 display: flex;
-                flex-direction: row;
+                justify-content: center;
                 align-items: center;
                 border: none;
-                border-radius: 5px;
-                #placeholderJob2 {
-                    background-color: #EFEFEF;
-                    justify-self: flex-start;
-                    margin: 0 10px 0 10px;
-                    display: grid;
-                    place-items: center;
-                    border-radius: 100%;
-                    width: 55px;
-                    height: 55px;
-                    #azienda2 {
-                        width: 75%;
-                        height: 50%;
+            } 
+            #secondP {
+                padding: 25px 0 15px 20px;
+            }  
+            .containerAppuntamenti {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding-bottom: 100px;
+                color: white;
+                font-weight: normal;
+                font-size: 16px;
+                .appuntamento {
+                    width: 90%;
+                    height: 70px;
+                    background-color:#364764;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border: none;
+                    border-radius: 5px;
+                    .texts { 
+                        display: flex;
+                        flex-direction: column;
                     }
-                }
-            }            
+                    #placeholderJob {
+                        background-color: #EFEFEF;
+                        justify-self: flex-start;
+                        margin: 0 10px 0 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 100%;
+                        width: 55px;
+                        height: 55px;
+                        #foto-azienda {
+                            width: 70%;
+                        }
+                    }
+                }            
+            }
         }
-}
+}}
