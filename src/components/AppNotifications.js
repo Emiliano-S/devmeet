@@ -10,10 +10,11 @@ const AppNotifications = () => {
     const [appointment, setAppointment] = useState([]);
     const [show, setShow] = useState(false)
 
-    const acceptAppointment = (accepted, notificationId) => {
+    const acceptAppointment = (accepted, index, notificationId) => {
         setAppointment(prev => {
-            return [...prev, notification[notificationId]]
+            return [...prev, notification[index]]
         })
+        declineAppointment(notificationId);
     }
 
     const buttonsShower = (id) => {
@@ -21,7 +22,7 @@ const AppNotifications = () => {
     }
 
     const declineAppointment = (id) =>{
-        
+        setNotification(notification.filter(item => item.id !== id));
     }
 // buttons appear
     const [showButtons1, setShowButtons1] = useState(false);
@@ -50,7 +51,7 @@ const AppNotifications = () => {
                 {notification.map((element, index) =>{
                     return(
                         <>
-                             <div className="appuntamento" key={element.id} onClick={() => {buttonsShower(index)}}>
+                             <div className="appuntamento" key={index} onClick={() => {buttonsShower(index)}}>
                                 <div id="placeholderJob">
                                     <img src={element.logo} id="foto-azienda" alt="azienda"/>
                                 </div>
@@ -60,7 +61,7 @@ const AppNotifications = () => {
                                 </div>
                             </div>
                             {show &&
-                                <>
+                                <div className="appuntamentiButtons" style={{display: 'flex', width: '70%',  gap: '10px'}}>
                                     <button
                                     style={{
                                     backgroundColor: "yellow",
@@ -71,7 +72,7 @@ const AppNotifications = () => {
                                     border: "none",
                                     cursor: "pointer",
                                     }}
-                                    onClick={() => {acceptAppointment(true, index)}}
+                                    onClick={() => {acceptAppointment(true, index, element.id)}}
                                     >
                                     ACCETTA
                                     </button>
@@ -85,11 +86,11 @@ const AppNotifications = () => {
                                     border: "none",
                                     cursor: "pointer",
                                     }}
-                                    onClick={() => {declineAppointment(index)}}
+                                    onClick={() => {declineAppointment(element.id)}}
                                     >
                                     RIFIUTA
                                     </button>
-                                </>
+                                </div>
                             }
                         </>
                 )})}
