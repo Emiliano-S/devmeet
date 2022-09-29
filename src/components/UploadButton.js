@@ -40,12 +40,12 @@ return (
             cursor: "pointer",
           }}
         >
-            {!profile && <div><div style={{width: '60%', display: 'flex', justifyContent:'flex-end'}}>
+            {!profile && <><div style={{width: '60%', display: 'flex', justifyContent:'flex-end'}}>
           {text}
             </div>
             {<div style= {{width: '40%', display: 'flex', justifyContent:'center'}}>
                 <img src={Add} alt="+" />
-            </div>} </div>}
+            </div>} </>}
 
             {profile && <div style = {{width: '100%', display:"flex", justifyContent:"center"}}>
               <div >
@@ -68,12 +68,12 @@ return (
             cursor: "pointer",
           }}
         >
-          {!profile && <div><div style={{width: '60%', display: 'flex', justifyContent:'flex-end'}}>
+          {!profile && <><div style={{width: '60%', display: 'flex', justifyContent:'flex-end'}}>
           {textClicked}
             </div>
             <div style= {{width: '40%', display: 'flex', justifyContent:'center'}}>
                 <img src={Remove} alt="-" />
-            </div> </div>}
+            </div> </>}
             {profile && <div style = {{width: '100%', display:"flex", justifyContent:"center"}}>
               <div >
                 {textClicked}
