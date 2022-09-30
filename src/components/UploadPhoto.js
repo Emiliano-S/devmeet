@@ -5,7 +5,6 @@ import CloudWhite from "../assets/svg/CloudWhite.svg";
 import Placeholder from "../assets/svg/Placeholder.svg";
 import Logoholder from "../assets/svg/Logoholder.svg";
 import xRemove from "../assets/svg/xRemove.svg";
-import { calcLength } from "framer-motion";
 
 const UploadAndDisplayImage = ({
   wd,
