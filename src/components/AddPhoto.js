@@ -1,17 +1,14 @@
 import { Link } from "react-router-dom";
-import Button from "./Button";
-import MakePhotoButton from "./MakePhotoButton";
-import UploadButtonPhoto from "./UploadButtonPhoto";
-import Logoholder from "../assets/svg/Logoholder.svg";
 import UploadAndDisplayImage from "./UploadPhoto";
 export function AddPhoto({ user, company }) {
   return (
     <div
       style={{
-        padding: "5%",
+        paddingLeft: "5%",
+        paddingRight: "5%",
         display: "flex",
         flexDirection: "column",
-        height: "100%",
+        height: "90%",
       }}
       className="PhotoContainer"
     >
@@ -21,6 +18,7 @@ export function AddPhoto({ user, company }) {
             width: "100%",
             display: "flex",
             flexDirection: "column",
+            height: "100%",
           }}
         >
           <div
@@ -28,7 +26,7 @@ export function AddPhoto({ user, company }) {
               display: "flex",
               width: "100%",
               justifycontent: "flex-start",
-              marginBottom: "50px",
+              marginBottom: "100px",
             }}
           >
             <div>
@@ -52,16 +50,8 @@ export function AddPhoto({ user, company }) {
             bgColor={"#364764"}
             textColor={"white"}
             text={"CARICA UNA FOTO"}
-            textClicked={"CONTINUA"}
+            textClicked={"REGISTRATI"}
           />
-          {/* <UploadButtonPhoto
-            registration
-            user
-            bgColor={"#364764"}
-            textColor={"white"}
-            text={"CARICA UNA FOTO"}
-            textClicked={"CONTINUA"}
-          /> */}
         </div>
       )}
 
@@ -71,6 +61,7 @@ export function AddPhoto({ user, company }) {
             width: "100%",
             display: "flex",
             flexDirection: "column",
+            height: "100%",
           }}
         >
           <div
@@ -87,15 +78,24 @@ export function AddPhoto({ user, company }) {
               </p>
             </div>
           </div>
-          <UploadButtonPhoto
+          <UploadAndDisplayImage
             registration
             company
-            bgColor={"#FCF347"}
-            text={"CARICA UN LOGO"}
-            textColor={"#364764"}
-            textClicked={"CONTINUA"}
+            bgColor={"#364764"}
+            textColor={"white"}
+            text={"CARICA LOGO"}
+            textClicked={"REGISTRATI"}
           />
         </div>
+        //   <UploadButtonPhoto
+        //     registration
+        //     company
+        //     bgColor={"#FCF347"}
+        //     text={"CARICA UN LOGO"}
+        //     textColor={"#364764"}
+        //     textClicked={"CONTINUA"}
+        //   />
+        // </div>
       )}
     </div>
   );
