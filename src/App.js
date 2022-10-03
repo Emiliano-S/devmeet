@@ -14,6 +14,8 @@ import { Skills } from "./pages/Skills";
 import { WorkExperiences } from "./pages/WorkExperiences";
 import { LinksLanguages } from "./pages/LinksLanguages";
 import Settings from "./pages/Settings";
+import { ProfileSettings } from "./components/ProfileSettings";
+import BottomNavbar1 from "./components/BottomNavbar1";
 
 const userSignUp = {
   nomeCognome: "",
@@ -33,13 +35,13 @@ const userSignUp = {
   foto: "",
 };
 
-function App() {
+function App({ user }) {
   const [dbCard, setdbCard] = useState(data);
 
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar back />
+        <NavBar back options />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />
@@ -70,6 +72,12 @@ function App() {
             element={<AddPhoto registration company />}
           />
           <Route path="/settings" element={<Settings />} />
+          <Route
+            path="/ProfileSettings"
+            element={<ProfileSettings id user />}
+          />
+          {/* navbar con le notifiche */}
+          <Route path="/bottomNavbar1" element={<BottomNavbar1 />} />
         </Routes>
         {/*
         <CardContainer data={dbCard}/>
