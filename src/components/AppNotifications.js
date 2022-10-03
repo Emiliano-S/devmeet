@@ -1,8 +1,6 @@
 import { NavBar } from "./NavBar";
 import notificationsDb from "../data/notificationsDb";
-import { useState, useEffect } from "react";
-import AppointmentButtons from "./AppointmentButtons";
-
+import { useState } from "react";
 
 const AppNotifications = () => {
 // for the on click of the buttons
@@ -24,28 +22,14 @@ const AppNotifications = () => {
     const declineAppointment = (id) =>{
         setNotification(notification.filter(item => item.id !== id));
     }
-// buttons appear
-    const [showButtons1, setShowButtons1] = useState(false);
-    const [showButtons2, setShowButtons2] = useState(false);
-
-    const buttonsShower1 = (event) => {
-        setShowButtons1(!showButtons1)
-    }
-
-    const buttonsShower2 = (event) => {
-        setShowButtons2(!showButtons2)
-    }
-// end buttons part
-
-
 
     return (
         <>
             <div className="container13">
                 <NavBar back/>
                 <p id="firstP">Notifiche</p>
+                                   
                 {/* <Appointments /> */}
-
 
             <div className="containerAppuntamenti">
                 {notification.map((element, index) =>{
