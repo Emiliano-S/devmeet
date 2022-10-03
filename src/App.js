@@ -17,6 +17,7 @@ import Settings from "./pages/Settings";
 import { ProfileSettings } from "./components/ProfileSettings";
 import BottomNavbar1 from "./components/BottomNavbar1";
 
+
 const userSignUp = {
   nomeCognome: "",
   dataNascita: "",
@@ -42,6 +43,8 @@ function App({ user }) {
     <div className="App">
       <BrowserRouter>
         <NavBar back options />
+        <BottomNavbar1 />
+        
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />
@@ -75,9 +78,11 @@ function App({ user }) {
           <Route
             path="/ProfileSettings"
             element={<ProfileSettings id user />}
+            
           />
+          
           {/* navbar con le notifiche */}
-          <Route path="/bottomNavbar1" element={<BottomNavbar1 />} />
+          {/* <Route path="/bottomNavbar1" element={<BottomNavbar1 />} /> */}
         </Routes>
         {/*
         <CardContainer data={dbCard}/>
