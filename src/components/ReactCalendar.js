@@ -2,13 +2,10 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import { NavBar } from "./NavBar";
 import notificationsDb from "../data/notificationsDb";
-import { useLocation } from 'react-router-dom';
-
 //library npm react-calendar
 
 const ReactCalendar = () => {
     const [value, onChange] = useState(new Date());
-    const { state } = useLocation();
 
     return (
         <>
