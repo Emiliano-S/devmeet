@@ -1,8 +1,6 @@
-import { useEffect, useRef, useState } from "react"
-import CloudWhite from '../assets/svg/CloudWhite.svg'
-import Camera from '../assets/svg/Camera.svg'
-import Placeholder from '../assets/svg/Placeholder.svg'
-import Logoholder from '../assets/svg/Logoholder.svg'
+import { useEffect, useRef, useState } from "react";
+import CloudWhite from "../assets/svg/CloudWhite.svg";
+import Camera from "../assets/svg/Camera.svg";
 
 const MakePhotoButton = ({
   wd,
@@ -13,9 +11,8 @@ const MakePhotoButton = ({
   textClicked,
   hg,
   user,
-  company
+  company,
 }) => {
-
   const [active, setActive] = useState(true);
   const [photo, setPhoto] = useState(true);
   const [camera, setCamera] = useState(true);
@@ -30,12 +27,12 @@ const MakePhotoButton = ({
   const getVideo = () => {
     navigator.mediaDevices
       .getUserMedia({ video: { width: 240, height: 240 } })
-      .then(stream => {
+      .then((stream) => {
         let video = videoRef.current;
         video.srcObject = stream;
         video.play();
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("error:", err);
       });
   };
@@ -52,11 +49,7 @@ const MakePhotoButton = ({
     return setInterval(() => {
       ctx.drawImage(video, 0, 0, width, height);
     }, 200);
-
-
   };
-
-
 
   const takePhoto = () => {
     setPhoto(false);
@@ -78,17 +71,16 @@ const MakePhotoButton = ({
         strip.removeChild(strip.firstChild);
       }, 500);
       setTimeout(() => {
-        getVideo()
-        setCamera(true)
+        getVideo();
+        setCamera(true);
       }, 600);
       console.log("cameraON");
       setPhoto(true);
     } else {
       setCamera(false);
       strip.insertBefore(link, strip.firstChild);
-      console.log("cameraoff")
+      console.log("cameraoff");
     }
-
   };
 
   const handleButtonClick = () => {
@@ -97,125 +89,200 @@ const MakePhotoButton = ({
   };
 
   const handleButtonClicked = () => {
-    getVideo();
     setActive(true);
     setCamera(true);
-  }
+  };
 
   return (
-    <div style={{ width: '100%', display: "flex", justifyContent: "center", marginTop: '22px' }}>
-      {active && <>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          {user && <div style={{ display: "flex", justifyContent: "center", paddingBottom: "44px", borderRadius: "5px" }}>
-            <img src={Placeholder} />
-          </div>}
-          {company && <div style={{ display: "flex", justifyContent: "center", paddingBottom: "44px", borderRadius: "5px" }}>
-            <img src={Logoholder} />
-          </div>}
-          <button
-            onClick={handleButtonClick}
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "22px",
+      }}
+    >
+      {active && (
+        <>
+          <div
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              backgroundColor: bgColor,
-              width: '266px',
-              color: textColor,
-              fontWeight: wg,
-              borderRadius: "6px",
-              height: '50px',
-              border: "none",
-              cursor: "pointer",
-              marginBottom: "22px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end', fontWeight: "bold" }}>
-              {text}
-            </div>
-            <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
-              <img src={Camera} alt="+" />
-            </div>
-          </button>
-        </div>
-      </>}
-      {!active &&
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <button
+              onClick={handleButtonClick}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: bgColor,
+                width: "266px",
+                color: textColor,
+                fontWeight: wg,
+                borderRadius: "6px",
+                height: "50px",
+                border: "none",
+                cursor: "pointer",
+                marginBottom: "22px",
+              }}
+            >
+              <div
+                style={{
+                  width: "60%",
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  fontWeight: "bold",
+                }}
+              >
+                {text}
+              </div>
+              <div
+                style={{
+                  width: "40%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <img src={Camera} alt="+" />
+              </div>
+            </button>
+          </div>
+        </>
+      )}
+      {!active && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <>
-            {camera &&
-              <div style={{ display: "block", width: "300",  marginBottom: "20px", }}>
-                <video onCanPlay={() => paintToCanvas()} ref={videoRef} style={{ display: "block", borderRadius: "50%" }} />
+            {camera && (
+              <div
+                style={{ display: "block", width: "300", marginBottom: "20px" }}
+              >
+                <video
+                  onCanPlay={() => paintToCanvas()}
+                  ref={videoRef}
+                  style={{ display: "block", borderRadius: "50%" }}
+                />
                 <canvas ref={photoRef} style={{ display: "none" }} />
-              </div>}
-            {!camera &&
+              </div>
+            )}
+            {!camera && (
               <>
-                <div style={{ display: "none", width: "400",}}>
-                  <video onCanPlay={() => paintToCanvas()} ref={videoRef} style={{ display: "none" }} />
-                  <canvas ref={photoRef} style={{ display: "none",}} />
+                <div style={{ display: "none", width: "400" }}>
+                  <video
+                    onCanPlay={() => paintToCanvas()}
+                    ref={videoRef}
+                    style={{ display: "none" }}
+                  />
+                  <canvas ref={photoRef} style={{ display: "none" }} />
                 </div>
               </>
-            }
-            <div style={{height: "240", width: "240", borderRadius: "50%"}}>
-              <div style={{height: "240", width: "240", marginBottom: "22px"}} ref={stripRef}  />
+            )}
+            <div style={{ height: "240", width: "240", borderRadius: "50%" }}>
+              <div
+                style={{ height: "240", width: "240", marginBottom: "22px" }}
+                ref={stripRef}
+              />
             </div>
             <button
               onClick={takePhoto}
               style={{
-                display: 'flex',
-                alignItems: 'center',
+                display: "flex",
+                alignItems: "center",
                 backgroundColor: bgColor,
-                width: '266px',
+                width: "266px",
                 color: textColor,
                 fontWeight: wg,
                 borderRadius: "6px",
-                height: '50px',
+                height: "50px",
                 border: "none",
                 cursor: "pointer",
-                marginBottom: "22px"
+                marginBottom: "22px",
               }}
             >
-              {photo &&
-                <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end', fontWeight: "bold",  }}>
+              {photo && (
+                <div
+                  style={{
+                    width: "60%",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    fontWeight: "bold",
+                  }}
+                >
                   SCATTA
                 </div>
-              }
-              {!photo &&
-                <div style={{ width: '60%', display: 'flex', justifyContent: 'flex-end', fontWeight: "bold" }}>
+              )}
+              {!photo && (
+                <div
+                  style={{
+                    width: "60%",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    fontWeight: "bold",
+                  }}
+                >
                   SCATTA DI NUOVO
                 </div>
-              }
-              <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
+              )}
+              <div
+                style={{
+                  width: "40%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <img src={Camera} alt="-" />
               </div>
             </button>
-            {!photo &&
+            {!photo && (
               <button
                 onClick={takePhoto}
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
+                  display: "flex",
+                  alignItems: "center",
                   backgroundColor: bgColor,
-                  width: '266px',
+                  width: "266px",
                   color: textColor,
                   fontWeight: wg,
                   borderRadius: "6px",
-                  height: '50px',
+                  height: "50px",
                   border: "none",
                   cursor: "pointer",
-                  marginBottom: "22px"
+                  marginBottom: "22px",
                 }}
               >
-                <div style={{ width: '60%', display: 'flex', justifyContent: 'center', fontWeight: "bold", paddingLeft: "40px" }}>
+                <div
+                  style={{
+                    width: "60%",
+                    display: "flex",
+                    justifyContent: "center",
+                    fontWeight: "bold",
+                    paddingLeft: "40px",
+                  }}
+                >
                   SALVA
                 </div>
-                <div style={{ width: '40%', display: 'flex', justifyContent: 'center' }}>
+                <div
+                  style={{
+                    width: "40%",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
                   <img src={CloudWhite} alt="-" />
                 </div>
-              </button>}
+              </button>
+            )}
           </>
         </div>
-      }
+      )}
     </div>
-  )
-}
+  );
+};
 
-
-export default MakePhotoButton
+export default MakePhotoButton;
