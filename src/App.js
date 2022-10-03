@@ -17,7 +17,7 @@ import Settings from "./pages/Settings";
 import { ProfileSettings } from "./components/ProfileSettings";
 import BottomNavbar1 from "./components/BottomNavbar1";
 
-const userSingUp = {
+const userSignUp = {
   nomeCognome: "",
   dataNascita: "",
   sesso: "",
@@ -47,7 +47,10 @@ function App({ user }) {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signUp/company" element={<Form company />} />
-          <Route path="/signUp/user" element={<Form user />} />
+          <Route
+            path="/signUp/user"
+            element={<Form user userArr={userSignUp} />}
+          />
           <Route path="/signUp/regUser" element={<Login registration user />} />
           <Route path="/signUp/regCompany" element={<Login registration />} />
           <Route path="/FilterBy" element={<Filterby />} />
