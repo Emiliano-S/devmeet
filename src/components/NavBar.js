@@ -1,6 +1,7 @@
 import navBackArrow from "../assets/svg/backNav.svg";
 import navBackArrowWhite from "../assets/svg/backNavWhite.svg";
 import navOption from "../assets/svg/optionsNav.svg";
+import remove from "../assets/svg/xRemoveWhite.svg";
 import navOptionWhite from "../assets/svg/navOptionWhite.svg";
 import navLogo from "../assets/img/logoNav.png";
 import navLogoWhite from "../assets/svg/logoNav.svg";
@@ -21,6 +22,11 @@ export function NavBar({ options, back }) {
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
       setOptFill(navOptionWhite);
+    } else if (location.pathname == "/settings") {
+      setBgColor("#364764");
+      setLogo(navLogoWhite);
+      setBackFill(navBackArrowWhite);
+      setOptFill(remove);
     }
   }, [location]);
 
