@@ -1,6 +1,7 @@
 import navBackArrow from "../assets/svg/backNav.svg";
 import navBackArrowWhite from "../assets/svg/backNavWhite.svg";
 import navOption from "../assets/svg/optionsNav.svg";
+import navOptionWhite from "../assets/svg/navOptionWhite.svg";
 import navLogo from "../assets/img/logoNav.png";
 import navLogoWhite from "../assets/svg/logoNav.svg";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -13,12 +14,13 @@ export function NavBar({ options, back }) {
   const [bgColor, setBgColor] = useState("transparent");
   const [logo, setLogo] = useState(navLogo);
   const [backFill, setBackFill] = useState(navBackArrow);
-
+  const [optFill, setOptFill] = useState(navOption);
   useEffect(() => {
     if (location.pathname == "/ProfileSettings") {
       setBgColor("#364764");
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
+      setOptFill(navOptionWhite);
     }
   }, [location]);
 
@@ -49,7 +51,7 @@ export function NavBar({ options, back }) {
       </div>
       <div className="NavBarOptionsContainer">
         {options && (
-          <img className="NavBarOptions" src={navOption} alt="Options" />
+          <img className="NavBarOptions" src={optFill} alt="Options" />
         )}
       </div>
     </div>
