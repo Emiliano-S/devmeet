@@ -3,7 +3,7 @@ import navBackArrowWhite from "../assets/svg/backNavWhite.svg";
 import navOption from "../assets/svg/optionsNav.svg";
 import navLogo from "../assets/img/logoNav.png";
 import navLogoWhite from "../assets/svg/logoNav.svg";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 

@@ -40,7 +40,7 @@ function App({ user }) {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar back />
+        <NavBar back options />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />
