@@ -1,0 +1,69 @@
+nav {
+  background-color: rgb(54, 71, 100);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding: 0.8em 0.5em;
+  margin-top: 2%;
+  align-content: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+}
+
+.navbar-svg-container {
+  height: 100%;
+}
+
+.navbar-central-button-container {
+  margin: 0 35%;
+  position: absolute;
+  bottom: 2%;
+  z-index: 100;
+}
+
+.navbar-button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navbar-svg-button {
+  border: none;
+  width: 19.5%;
+  padding: 0.4em;
+  border-radius: 0.8em;
+  background-color: transparent;
+  -webkit-border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -ms-border-radius: 0.8em;
+  -o-border-radius: 0.8em;
+}
+
+.navbar-svg-button:focus {
+  background-color: rgb(252, 243, 71);
+  border-radius: 1;
+  -webkit-border-radius: 1;
+  -moz-border-radius: 1;
+  -ms-border-radius: 1;
+  -o-border-radius: 1;
+}
+
+.navbar-svg-button:focus .navbar-svg-container svg path {
+  fill: rgb(54, 71, 100);
+}
+
+.navbar-svg-button:focus .navbar-svg-container circle,
+.navbar-svg-button:focus .navbar-svg-container path {
+  stroke: rgb(54, 71, 100);
+}
+
+.focusText {
+  color: white;
+}
+
+.navbar-svg-button:focus .focusText {
+  color: rgb(54, 71, 100);
+}

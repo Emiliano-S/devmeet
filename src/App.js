@@ -15,6 +15,7 @@ import { WorkExperiences } from "./pages/WorkExperiences";
 import { LinksLanguages } from "./pages/LinksLanguages";
 import Settings from "./pages/Settings";
 import { ProfileSettings } from "./components/ProfileSettings";
+import BottomNavbar1 from "./components/BottomNavbar1";
 
 const userSingUp = {
   nomeCognome: "",
@@ -72,6 +73,8 @@ function App({ user }) {
             path="/ProfileSettings"
             element={<ProfileSettings id user />}
           />
+          {/* navbar con le notifiche */}
+          <Route path="/bottomNavbar1" element={<BottomNavbar1 />} />
         </Routes>
         {/*
         <CardContainer data={dbCard}/>
