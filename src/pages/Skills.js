@@ -1,12 +1,7 @@
 import { InputArrayFilter } from "../components/InputArrayFilter";
 import skillsArray from "../data/dbSkills.json";
 import comuniArray from "../data/dbComuni.json";
-import {
-  Navigate,
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Button from "../components/Button";
 
