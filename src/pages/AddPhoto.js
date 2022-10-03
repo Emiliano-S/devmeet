@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Button from "./Button";
-import MakePhotoButton from "./MakePhotoButton";
-import UploadButtonPhoto from "./UploadButtonPhoto";
+import Button from "../components/Button";
+import MakePhotoButton from "../components/MakePhotoButton";
+import UploadButtonPhoto from "../components/UploadButtonPhoto";
 import Logoholder from '../assets/svg/Logoholder.svg'
 export function AddPhoto({ user, company }) {
     return (

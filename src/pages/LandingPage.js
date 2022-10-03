@@ -1,5 +1,5 @@
 import devmeetLogo1 from "../assets/svg/devmeet-logo1.svg"
-import Button from "./Button"
+import Button from "../components/Button"
 import {Link} from 'react-router-dom'
 
 

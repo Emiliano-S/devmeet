@@ -1,0 +1,224 @@
+.skillsPageContainer {
+  width: 100%;
+  height: calc(100vh - 50px);
+  min-height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 40px 0px;
+  gap: 10px;
+  color: #364764;
+  .skillsContainer,.lingueContainer,
+  .lavoroContainer {
+    height: 50%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    h3 {
+      padding: 0 20px;
+    }
+  }
+  .input-search-container {
+    position: relative;
+    input[type="search"] {
+      border: none;
+      width: calc(100% - 40px);
+      margin: 0 20px;
+      min-height: 50px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      padding-left: 40px;
+      background: url("../../assets/svg/iconSearch.svg") no-repeat scroll 7px
+        14px;
+      background-color: #ffffff;
+      padding-top: 10px;
+      &:focus {
+        outline: none !important;
+        border: 2px solid #364764;
+      }
+    }
+    .search-placeholder {
+      position: absolute;
+      top: 15px;
+      left: 60px;
+      font-size: 16px;
+
+      &.clicked {
+        top: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .skillList, .lingueList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 10px 20px;
+    .skillRow, .lingueRow {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 1s ease-in-out;
+      -webkit-transition: transform 1s ease-in-out;
+      -moz-transition: transform 1s ease-in-out;
+      -ms-transition: transform 1s ease-in-out;
+      -o-transition: transform 1s ease-in-out;
+
+      &.skillRemoved, &.lingueRemoved {
+        transform: translateX(-1000px);
+        -webkit-transform: translateX(-1000px);
+        -moz-transform: translateX(-1000px);
+        -ms-transform: translateX(-1000px);
+        -o-transform: translateX(-1000px);
+      }
+      .skill, .lingue {
+        display: flex;
+        width: calc(100% - 34px);
+        justify-content: flex-start;
+        align-items: stretch;
+        font-size: 14px;
+        background-color: #f0eff1;
+        padding: 10px 10px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        span {
+          flex-grow: 2;
+        }
+        .selectYears, .selectLanguages {
+          background: none;
+          border: none;
+          font-size: 10px;
+          text-align: right;
+        }
+      }
+      .skillRemove, .lingueRemove {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        background: url("../../assets/svg/trashcan.svg") no-repeat scroll;
+        background-position: center;
+        background-size: 40%;
+        background-color: #fcf347;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+    }
+  }
+
+  .comuniList {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    .comuniRow {
+      position: relative;
+      .comuni {
+        display: flex;
+        width: max-content;
+        justify-content: flex-start;
+        align-items: stretch;
+        font-size: 14px;
+        background-color: #f0eff1;
+        padding: 10px 30px 10px 10px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        span {
+          flex-grow: 2;
+        }
+      }
+      .comuniRemove {
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 8px;
+        bottom: 0;
+        right: 0px;
+        cursor: pointer;
+        background: url("../../assets/svg/xRemove.svg") no-repeat scroll;
+        background-position: center;
+        background-size: 40%;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+    }
+  }
+  .dropdown-wrapper-search {
+    position: relative;
+    z-index: 2;
+    .dropdown-list-search {
+      position: absolute;
+      width: calc(100% - 40px);
+      left: 20px;
+      right: 20px;
+      top: 40px;
+      background: #fff;
+      max-height: 200px;
+      overflow: auto;
+      padding: 10px;
+      border: 2px solid #364764;
+      border-top: none;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 5px;
+        li {
+          list-style: none;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.worksExperienceForm{
+  padding: 0 20px;
+  .form-title-style{
+    font-size: 12px;
+    font-weight: normal;
+    color: #364764;
+  }
+}
+
+.container-df-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  .FormRowContainer{
+    width: 100%;
+  }
+}

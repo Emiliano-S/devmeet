@@ -4,7 +4,7 @@ import navOption from "../assets/svg/optionsNav.svg";
 import navOptionWhite from "../assets/svg/navOptionWhite.svg";
 import navLogo from "../assets/img/logoNav.png";
 import navLogoWhite from "../assets/svg/logoNav.svg";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -51,8 +51,22 @@ export function NavBar({ options, back }) {
       </div>
       <div className="NavBarOptionsContainer">
         {options && (
-          <img className="NavBarOptions" src={optFill} alt="Options" />
+          <Link to="/settings">
+            <button
+              style={{
+                border: "none",
+                backgroundColor: "Transparent",
+                cursor: "pointer",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <img className="NavBarOptions" src={optFill} alt="Options" />{" "}
+            </button>{" "}
+          </Link>
         )}
+        {/* {options && (
+          <img className="NavBarOptions" src={navOption} alt="Options" />
+        )} */}
       </div>
     </div>
   );
