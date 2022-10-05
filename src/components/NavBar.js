@@ -28,6 +28,25 @@ export function NavBar({ options, back }) {
       setBackFill(navBackArrowWhite);
       setOptFill(remove);
 
+    } else if (
+      location.pathname == '/signUp' ||
+      location.pathname == '/login' ||
+      location.pathname == '/signUp/company' ||
+      location.pathname == '/signUp/user' ||
+      location.pathname == '/signUp/regUser' ||
+      location.pathname == '/signUp/regCompany' ||
+      location.pathname == '/singUp/regUser/skills' || 
+      location.pathname == '/singUp/regUser/workExperiences' || 
+      location.pathname == '/singUp/regUser/linksLanguages' || 
+      location.pathname == '/signUp/regUser/addPhoto' ||
+      location.pathname == "/signUp/regCompany/addLogo" 
+
+
+     ) {
+      setBgColor("White");
+      setLogo(navLogo);
+      setBackFill(navBackArrow);
+      setOptFill(null)
     } else {
       setBgColor("White");
       setLogo(navLogo);
@@ -46,7 +65,7 @@ export function NavBar({ options, back }) {
       <div className="NavBarBackContainer">
         {back && (
           <button
-            onClick={() => navigate(-1, { replace: true })}
+            onClick={() => navigate(-1, {replace:true})}
             style={{
               border: "none",
               backgroundColor: `${bgColor}`,
@@ -80,7 +99,7 @@ export function NavBar({ options, back }) {
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <img className="NavBarOptions" src={optFill} alt="Options" />{" "}
+              {(optFill !== null) && <><img className="NavBarOptions" src={optFill} alt="Options" />{" "}</>}
             </button>{" "}</>
         )}
         {/* {options && (

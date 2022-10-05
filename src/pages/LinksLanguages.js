@@ -18,11 +18,12 @@ export function LinksLanguages() {
     <div className="skillsPageContainer">
       <LinksForm toPopulate={setToPopulate} />
       <LanguagesForm toPopulate={setToPopulate} />
+      <Link to='/signUp/regUser/addPhoto'>
       <div className="container-continue-button">
-        <Link to='/signUp/regUser/addPhoto'><button
+        <button
           style={{
             backgroundColor: "yellow",
-            width: "100%",
+            width: "50%",
             color: "rgb(54, 71, 100)",
             borderRadius: "6px",
             height: "3rem",
@@ -32,8 +33,8 @@ export function LinksLanguages() {
           onClick={handleSubmit}
         >
           CONTINUA
-        </button></Link>
-      </div>
+        </button>
+      </div></Link>
     </div>
   );
 }
