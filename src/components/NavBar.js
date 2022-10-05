@@ -27,6 +27,7 @@ export function NavBar({ options, back }) {
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
       setOptFill(remove);
+
     } else {
       setBgColor("White");
       setLogo(navLogo);
@@ -62,9 +63,16 @@ export function NavBar({ options, back }) {
       </div>
       <div className="NavBarOptionsContainer">
         {options && (
-          <Link to="/settings">
+          <>
             <button
-            onClick={() => navigate(-1, {replace:true})}
+            onClick={() => {
+              if (location.pathname == '/settings') {
+                navigate(-1, {replace:true})
+                console.log('ciao')
+              } else  {
+                navigate('/settings', {replace: false})
+              }
+            }}
               style={{
                 border: "none",
                 backgroundColor: "Transparent",
@@ -73,8 +81,7 @@ export function NavBar({ options, back }) {
               }}
             >
               <img className="NavBarOptions" src={optFill} alt="Options" />{" "}
-            </button>{" "}
-          </Link>
+            </button>{" "}</>
         )}
         {/* {options && (
           <img className="NavBarOptions" src={navOption} alt="Options" />
