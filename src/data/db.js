@@ -5,7 +5,8 @@ import MaryRose from '../assets/img/userPicture/MaryRose.png';
 export default [
     {
         id: 1,
-        name: "Mario Verde",
+        fist_name: "Mario",
+        last_name: "Verde",
         email: "marioverde@gmail.com",
         birthday: "1993-01-20",
         sex: "uomo",
@@ -33,7 +34,8 @@ export default [
     },
     {
         id: 2,
-        name: "Mary Rose",
+        first_name: "Mary",
+        last_name: "Rose",
         email: "maryrose@gmail.com",
         birthday: "1995-04-01",
         sex: "donna",
