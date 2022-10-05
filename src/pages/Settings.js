@@ -4,6 +4,9 @@ import UploadButton from "../components/UploadButton";
 
 
 const Settings = () => {
+  
+  
+  
   return (
     <div className="form-container">
       <div className="form-title-style">Notifiche</div>

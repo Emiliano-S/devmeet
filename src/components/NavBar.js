@@ -27,6 +27,11 @@ export function NavBar({ options, back }) {
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
       setOptFill(remove);
+    } else {
+      setBgColor("White");
+      setLogo(navLogo);
+      setBackFill(navBackArrow);
+      setOptFill(navOption);
     }
   }, [location]);
 
@@ -59,6 +64,7 @@ export function NavBar({ options, back }) {
         {options && (
           <Link to="/settings">
             <button
+            onClick={() => navigate(-1, {replace:true})}
               style={{
                 border: "none",
                 backgroundColor: "Transparent",
