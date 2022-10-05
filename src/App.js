@@ -16,6 +16,7 @@ import { LinksLanguages } from "./pages/LinksLanguages";
 import Settings from "./pages/Settings";
 import { ProfileSettings } from "./components/ProfileSettings";
 import BottomNavbar1 from "./components/BottomNavbar1";
+import { Card } from "./components/Card";
 
 const userSignUp = {
   nomeCognome: "",
@@ -47,6 +48,7 @@ function App({ user }) {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signUp/company" element={<Form company />} />
+          <Route path="/card" element={<CardContainer data = {data}/>} />
           <Route
             path="/signUp/user"
             element={<Form user userArr={userSignUp} />}
