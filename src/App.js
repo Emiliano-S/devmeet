@@ -43,7 +43,7 @@ function App({ user }) {
     <div className="App">
       <BrowserRouter>
         <NavBar back options />
-        <BottomNavbar1 />
+         <BottomNavbar1 /> 
         
         <Routes>
           <Route path="/" element={<LandingPage />} />
