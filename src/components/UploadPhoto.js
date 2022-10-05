@@ -235,7 +235,7 @@ const UploadAndDisplayImage = ({
             />
           </label>
           <div>
-            <Link to="/signUp/Addphoto/#">
+            <Link to="/card">
               <Button
                 lowOp
                 text={"CARICA IN SEGUITO"}
@@ -250,7 +250,7 @@ const UploadAndDisplayImage = ({
         </div>
       ) : (
         <div>
-          <Link to="/signUp/Addphoto/#">
+          <Link to="/card">
             <Button
               lowOp
               text={"REGISTRATI"}

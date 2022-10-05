@@ -17,12 +17,12 @@ export function NavBar({ options, back }) {
   const [backFill, setBackFill] = useState(navBackArrow);
   const [optFill, setOptFill] = useState(navOption);
   useEffect(() => {
-    if (location.pathname == "/ProfileSettings") {
+    if (location.pathname === "/ProfileSettings") {
       setBgColor("#364764");
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
       setOptFill(navOptionWhite);
-    } else if (location.pathname == "/settings") {
+    } else if (location.pathname === "/settings") {
       setBgColor("#364764");
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
