@@ -35,11 +35,11 @@ export function NavBar({ options, back }) {
       location.pathname == '/signUp/user' ||
       location.pathname == '/signUp/regUser' ||
       location.pathname == '/signUp/regCompany' ||
-      location.pathname == '/singUp/regUser/skills' || 
-      location.pathname == '/singUp/regUser/workExperiences' || 
-      location.pathname == '/singUp/regUser/linksLanguages' || 
+      location.pathname == '/singUp/regUser/skills' ||
+      location.pathname == '/singUp/regUser/workExperiences' ||
+      location.pathname == '/singUp/regUser/linksLanguages' ||
       location.pathname == '/signUp/regUser/addPhoto' ||
-      location.pathname == "/signUp/regCompany/addLogo" 
+      location.pathname == "/signUp/regCompany/addLogo"
 
 
      ) {
@@ -65,7 +65,7 @@ export function NavBar({ options, back }) {
       <div className="NavBarBackContainer">
         {back && (
           <button
-            onClick={() => navigate(-1, {replace:true})}
+            onClick={() => navigate(-1, {replace: true})}
             style={{
               border: "none",
               backgroundColor: `${bgColor}`,

@@ -56,8 +56,9 @@ const Settings = () => {
       />
       <UploadButton 
       profile
+      settings
                         bgColor= {'#364764'}
-                        text= {'NASCONDI PROFILO'}
+                        text= {'DISATTIVA PROFILO'}
                         textColor = {'white'}
                         textClicked ={'ATTIVA PROFILO'}
                         wg = {'semibold'} />

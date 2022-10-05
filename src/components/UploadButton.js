@@ -11,7 +11,8 @@ const UploadButton = ({
     wg,
     textClicked,
     hg,
-    profile
+    profile,
+    settings
   }) =>  {
 
 const [active, setActive] = useState(true);
@@ -47,7 +48,7 @@ setActive(true);
 }
 return (
     <div style={{width: '100%', display: "flex", justifyContent: "center", paddingTop: '44px'}}>
-          {active && <>
+          {active && !settings && <>
           <label
           style = {{
             display: 'flex',
@@ -93,6 +94,37 @@ return (
           id="file"
           name="file"
           /> </label> </>}
+
+          {active && settings && <>
+          <button
+          style = {{
+            display: 'flex',
+            alignItems: 'center',
+            backgroundColor: bgColor,
+            width: '266px',
+            color: textColor,
+            fontWeight: wg,
+            borderRadius: "6px",
+            height: '50px',
+            border: "none",
+            cursor: "pointer",
+          }}
+          onClick = {handleButtonClick}
+          >
+            {!profile && <><div style={{width: '60%', display: 'flex', justifyContent:'flex-end'}}>
+          {text}
+            </div>
+            {<div style= {{width: '40%', display: 'flex', justifyContent:'center'}}>
+                <img src={Add} alt="+" />
+            </div>} </>}
+
+            {profile && <div style = {{width: '100%', display:"flex", justifyContent:"center"}}>
+              <div >
+                {text}
+              </div>
+              </div>}
+           </button> </>}
+          
         {!active && <div> <button
           onClick={handleButtonClicked}
           style={{
