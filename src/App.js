@@ -15,8 +15,7 @@ import { WorkExperiences } from "./pages/WorkExperiences";
 import { LinksLanguages } from "./pages/LinksLanguages";
 import Settings from "./pages/Settings";
 import { ProfileSettings } from "./components/ProfileSettings";
-import BottomNavbar1 from "./components/BottomNavbar1";
-import { Card } from "./components/Card";
+import { NavBarBottom } from "./components/NavBarBottom";
 
 const userSignUp = {
   nomeCognome: "",
@@ -43,19 +42,21 @@ function App({ user }) {
     <div className="App">
       <BrowserRouter>
         <NavBar back options />
+        {/* <BottomNavbar1 />  */}
+
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signUp/company" element={<Form company />} />
-          <Route path="/card" element={<CardContainer data = {data}/>} />
+          <Route path="/card" element={<CardContainer data={data} />} />
           <Route
             path="/signUp/user"
             element={<Form user userArr={userSignUp} />}
           />
           <Route path="/signUp/regUser" element={<Login registration user />} />
           <Route path="/signUp/regCompany" element={<Login registration />} />
-          <Route path="/FilterBy" element={<Filterby />} />
+          <Route path="/filterBy" element={<Filterby />} />
           <Route path="/singUp/regUser/skills" element={<Skills />} />
           <Route
             path="/singUp/regUser/workExperiences"
@@ -78,13 +79,15 @@ function App({ user }) {
             path="/ProfileSettings"
             element={<ProfileSettings id user />}
           />
+
           {/* navbar con le notifiche */}
-          <Route path="/bottomNavbar1" element={<BottomNavbar1 />} />
+          {/* <Route path="/bottomNavbar1" element={<BottomNavbar1 />} /> */}
         </Routes>
         {/*
         <CardContainer data={dbCard}/>
 
         */}
+        <NavBarBottom />
       </BrowserRouter>
     </div>
   );

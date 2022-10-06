@@ -192,7 +192,7 @@ export default function Form({ user, company, userArr }) {
             ></textarea>
           </div>
 
-          <div className="container-continue-button">
+          <div className="container-continue-button" style = {{paddingBottom : '10%'}}>
               <Button
                 submit
                 type="submit"

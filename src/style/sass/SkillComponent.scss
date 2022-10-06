@@ -1,44 +1,34 @@
 .SkillComponent {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px 20px;
+  justify-content: center;
+
+  .SkillSVG {
     display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 5px 5px;
-    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
 
-
-    .ButtonSVG {
-        -webkit-box-shadow: 5px 5px 10px 0px #000000;
-        -moz-box-shadow: 5px 5px 10px 0px #000000;
-        -o-box-shadow: 5px 5px 10px 0px #000000;
-        box-shadow: 5px 5px 10px 0px #000000;
+    .svg {
+      display: flex;
+      flex-direction: row;
+      height: 80%;
+      width: 99%;
+      margin-top: 2px;
+      align-items: center;
     }
 
-    .SkillSVG {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        justify-content: space-between;
-
-        .svg {
-            display: flex;
-            flex-direction: row;
-            height: 80%;
-            width: 99%;
-            margin-top: 2px;
-            align-items: center;
-        }
-
-        .TitleSVG {
-            font-size: 15px;
-            font-weight: 700;
-            color: white;
-            display: flex;
-            padding-left: 10px;
-            padding-bottom: 10px;
-        }
-
-
+    .TitleSVG {
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      padding-left: 10px;
+      padding-bottom: 10px;
     }
+  }
 }

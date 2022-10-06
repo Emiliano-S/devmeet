@@ -5,7 +5,7 @@
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 13px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -21,7 +21,6 @@
         display:flex;
         top: 0;
         left: 0;
-        
         background-color: #eee;
         border-radius: 6px;
         text-align:center;
@@ -42,7 +41,10 @@
   }
 
 body {
-  background-color: lightgray;
+  background-color: #f9f9f9;
+  height: auto;
+  padding-bottom:170px;
+
 }
 .form-container {
   width: 90%;

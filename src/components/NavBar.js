@@ -27,6 +27,31 @@ export function NavBar({ options, back }) {
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
       setOptFill(remove);
+
+    } else if (
+      location.pathname == '/signUp' ||
+      location.pathname == '/login' ||
+      location.pathname == '/signUp/company' ||
+      location.pathname == '/signUp/user' ||
+      location.pathname == '/signUp/regUser' ||
+      location.pathname == '/signUp/regCompany' ||
+      location.pathname == '/singUp/regUser/skills' || 
+      location.pathname == '/singUp/regUser/workExperiences' || 
+      location.pathname == '/singUp/regUser/linksLanguages' || 
+      location.pathname == '/signUp/regUser/addPhoto' ||
+      location.pathname == "/signUp/regCompany/addLogo" 
+
+
+     ) {
+      setBgColor("White");
+      setLogo(navLogo);
+      setBackFill(navBackArrow);
+      setOptFill(null)
+    } else {
+      setBgColor("White");
+      setLogo(navLogo);
+      setBackFill(navBackArrow);
+      setOptFill(navOption);
     }
   }, [location]);
 
@@ -40,7 +65,7 @@ export function NavBar({ options, back }) {
       <div className="NavBarBackContainer">
         {back && (
           <button
-            onClick={() => navigate(-1, { replace: true })}
+            onClick={() => navigate(-1, {replace:true})}
             style={{
               border: "none",
               backgroundColor: `${bgColor}`,
@@ -57,8 +82,16 @@ export function NavBar({ options, back }) {
       </div>
       <div className="NavBarOptionsContainer">
         {options && (
-          <Link to="/settings">
+          <>
             <button
+            onClick={() => {
+              if (location.pathname == '/settings') {
+                navigate(-1, {replace:true})
+                console.log('ciao')
+              } else  {
+                navigate('/settings', {replace: false})
+              }
+            }}
               style={{
                 border: "none",
                 backgroundColor: "Transparent",
@@ -66,9 +99,8 @@ export function NavBar({ options, back }) {
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <img className="NavBarOptions" src={optFill} alt="Options" />{" "}
-            </button>{" "}
-          </Link>
+              {(optFill !== null) && <><img className="NavBarOptions" src={optFill} alt="Options" />{" "}</>}
+            </button>{" "}</>
         )}
         {/* {options && (
           <img className="NavBarOptions" src={navOption} alt="Options" />

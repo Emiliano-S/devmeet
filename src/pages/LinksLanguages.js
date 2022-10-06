@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LanguagesForm } from "../components/LanguagesForm";
 import { LinksForm } from "../components/LinksForm";
+import {Link} from 'react-router-dom'
 
 export function LinksLanguages() {
   const { state } = useLocation();
@@ -17,6 +18,7 @@ export function LinksLanguages() {
     <div className="skillsPageContainer">
       <LinksForm toPopulate={setToPopulate} />
       <LanguagesForm toPopulate={setToPopulate} />
+      <Link to='/signUp/regUser/addPhoto'>
       <div className="container-continue-button">
         <button
           style={{
@@ -32,7 +34,7 @@ export function LinksLanguages() {
         >
           CONTINUA
         </button>
-      </div>
+      </div></Link>
     </div>
   );
 }

@@ -1,7 +1,12 @@
 import React from "react";
 import home from "../assets/svg/home.svg";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+
 
 export default function BottomNavbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <>
       {/* bottone centrale devmeet */}
@@ -100,7 +105,75 @@ export default function BottomNavbar() {
         </button>
 
         {/* ----------------FILTRA---------------- */}
-        <button className="navbar-svg-button" style={{ marginRight: "auto" }}>
+        {(location.pathname =='/FilterBy') &&
+        <button className="navbar-svg-button" style={{ marginRight: "auto", backgroundColor: 'rgb(252,243,71)' }}>
+          <div className="navbar-svg-container">
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="5.5"
+                cy="13.7522"
+                r="2.25"
+                stroke="rgb(54, 71, 100)"
+                stroke-width="1.5"
+              />
+              <circle
+                cx="12.5"
+                cy="5.36621"
+                r="2.25"
+                stroke="rgb(54, 71, 100)"
+                stroke-width="1.5"
+              />
+              <circle
+                cx="19.5"
+                cy="15.3193"
+                r="2.25"
+                stroke="rgb(54, 71, 100)"
+                stroke-width="1.5"
+              />
+              <path
+                d="M5.5 3.5V11.2284"
+                stroke="rgb(54, 71, 100)"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M5.5 16.1686V20.0431"
+                stroke="rgb(54, 71, 100)"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M12.5 7.8606V20.0431"
+                stroke="rgb(54, 71, 100)"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M19.5 3.5L19.5 12.8612"
+                stroke="rgb(54, 71, 100)"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M19.5 17.7422V20.043"
+                stroke="rgb(54, 71, 100)"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div style={{color: 'rgb(54, 71, 100)'}}>filtra</div>
+        </button> }
+
+        { (location.pathname !== '/FilterBy') &&
+        <Link to= '/FilterBy'  style={{marginRight:'auto', width:'50%'}}>
+        <button className="navbar-svg-button" style={{ marginRight: "auto", paddingLeft:'24px' }}>
           <div className="navbar-svg-container">
             <svg
               width="25"
@@ -163,7 +236,9 @@ export default function BottomNavbar() {
             </svg>
           </div>
           <div className="focusText">filtra</div>
-        </button>
+        </button> </Link>}
+
+       
 
         {/* ----------------NOTIFICHE---------------- */}
         <button className="navbar-svg-button">

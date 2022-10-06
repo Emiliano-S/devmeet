@@ -1,10 +1,4 @@
-@import './settings.css';
-@import './LandingPage.css';
-@import './form.css';
-@import './SignUp.css';
-@import './Filterby.css';
-@import './SkillComponent.css';
-@import './skills.css';
+@import './index.css';
 @import './BottomNavbar.css';
 
 @import './Card.css';

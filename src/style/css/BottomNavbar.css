@@ -9,7 +9,7 @@ nav {
   align-content: center;
   justify-content: space-between;
   align-items: flex-end;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 99;
 }
@@ -20,7 +20,7 @@ nav {
 
 .navbar-central-button-container {
   margin: 0 35%;
-  position: absolute;
+  position: fixed;
   bottom: 2%;
   z-index: 100;
 }
