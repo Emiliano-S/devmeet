@@ -16,7 +16,7 @@ import { LinksLanguages } from "./pages/LinksLanguages";
 import Settings from "./pages/Settings";
 import { ProfileSettings } from "./components/ProfileSettings";
 import BottomNavbar1 from "./components/BottomNavbar1";
-
+import { NavBarBottom } from "./components/NavBarBottom";
 
 const userSignUp = {
   nomeCognome: "",
@@ -43,8 +43,8 @@ function App({ user }) {
     <div className="App">
       <BrowserRouter>
         <NavBar back options />
-         {/* <BottomNavbar1 />  */}
-        
+        {/* <BottomNavbar1 />  */}
+
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />
@@ -56,7 +56,7 @@ function App({ user }) {
           />
           <Route path="/signUp/regUser" element={<Login registration user />} />
           <Route path="/signUp/regCompany" element={<Login registration />} />
-          <Route path="/FilterBy" element={<Filterby />} />
+          <Route path="/filterBy" element={<Filterby />} />
           <Route path="/singUp/regUser/skills" element={<Skills />} />
           <Route
             path="/singUp/regUser/workExperiences"
@@ -78,9 +78,8 @@ function App({ user }) {
           <Route
             path="/ProfileSettings"
             element={<ProfileSettings id user />}
-            
           />
-          
+
           {/* navbar con le notifiche */}
           {/* <Route path="/bottomNavbar1" element={<BottomNavbar1 />} /> */}
         </Routes>
@@ -88,6 +87,7 @@ function App({ user }) {
         <CardContainer data={dbCard}/>
 
         */}
+        <NavBarBottom />
       </BrowserRouter>
     </div>
   );

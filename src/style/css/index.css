@@ -458,4 +458,70 @@ body {
   width: 100%;
 }
 
+.navBarBottomContainer {
+  width: 100%;
+  height: 99px;
+  position: relative;
+}
+.navBarBottomContainer .buttonAppointment {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcf347;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: -31px;
+  border: 5px solid #364764;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+.navBarBottomContainer .navBarBottom {
+  width: 100%;
+  height: 64px;
+  background-color: #364764;
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  text-decoration: none;
+}
+.navBarBottomContainer .navBarBottom .navBarBottomButtons {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  font-size: 10px;
+}
+.navBarBottomContainer .navBarBottom .navBarBottomButtons a {
+  text-decoration: none;
+}
+.navBarBottomContainer .navBarBottom .navBarBottomButtons .navBarBottomButtonsActive {
+  min-width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  color: #ffffff;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.navBarBottomContainer .navBarBottom .navBarBottomButtons .navBarBottomButtonsActive.active {
+  background-color: #fcf347;
+  color: #364764;
+}
+
 /*# sourceMappingURL=index.css.map */
