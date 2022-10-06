@@ -460,8 +460,8 @@ body {
 
 .navBarBottomContainer {
   width: 100%;
-  height: 99px;
-  position: relative;
+  position: fixed;
+  bottom: 0;
 }
 .navBarBottomContainer .buttonAppointment {
   width: 65px;
