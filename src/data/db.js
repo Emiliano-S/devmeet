@@ -5,7 +5,7 @@ import MaryRose from '../assets/img/userPicture/MaryRose.png';
 export default [
     {
         id: 1,
-        fist_name: "Mario",
+        first_name: "Mario",
         last_name: "Verde",
         email: "marioverde@gmail.com",
         birthday: "1993-01-20",
