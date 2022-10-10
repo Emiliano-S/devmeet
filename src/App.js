@@ -52,7 +52,7 @@ function App({ user }) {
     <div className="App">
       <BrowserRouter>
         <NavBar back options />
-        {/* <BottomNavbar1 />  */}
+
 
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -89,8 +89,7 @@ function App({ user }) {
             path="/ProfileSettings"
             element={<ProfileSettings id user />}
           />
-          {/* navbar con le notifiche */}
-          {/* <Route path="/bottomNavbar1" element={<BottomNavbar1 />} /> */}
+
         </Routes>
         {/*
         <CardContainer data={dbCard}/>
