@@ -13,11 +13,12 @@ import { Link, useLocation } from "react-router-dom";
 
 export function NavBarBottom() {
   const location = useLocation();
+  const arrLocationWithoutBottomNav = ["/", "/signUp", "/login", "/signUp/regUser", "/signUp/user", "/singUp/regUser/skills", "/singUp/regUser/workExperiences", "/singUp/regUser/linksLanguages", "/signUp/regUser/addPhoto", "/settings"];
 
   return (
   <>
     {
-    (location.pathname !== "/" && location.pathname !== "/signUp" && location.pathname !== "/login") ?
+    (!arrLocationWithoutBottomNav.find(element => element === location.pathname)) ?
       <div className="navBarBottomContainer">
       <div className="buttonAppointment">
         <img src={IconButtonAppointment} alt="Fissa appuntamento" />
