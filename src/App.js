@@ -41,6 +41,7 @@ const userSignUp = {
     github: "",
     website: ""
   }],
+  cv: "",
   profile_picture: "",
   is_profile_visible: true
 };

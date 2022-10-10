@@ -15,7 +15,10 @@ export function NavBarBottom() {
   const location = useLocation();
 
   return (
-    <div className="navBarBottomContainer">
+  <>
+    {
+    (location.pathname !== "/" && location.pathname !== "/signUp" && location.pathname !== "/login") ?
+      <div className="navBarBottomContainer">
       <div className="buttonAppointment">
         <img src={IconButtonAppointment} alt="Fissa appuntamento" />
       </div>
@@ -95,6 +98,8 @@ export function NavBarBottom() {
           </Link>
         </div>
       </div>
-    </div>
+      </div> : null
+    }
+  </>
   );
 }
