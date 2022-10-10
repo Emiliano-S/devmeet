@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import useSWR from "swr";
-import data from "../data/db";
 import { useDispatch } from "react-redux";
 
 function FormRow({ text, textType, id, name, ph, data, password, number, email, dropdown, options, handleChange, notRequired = false }) {
@@ -64,7 +63,6 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email, 
           <div className="form-title-style">{text}</div>
           <input
             type='password'
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
             className="input-form-style"
             id={id}
             name={name}

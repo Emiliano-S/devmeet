@@ -1,0 +1,51 @@
+{
+    "company":
+    [{
+        "id": 0,
+        "email": "devmeet@devmeet.it",
+        "password": "Devmeet123",
+        "first_name": "Emiliano",
+        "last_name": "Scanga",
+        "company_name": "DevMeet",
+        "phone_number": "+3412345678",
+        "city": "Milano",
+        "job_type": "Remote",
+        "number_employees": "0 - 10",
+        "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur. Blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat.",
+        "sector": "Web Agency",
+        "skills": [
+            {
+                "skill_name": "React",
+                "skill_level": "Mid."
+            },
+            {
+                "skill_name": "JavaScript",
+                "skill_level": "Snr."
+            },
+            {
+                "skill_name": "Php",
+                "skill_level": "Jr."
+            },
+            {
+                "skill_name": "HTML",
+                "skill_level": "Snr."
+            },
+            {
+                "skill_name": "CSS",
+                "skill_level": "Snr."
+            },
+            {
+                "skill_name": "SASS",
+                "skill_level": "Snr."
+            }
+        ],
+        "work_place": [],
+        "notifications": [],
+        "appointments":[],
+        "profile_picture": "./img/companyPicture/devMeetLogo.png",
+        "is_profile_visible": true,
+        "linkedin": "https://www.linkedin.com",
+        "github": "https://github.com",
+        "website": "https://google.com"
+    }]
+}

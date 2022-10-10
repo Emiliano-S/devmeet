@@ -4,7 +4,6 @@ import linkedinLogoIcon from "../assets/svg/linkedinLogoIcon.svg";
 import githubLogoIcon from "../assets/svg/githubIcon.svg";
 import websiteIcon from "../assets/svg/websiteIcon.svg";
 import cvIcon from "../assets/svg/cvIcon.svg";
-import { useEffect } from "react";
 
 export function Card({ user, id }) {
   const {
@@ -26,7 +25,6 @@ export function Card({ user, id }) {
     cv,
   } = user;
   const [descriptionClass, setDescriptionClass] = useState("");
-  console.log(github);
   const DescriptionOpener = (event, info) => {
     if (info.offset.y < -100) {
       setDescriptionClass("open");
@@ -39,8 +37,7 @@ export function Card({ user, id }) {
     const ageInMilliseconds = new Date() - new Date(date);
     return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365);
   };
-  useEffect(() =>{console.log(cv)});
-  
+
   return (
     <div className="Card">
       <div className="CardRelative">

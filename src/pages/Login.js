@@ -2,17 +2,42 @@ import {NavBar} from '../components/NavBar'
 import FormRow from '../components/FormRow'
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
+import { useState } from 'react'
+import axios from 'axios'
 
 
 
-function Login ({registration, user}) {
+function Login ({registration, user, setLogOutUser}) {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
+    const login = (e) =>{
+        e.preventDefault();
+        axios.post("http://localhost:5000/api/auth/login", {
+            email,
+            password
+        }).then((response) => {
+            console.log("response", response);
+            localStorage.setItem("login", JSON.stringify({
+                userLogin: true,
+                token: response.data.access_token
+            }))
+            setError("");
+            setEmail("");
+            setPassword("");
+            setLogOutUser(false);
+        }).catch(error => setError(error.response.data.message));
+    }
+
     return (
         <div style={{width: '100%', height: '100%'}}>
             {/* <NavBar back /> */}
             <div className="form-container" >
-            <form id='login-form'>
-            <FormRow email text={'Email'} />
-            <FormRow password text={'Password'}/>
+                {error && <p style={{color: "red"}}>{error}</p>}
+            <form id='login-form' onSubmit={login}>
+            <FormRow email text={'Email'} value={email} handleChange={(e) => setEmail(e.target.value) }/>
+            <FormRow password text={'Password'} value={password} handleChange={(e) => setPassword(e.target.value)}/>
              {!registration && (<div className="pass-forgot">
                 <a href='#'>Password dimenticata?</a>
              </div>)}
