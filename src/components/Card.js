@@ -4,26 +4,29 @@ import linkedinLogoIcon from "../assets/svg/linkedinLogoIcon.svg";
 import githubLogoIcon from "../assets/svg/githubIcon.svg";
 import websiteIcon from "../assets/svg/websiteIcon.svg";
 import cvIcon from "../assets/svg/cvIcon.svg";
+import { useEffect } from "react";
 
 export function Card({ user, id }) {
   const {
     first_name,
     last_name,
-    birthday,
+    birth_date,
     bio,
-    profession,
+    role,
     skills,
-    language,
-    available_for,
-    user_picture,
-    experiences,
+    city,
+    languages,
+    job_type,
+    profile_picture,
+    work_experience,
+    work_place,
     linkedin,
     github,
     website,
     cv,
   } = user;
   const [descriptionClass, setDescriptionClass] = useState("");
-
+  console.log(github);
   const DescriptionOpener = (event, info) => {
     if (info.offset.y < -100) {
       setDescriptionClass("open");
@@ -36,13 +39,14 @@ export function Card({ user, id }) {
     const ageInMilliseconds = new Date() - new Date(date);
     return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365);
   };
-
+  useEffect(() =>{console.log(cv)});
+  
   return (
     <div className="Card">
       <div className="CardRelative">
         <div
           className="CardProfilePicture"
-          style={{ backgroundImage: `url(${user_picture})` }}
+          style={{ backgroundImage: `url(${profile_picture})` }}
         ></div>
         <motion.div
           className={"CardProfileDescriptionContainer " + descriptionClass}
@@ -62,18 +66,19 @@ export function Card({ user, id }) {
             >
               <div className="CardDescriptionNameContainer">
                 <div className="CardName">
-                  {first_name} {last_name}, {GetAge(birthday)}
+                  {first_name} {last_name}, {GetAge(birth_date)}
                 </div>
-                <div className="AvailableForTag">{available_for}</div>
+                <div className="AvailableForTag">{job_type}</div>
               </div>
               <div className="CardDescriptionProfessionContainer">
-                {profession}
+                {role}
               </div>
               <div className="CardDescriptionSkillsContainer">
                 {skills.map((skill, index) => {
                   return (
                     <div key={index} className="SkillsCards">
-                      {skill}
+                      {skill.skill_name}
+                      <div className="SkillsLanguagesPop">{skill.skill_level}</div>
                     </div>
                   );
                 })}
@@ -85,10 +90,11 @@ export function Card({ user, id }) {
               <div className="CardDescriptionCamp">
                 <div className="CardDescriptionTitle">Lingue</div>
                 <div className="LanguageContainer">
-                  {language.map((lingua, index) => {
+                  {languages.map((lingua, index) => {
                     return (
                       <div key={index} className="LanguageCards">
-                        {lingua}
+                        {lingua.language}
+                        <div className="SkillsLanguagesPop">{lingua.language_level}</div>
                       </div>
                     );
                   })}
@@ -99,7 +105,7 @@ export function Card({ user, id }) {
                   Esperienze lavorative
                 </div>
                 <div className="ExperiencesContainer">
-                  {experiences.map((experiences, index) => {
+                  {work_experience.map((experiences, index) => {
                     return (
                       <div key={index} className="LanguageCards">
                         {experiences.society} {experiences.start_date} /{" "}
@@ -135,7 +141,7 @@ export function Card({ user, id }) {
                   {cv && (
                     <a href={cv}>
                       <img src={cvIcon} alt="My Curriculum Vitae!" />{" "}
-                      {first_name} {last_name} - {profession}.pdf
+                      {first_name} {last_name} - {role}.pdf
                     </a>
                   )}
                 </div>
@@ -145,18 +151,19 @@ export function Card({ user, id }) {
             <div className="descriptionContainer">
               <div className="CardDescriptionNameContainer">
                 <div className="CardName">
-                  {first_name} {last_name}, {GetAge(birthday)}
+                  {first_name} {last_name}, {GetAge(birth_date)}
                 </div>
-                <div className="AvailableForTag">{available_for}</div>
+                <div className="AvailableForTag">{job_type}</div>
               </div>
               <div className="CardDescriptionProfessionContainer">
-                {profession}
+                {role}
               </div>
               <div className="CardDescriptionSkillsContainer">
                 {skills.map((skill, index) => {
                   return (
                     <div key={index} className="SkillsCards">
-                      {skill}
+                      {skill.skill_name}
+                      <div className="SkillsLanguagesPop">{skill.skill_level}</div>
                     </div>
                   );
                 })}
@@ -168,10 +175,11 @@ export function Card({ user, id }) {
               <div className="CardDescriptionCamp">
                 <div className="CardDescriptionTitle">Lingue</div>
                 <div className="LanguageContainer">
-                  {language.map((lingua, index) => {
+                  {languages.map((lingua, index) => {
                     return (
                       <div key={index} className="LanguageCards">
-                        {lingua}
+                        {lingua.language}
+                        <div className="SkillsLanguagesPop">{lingua.language_level}</div>
                       </div>
                     );
                   })}
@@ -182,7 +190,7 @@ export function Card({ user, id }) {
                   Esperienze lavorative
                 </div>
                 <div className="ExperiencesContainer">
-                  {experiences.map((experiences, index) => {
+                  {work_experience.map((experiences, index) => {
                     return (
                       <div key={index} className="LanguageCards">
                         {experiences.society} {experiences.start_date} /{" "}
@@ -218,7 +226,7 @@ export function Card({ user, id }) {
                   {cv && (
                     <a href={cv}>
                       <img src={cvIcon} alt="My Curriculum Vitae!" />{" "}
-                      {first_name} {last_name} - {profession}.pdf
+                      {first_name} {last_name} - {role}.pdf
                     </a>
                   )}
                 </div>

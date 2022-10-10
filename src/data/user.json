@@ -13,6 +13,7 @@
         "job_type": "Remote",
         "role": "Senior Full Stack Developer",
         "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur. Blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat.",
+        "cv": "./cv/cv.pdf",
         "skills": [
             {
                 "skill_name": "React",
@@ -68,13 +69,10 @@
         ],
         "notifications": [],
         "appointments":[],
-        "links": [{
-          "linkedin": "https://www.linkedin.com",
-          "github": "https://github.com",
-          "website": "https://google.com"
-        }],
-        "cv": "",
         "profile_picture": "./img/userPicture/MarioVerde.png",
-        "is_profile_visible": true
+        "is_profile_visible": true,
+        "linkedin": "https://www.linkedin.com",
+        "github": "https://github.com",
+        "website": "https://google.com"
     }]
 }
