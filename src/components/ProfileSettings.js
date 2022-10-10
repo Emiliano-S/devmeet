@@ -59,6 +59,7 @@ export function ProfileSettings({ data, user }) {
                     width: "64px",
                     borderRadius: "50%",
                   }}
+                  alt="Profile"
                 />
               </Link>
             </div>
