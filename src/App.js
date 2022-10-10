@@ -16,6 +16,7 @@ import { LinksLanguages } from "./pages/LinksLanguages";
 import Settings from "./pages/Settings";
 import { ProfileSettings } from "./components/ProfileSettings";
 import { NavBarBottom } from "./components/NavBarBottom";
+import { Loading } from "./components/Loading";
 
 const userSignUp = {
   nomeCognome: "",
@@ -79,6 +80,7 @@ function App({ user }) {
             path="/ProfileSettings"
             element={<ProfileSettings id user />}
           />
+          <Route path="/loading" element={<Loading />} />
 
           {/* navbar con le notifiche */}
           {/* <Route path="/bottomNavbar1" element={<BottomNavbar1 />} /> */}
