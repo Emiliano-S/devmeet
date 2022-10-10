@@ -35,15 +35,17 @@ const userSignUp = {
   work_experience: [],
   languages: [],
   notifications: [],
-  appointments:[],
-  links: [{
-    linkedin: "",
-    github: "",
-    website: ""
-  }],
+  appointments: [],
+  links: [
+    {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  ],
   cv: "",
   profile_picture: "",
-  is_profile_visible: true
+  is_profile_visible: true,
 };
 
 function App({ user }) {

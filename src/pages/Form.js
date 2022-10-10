@@ -24,7 +24,7 @@ export default function Form({ user, company, userArr }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/singUp/regUser/skills", { state: {arr: arrUser} })
+    navigate("/singUp/regUser/skills", { state: { arr: arrUser } });
   };
 
   return (
@@ -32,9 +32,28 @@ export default function Form({ user, company, userArr }) {
       {/* <NavBar back/> */}
       <div className="form-container">
         <form id="user-info" onSubmit={handleSubmit}>
-          <FormRow textType text={"Nome e Cognome"} name={"nomeCognome"} handleChange={handleChange} />
+          <FormRow
+            textType
+            text={"Nome"}
+            name={"nome"}
+            handleChange={handleChange}
+          />
 
-          {user && <FormRow data text={"Data di nascita"} name={"dataNascita"} handleChange={handleChange}/>}
+          <FormRow
+            textType
+            text={"Cognome"}
+            name={"Cognome"}
+            handleChange={handleChange}
+          />
+
+          {user && (
+            <FormRow
+              data
+              text={"Data di nascita"}
+              name={"dataNascita"}
+              handleChange={handleChange}
+            />
+          )}
           {company && (
             <FormRow textType text={"Nome Azienda"} name={"Nome_Compagnia"} />
           )}
@@ -74,9 +93,19 @@ export default function Form({ user, company, userArr }) {
             </div>
           )}
 
-          <FormRow number text={"Recapito telefonico"} name={"recTel"} handleChange={handleChange} />
+          <FormRow
+            number
+            text={"Recapito telefonico"}
+            name={"recTel"}
+            handleChange={handleChange}
+          />
 
-          <FormRow text={"Stato e città"} textType name={"citta"} handleChange={handleChange}/>
+          <FormRow
+            text={"Città"}
+            textType
+            name={"citta"}
+            handleChange={handleChange}
+          />
 
           {user && (
             <div className="form-title-style">Sono in cerca di lavoro:</div>
@@ -142,7 +171,12 @@ export default function Form({ user, company, userArr }) {
           )}
           {user && (
             <div>
-              <FormRow textType text={"Qualifica"} name={"qualifica"} handleChange={handleChange} />
+              <FormRow
+                textType
+                text={"Qualifica"}
+                name={"qualifica"}
+                handleChange={handleChange}
+              />
 
               <UploadButton
                 bgColor={"#364764"}
@@ -192,18 +226,21 @@ export default function Form({ user, company, userArr }) {
             ></textarea>
           </div>
 
-          <div className="container-continue-button" style = {{paddingBottom : '10%'}}>
-              <Button
-                submit
-                type="submit"
-                form="user-info"
-                value="Submit"
-                bgColor={"yellow"}
-                wd={"50%"}
-                hg={"3em"}
-                text={"CONTINUA"}
-                textColor={"rgb(54,71,100)"}
-              />
+          <div
+            className="container-continue-button"
+            style={{ paddingBottom: "10%" }}
+          >
+            <Button
+              submit
+              type="submit"
+              form="user-info"
+              value="Submit"
+              bgColor={"#fcf347"}
+              wd={"50%"}
+              hg={"3em"}
+              text={"CONTINUA"}
+              textColor={"rgb(54,71,100)"}
+            />
           </div>
         </form>
       </div>

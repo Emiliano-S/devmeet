@@ -33,11 +33,12 @@ body .Container-Filter {
   cursor: pointer;
 }
 .container-radio-button .checkmark-radio-button {
+  font-size: 12px;
   position: absolute;
   display: flex;
   top: 0;
   left: 0;
-  background-color: #eee;
+  background-color: rgb(255, 255, 255);
   border-radius: 6px;
   text-align: center;
   align-items: center;
@@ -49,7 +50,7 @@ body .Container-Filter {
 }
 
 .container-radio-button input:checked ~ .checkmark-radio-button {
-  background-color: yellow;
+  background-color: #fcf347;
 }
 
 body {
@@ -61,6 +62,7 @@ body {
 .form-container {
   width: 90%;
   margin: 5%;
+  color: #364764;
 }
 
 .form-title-style {
@@ -83,6 +85,8 @@ body {
   outline: none;
   border-color: transparent;
   border-radius: 0.8em;
+  color: #364764;
+  font-size: 12px;
 }
 
 .container-continue-button {
@@ -104,9 +108,9 @@ body {
   margin-top: 5px;
 }
 .pass-forgot a {
-  color: black;
-  text-decoration-color: yellow;
-  -moz-text-decoration-color: yellow;
+  color: #364764;
+  text-decoration-color: #fcf347;
+  -moz-text-decoration-color: #fcf347;
 }
 
 .text-login-registration {
@@ -115,9 +119,9 @@ body {
   margin-top: 10px;
 }
 .text-login-registration p a {
-  color: black;
-  text-decoration-color: yellow;
-  -moz-text-decoration-color: yellow;
+  color: #364764;
+  text-decoration-color: #fcf347;
+  -moz-text-decoration-color: #fcf347;
 }
 
 .registration-container {
