@@ -19,21 +19,30 @@ import { NavBarBottom } from "./components/NavBarBottom";
 import { Loading } from "./components/Loading";
 
 const userSignUp = {
-  nomeCognome: "",
-  dataNascita: "",
-  sesso: "",
-  recTel: "",
-  citta: "",
-  tipologiaLavoro: "",
-  qualifica: "",
-  cv: "",
+  email: "",
+  password: "",
+  first_name: "",
+  last_name: "",
+  birth_date: "",
+  sex: "",
+  phone_number: "",
+  city: "",
+  job_type: "",
+  role: "",
   bio: "",
   skills: [],
-  sedeLavoro: [],
-  esperienzeLavorative: [],
-  link: {},
-  lingue: [],
-  foto: "",
+  work_place: [],
+  work_experience: [],
+  languages: [],
+  notifications: [],
+  appointments:[],
+  links: [{
+    linkedin: "",
+    github: "",
+    website: ""
+  }],
+  profile_picture: "",
+  is_profile_visible: true
 };
 
 function App({ user }) {
