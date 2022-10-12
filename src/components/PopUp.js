@@ -101,6 +101,7 @@ const PopUpDeactivateAccount = (handleChange) => {
           hg={"3em"}
           text={"NASCONDI PROFILO"}
           textColor={"rgb(54,71,100)"}
+          onClick={handleChange}
         />
       </div>
     </>
@@ -138,7 +139,7 @@ const PopUpReactivateAccount = () => {
   );
 };
 
-const PopUpRefuse = () => {
+const PopUpRefuse = (onClickRefuse) => {
   return (
     <>
       <span className="PopUpTitle">Rifiuta appuntamento</span>
@@ -182,7 +183,7 @@ const PopUpRefuse = () => {
             textColor={"rgb(54,71,100)"}
           />
           <Button
-            submit
+            lowOp
             type="submit"
             form="user-info"
             value="Submit"
@@ -191,6 +192,7 @@ const PopUpRefuse = () => {
             hg={"3em"}
             text={"RIFIUTA"}
             textColor={"rgb(54,71,100)"}
+            onClickFunction={onClickRefuse}
           />
         </div>
       </form>
@@ -198,7 +200,7 @@ const PopUpRefuse = () => {
   );
 };
 
-export function PopUp({ type, handleChange }) {
+export function PopUp({ type, handleChange, propFunction }) {
   return (
     <div className="PopUpContainer">
       <div className="PopUp">
@@ -206,7 +208,7 @@ export function PopUp({ type, handleChange }) {
         {type === 2 && <PopUpDeleteAccount />}
         {type === 3 && <PopUpDeactivateAccount />}
         {type === 4 && <PopUpReactivateAccount />}
-        {type === 5 && <PopUpRefuse />}
+        {type === 5 && <PopUpRefuse onClickRefuse={propFunction} />}
         <div className="PopUpCloser" onClick={handleChange}>
           <img src={closer} alt="Chiudi PopUp" />
         </div>

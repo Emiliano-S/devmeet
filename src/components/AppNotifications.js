@@ -1,11 +1,18 @@
 import notificationsDb from "../data/notificationsDb";
 import { useState } from "react";
+import { PopUp } from "../components/PopUp";
 
 const AppNotifications = () => {
   // for the on click of the buttons
   const [notification, setNotification] = useState(notificationsDb);
   const [appointment, setAppointment] = useState([]);
   const [show, setShow] = useState(-1);
+  const [popUpVisibility, setPopUpVisibility] = useState(false);
+  const [popUpType, setPopUpType] = useState(0);
+  const closePopUp = (type) => {
+    setPopUpType(type);
+    setPopUpVisibility(!popUpVisibility);
+  };
 
   const acceptAppointment = (accepted, index, notificationId) => {
     setAppointment((prev) => {
@@ -28,6 +35,15 @@ const AppNotifications = () => {
 
   return (
     <>
+      {popUpVisibility ? (
+        <PopUp
+          type={popUpType}
+          propFunction={declineAppointment}
+          handleChange={closePopUp}
+        />
+      ) : (
+        ""
+      )}
       <div className="container13">
         <p id="firstP">Notifiche</p>
 
@@ -86,7 +102,7 @@ const AppNotifications = () => {
                         cursor: "pointer",
                       }}
                       onClick={() => {
-                        declineAppointment(element.id);
+                        closePopUp(5);
                       }}
                     >
                       RIFIUTA
