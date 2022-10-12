@@ -1,57 +1,58 @@
-@import './index.css';
-@import './BottomNavbar.css';
+@import "./index.css";
+@import "./BottomNavbar.css";
 
-<<<<<<< HEAD
-@import './Card.css';
-=======
-@import './LandingPage.css';
-@import './form.css';
-@import './SignUp.css';
-@import './Calendar.css';
-@import './AppNotifications.css';
-@import './Appointments.css';
-
->>>>>>> feature/calendar
+@import "./Card.css";
+@import "./LandingPage.css";
+@import "./form.css";
+@import "./SignUp.css";
+@import "./Calendar.css";
+@import "./AppNotifications.css";
+@import "./Appointments.css";
 
 @font-face {
-    font-family: 'DM Sans Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('DM Sans Regular'), url('../../assets/fonts/DMSans-Regular.woff') format('woff');
+  font-family: "DM Sans Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Regular"),
+    url("../../assets/fonts/DMSans-Regular.woff") format("woff");
 }
 
 @font-face {
-font-family: 'DM Sans Italic';
-font-style: normal;
-font-weight: normal;
-src: local('DM Sans Italic'), url('../../assets/fonts/DMSans-Italic.woff') format('woff');
+  font-family: "DM Sans Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Italic"),
+    url("../../assets/fonts/DMSans-Italic.woff") format("woff");
 }
 
 @font-face {
-font-family: 'DM Sans Medium';
-font-style: normal;
-font-weight: normal;
-src: local('DM Sans Medium'), url('../../assets/fonts/DMSans-Medium.woff') format('woff');
+  font-family: "DM Sans Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Medium"),
+    url("../../assets/fonts/DMSans-Medium.woff") format("woff");
 }
 
 @font-face {
-font-family: 'DM Sans Medium Italic';
-font-style: normal;
-font-weight: normal;
-src: local('DM Sans Medium Italic'), url('../../assets/fonts/DMSans-MediumItalic.woff') format('woff');
+  font-family: "DM Sans Medium Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Medium Italic"),
+    url("../../assets/fonts/DMSans-MediumItalic.woff") format("woff");
 }
 
 @font-face {
-font-family: 'DM Sans Bold';
-font-style: normal;
-font-weight: normal;
-src: local('DM Sans Bold'), url('../../assets/fonts/DMSans-Bold.woff') format('woff');
+  font-family: "DM Sans Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Bold"),
+    url("../../assets/fonts/DMSans-Bold.woff") format("woff");
 }
 
 @font-face {
-font-family: 'DM Sans Bold Italic';
-font-style: normal;
-font-weight: normal;
-src: local('DM Sans Bold Italic'), url('../../assets/fonts/DMSans-BoldItalic.woff') format('woff');
+  font-family: "DM Sans Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DM Sans Bold Italic"),
+    url("../../assets/fonts/DMSans-BoldItalic.woff") format("woff");
 }
-
