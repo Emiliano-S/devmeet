@@ -643,5 +643,39 @@ body .CardContainer .Card {
     animation-timing-function: ease-out;
   }
 }
+.PopUpContainer {
+  position: absolute;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  background-color: rgba(54, 71, 100, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PopUpContainer .PopUp {
+  position: relative;
+  background-color: #f9f9f9;
+  width: calc(100vw - 50px);
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 0px 5px 20px #000;
+}
+.PopUpContainer .PopUp .PopUpCloser {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  background-color: #fcf347;
+  padding: 5px 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
 
 /*# sourceMappingURL=index.css.map */
