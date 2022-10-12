@@ -1,0 +1,80 @@
+{
+    "users":
+    [{
+        "id": 0,
+        "email": "marioverde@gmail.com",
+        "password": "MarioVerde123",
+        "first_name": "Mario",
+        "last_name": "Verde",
+        "birth_date": "1993-01-20",
+        "sex": "uomo",
+        "phone_number": "+3412345678",
+        "city": "Milano",
+        "job_type": "Remote",
+        "role": "Senior Full Stack Developer",
+        "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur. Blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat.",
+        "skills": [
+            {
+                "skill_name": "React",
+                "skill_level": "Mid."
+            },
+            {
+                "skill_name": "JavaScript",
+                "skill_level": "Snr."
+            },
+            {
+                "skill_name": "Php",
+                "skill_level": "Jr."
+            },
+            {
+                "skill_name": "HTML",
+                "skill_level": "Snr."
+            },
+            {
+                "skill_name": "CSS",
+                "skill_level": "Snr."
+            },
+            {
+                "skill_name": "SASS",
+                "skill_level": "Snr."
+            }
+        ],
+        "work_place": [],
+        "work_experience": [
+            {
+            "society": "Develhope",
+            "start_date": "01-01-2022",
+            "end_date": "in corso"
+            },
+            {
+            "society": "Google",
+            "start_date": "22-10-2021",
+            "end_date": "15-12-2021"
+            }
+        ],
+        "languages": [
+            {
+                "language": "Italiano",
+                "language_level": "C2"
+            },
+            {
+                "language": "Inglese",
+                "language_level": "B2"
+            },
+            {
+                "language": "Russo",
+                "language_level": "B1"
+            }
+        ],
+        "notifications": [],
+        "appointments":[],
+        "links": [{
+          "linkedin": "https://www.linkedin.com",
+          "github": "https://github.com",
+          "website": "https://google.com"
+        }],
+        "cv": "",
+        "profile_picture": "./img/userPicture/MarioVerde.png",
+        "is_profile_visible": true
+    }]
+}

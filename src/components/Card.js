@@ -4,6 +4,7 @@ import linkedinLogoIcon from "../assets/svg/linkedinLogoIcon.svg";
 import githubLogoIcon from "../assets/svg/githubIcon.svg";
 import websiteIcon from "../assets/svg/websiteIcon.svg";
 import cvIcon from "../assets/svg/cvIcon.svg";
+import { PopUp } from "./PopUp";
 
 export function Card({ user, id }) {
   const {

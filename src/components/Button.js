@@ -26,6 +26,7 @@ const Button = ({
 
   function handleButtonClickReset(event) {
     event.target.style.opacity = 0.5;
+    if(onClickFunction !== undefined) onClickFunction();
     setTimeout(() => {
       event.target.disabled = true;
       setTimeout(() => {

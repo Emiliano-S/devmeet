@@ -10,16 +10,26 @@ import IconHomeBlu from "../assets/svg/navBottomHomeB.svg";
 import IconNotificationsBlu from "../assets/svg/navBottomNotificationsB.svg";
 
 import { Link, useLocation } from "react-router-dom";
+import { PopUp } from "./PopUp";
+import { useState } from "react";
 
 export function NavBarBottom() {
   const location = useLocation();
+  const arrLocationWithoutBottomNav = ["/", "/signUp", "/login", "/signUp/regUser", "/signUp/user", "/singUp/regUser/skills", "/singUp/regUser/workExperiences", "/singUp/regUser/linksLanguages", "/signUp/regUser/addPhoto", "/settings"];
+
+  const [popUpVisibility, setPopUpVisibility] = useState(false);
+
+  const closePopUp = () =>{
+    setPopUpVisibility(!popUpVisibility);
+  }
 
   return (
   <>
+    {popUpVisibility && location.pathname === "/card" ?  <PopUp type={1} handleChange={closePopUp} /> : ""}
     {
-    (location.pathname !== "/" && location.pathname !== "/signUp" && location.pathname !== "/login") ?
+    (!arrLocationWithoutBottomNav.find(element => element === location.pathname)) ?
       <div className="navBarBottomContainer">
-      <div className="buttonAppointment">
+      <div className="buttonAppointment" onClick={closePopUp}>
         <img src={IconButtonAppointment} alt="Fissa appuntamento" />
       </div>
       <div className="navBarBottom">
