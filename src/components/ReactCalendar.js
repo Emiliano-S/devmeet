@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import { NavBar } from "./NavBar";
 import notificationsDb from "../data/notificationsDb";
 //library npm react-calendar
 

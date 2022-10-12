@@ -99,10 +99,10 @@ function App({ user }) {
           <Route path="/loading" element={<Loading />} />
           <Route path="/calendar" element={<ReactCalendar />} />
           <Route path="/notifiche" element={<AppNotifications />} />
-
           {/* navbar con le notifiche */}
           {/* <Route path="/bottomNavbar1" element={<BottomNavbar1 />} /> */}
         </Routes>
+
         {/*
         <CardContainer data={dbCard}/>
 

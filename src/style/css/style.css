@@ -1,13 +1,9 @@
 @import "./index.css";
 @import "./BottomNavbar.css";
-
 @import "./Card.css";
-@import "./LandingPage.css";
-@import "./form.css";
-@import "./SignUp.css";
-@import "./Calendar.css";
+/* @import "./Calendar.css";
 @import "./AppNotifications.css";
-@import "./Appointments.css";
+@import "./Appointments.css"; */
 
 @font-face {
   font-family: "DM Sans Regular";

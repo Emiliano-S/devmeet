@@ -1,9 +1,8 @@
 body {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 body .containerCalendarCard {
   width: 100vw;
-  height: 100vh;
 }
 body .containerCalendarCard .calendarComponentContainer {
   font-family: "DM Sans Bold";
@@ -36,7 +35,11 @@ body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti {
   font-weight: normal;
   font-size: 16px;
 }
-body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .appuntamento {
+body
+  .containerCalendarCard
+  .calendarComponentContainer
+  .containerAppuntamenti
+  .appuntamento {
   width: 90%;
   height: 70px;
   background-color: #364764;
@@ -46,12 +49,22 @@ body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .
   border: none;
   border-radius: 5px;
 }
-body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .appuntamento .texts {
+body
+  .containerCalendarCard
+  .calendarComponentContainer
+  .containerAppuntamenti
+  .appuntamento
+  .texts {
   display: flex;
   flex-direction: column;
 }
-body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .appuntamento #placeholderJob {
-  background-color: #EFEFEF;
+body
+  .containerCalendarCard
+  .calendarComponentContainer
+  .containerAppuntamenti
+  .appuntamento
+  #placeholderJob {
+  background-color: #efefef;
   justify-self: flex-start;
   margin: 0 10px 0 10px;
   display: flex;
@@ -61,7 +74,13 @@ body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .
   width: 55px;
   height: 55px;
 }
-body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .appuntamento #placeholderJob #foto-azienda {
+body
+  .containerCalendarCard
+  .calendarComponentContainer
+  .containerAppuntamenti
+  .appuntamento
+  #placeholderJob
+  #foto-azienda {
   width: 70%;
 }
 
@@ -105,7 +124,7 @@ body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .
 .react-calendar__navigation {
   display: flex;
   height: 44px;
-  margin-bottom: 0,5em;
+  margin-bottom: 0, 5em;
   font-size: medium;
 }
 .react-calendar__navigation button {
@@ -123,7 +142,7 @@ body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.70em;
+  font-size: 0.7em;
 }
 .react-calendar__month-view__weekdays__weekday {
   padding: 0.5em;
@@ -150,7 +169,7 @@ body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .
 }
 .react-calendar__tile {
   width: 100%;
-  padding: 15px ;
+  padding: 15px;
   background: none;
   text-align: center;
   line-height: 16px;
@@ -167,29 +186,28 @@ body .containerCalendarCard .calendarComponentContainer .containerAppuntamenti .
   background-color: #e6e6e6;
 }
 .react-calendar__tile--now {
-  background: #FCF347;
-
+  background: #fcf347;
 }
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
-  background: #FCF347;
+  background: #fcf347;
   color: #364764;
 }
 .react-calendar__tile--hasActive {
-  background: #FCF347;
+  background: #fcf347;
   color: #364764;
 }
 .react-calendar__tile--hasActive:enabled:hover,
 .react-calendar__tile--hasActive:enabled:focus {
-  background: #FCF347;
+  background: #fcf347;
 }
 .react-calendar__tile--active {
-  background: #FCF347;
+  background: #fcf347;
   color: #364764;
 }
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background: #FCF347;
+  background: #fcf347;
 }
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
