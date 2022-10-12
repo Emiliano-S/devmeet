@@ -38,7 +38,6 @@ const AppNotifications = () => {
       {popUpVisibility ? (
         <PopUp
           type={popUpType}
-          propFunction={declineAppointment}
           handleChange={closePopUp}
         />
       ) : (
@@ -102,7 +101,7 @@ const AppNotifications = () => {
                         cursor: "pointer",
                       }}
                       onClick={() => {
-                        closePopUp(5);
+                        declineAppointment(element.id);
                       }}
                     >
                       RIFIUTA

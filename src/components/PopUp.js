@@ -139,7 +139,7 @@ const PopUpReactivateAccount = () => {
   );
 };
 
-const PopUpRefuse = (onClickRefuse) => {
+const PopUpRefuse = () => {
   return (
     <>
       <span className="PopUpTitle">Rifiuta appuntamento</span>
@@ -192,7 +192,6 @@ const PopUpRefuse = (onClickRefuse) => {
             hg={"3em"}
             text={"RIFIUTA"}
             textColor={"rgb(54,71,100)"}
-            onClickFunction={onClickRefuse}
           />
         </div>
       </form>
@@ -208,7 +207,7 @@ export function PopUp({ type, handleChange, propFunction }) {
         {type === 2 && <PopUpDeleteAccount />}
         {type === 3 && <PopUpDeactivateAccount />}
         {type === 4 && <PopUpReactivateAccount />}
-        {type === 5 && <PopUpRefuse onClickRefuse={propFunction} />}
+        {type === 5 && <PopUpRefuse />}
         <div className="PopUpCloser" onClick={handleChange}>
           <img src={closer} alt="Chiudi PopUp" />
         </div>
