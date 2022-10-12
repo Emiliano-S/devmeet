@@ -8,17 +8,17 @@ const PopUpAppointment = () =>{
       <form>
         <div className="formAppointRow">
           <div className="formAppointInput">
-            <label for="date">Data</label>
+            <label htmlFor="date">Data</label>
             <input type="date" min={new Date().toISOString().split("T")[0]} className="input-form-style"/>
           </div>
           <div className="formAppointInput">
-            <label for="time">Ora</label>
+            <label htmlFor="time">Ora</label>
             <input type="time" className="input-form-style"/>
           </div>
         </div>
         <div className="formAppointRow">
           <div className="formAppointInput">
-            <label for="time">Note</label>
+            <label htmlFor="time">Note</label>
             <textarea type="time" className="input-form-style"/>
           </div>
         </div>
@@ -31,7 +31,7 @@ const PopUpAppointment = () =>{
                   bgColor={"yellow"}
                   wd={"100%"}
                   hg={"3em"}
-                  text={"CONTINUA"}
+                  text={"INVIA"}
                   textColor={"rgb(54,71,100)"}
                 />
         </div>

@@ -38,8 +38,6 @@ export function Card({ user, id }) {
     return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365);
   };
 
-  
-
   return (
     <div className="Card">
       <div className="CardRelative">
