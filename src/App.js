@@ -53,7 +53,6 @@ function App({ user }) {
       <BrowserRouter>
         <NavBar back options />
 
-
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />

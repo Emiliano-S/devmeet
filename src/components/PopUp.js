@@ -42,7 +42,12 @@ const PopUpAppointment = () =>{
 
 const PopUpDeleteAccount = () =>{
   return(
-    <></>
+    <>
+    <span className="PopUpTitle">Elimina account</span>
+     <div>
+      
+     </div>
+    </>
   )
 }
 
