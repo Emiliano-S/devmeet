@@ -20,7 +20,7 @@ const Settings = () => {
       setButtontextVisibility("ATTIVA PROFILO");
       closePopUp(3);
     } else {
-      setButtontextVisibility("ATTIVA PROFILO");
+      setButtontextVisibility("NASCONDI PROFILO");
       closePopUp(4);
     }
   };
@@ -143,7 +143,7 @@ const Settings = () => {
             hg={"50px"}
             wg={"bold"}
             onClickFunction={() => {
-              closePopUp(3);
+              closePopUp(2);
             }}
           />
         </div>
