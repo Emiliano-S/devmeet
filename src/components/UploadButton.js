@@ -60,7 +60,7 @@ const UploadButton = ({
         ref={inputRef}
         type="file"
         onChange={handleFileChange}
-        accept=".pdf"
+        accept="application/pdf"
         id="file"
         name="file"
       />
