@@ -4,6 +4,7 @@ import linkedinLogoIcon from "../assets/svg/linkedinLogoIcon.svg";
 import githubLogoIcon from "../assets/svg/githubIcon.svg";
 import websiteIcon from "../assets/svg/websiteIcon.svg";
 import cvIcon from "../assets/svg/cvIcon.svg";
+import { PopUp } from "./PopUp";
 
 export function Card({ user, id }) {
   const {
@@ -36,6 +37,8 @@ export function Card({ user, id }) {
     const ageInMilliseconds = new Date() - new Date(date);
     return Math.floor(ageInMilliseconds / 1000 / 60 / 60 / 24 / 365);
   };
+
+  
 
   return (
     <div className="Card">

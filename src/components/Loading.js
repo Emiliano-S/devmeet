@@ -16,6 +16,7 @@ export function Loading() {
           id="LoadingYellowArrow"
         />
       </div>
+      <span>Loading...</span>
     </div>
   );
 }
