@@ -83,7 +83,7 @@ export function InputArrayFilter({
           currentMyValue.filter((value, index) => index !== i)
         );
         clearTimeout(remove);
-      }, 6000);
+      }, 1300);
     } else {
       setMyValue((currentMyValue) =>
         currentMyValue.filter((value, index) => index !== i)
