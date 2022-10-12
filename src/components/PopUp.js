@@ -1,3 +1,4 @@
+import { useState } from "react";
 import closer from "../assets/svg/xRemove.svg";
 import Button from "./Button";
 
@@ -75,7 +76,7 @@ const PopUpDeleteAccount = () => {
   );
 };
 
-const PopUpDeactivateAccount = () => {
+const PopUpDeactivateAccount = (handleChange) => {
   return (
     <>
       <span className="PopUpTitle">Nascondi profilo</span>
@@ -129,7 +130,7 @@ const PopUpReactivateAccount = () => {
           bgColor={"#fcf347"}
           wd={"100%"}
           hg={"3em"}
-          text={"NASCONDI PROFILO"}
+          text={"ATTIVA PROFILO"}
           textColor={"rgb(54,71,100)"}
         />
       </div>
