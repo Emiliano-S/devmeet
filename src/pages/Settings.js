@@ -8,10 +8,21 @@ import UploadButton from "../components/UploadButton";
 const Settings = () => {
   const [popUpVisibility, setPopUpVisibility] = useState(false);
   const [popUpType, setPopUpType] = useState(0);
+  const [buttonTextVisibility, setButtontextVisibility] = useState('Nascondi profilo');
 
   const closePopUp = (type) =>{
     setPopUpType(type)
     setPopUpVisibility(!popUpVisibility);
+  }
+
+  const changeText = () =>{
+      if(buttonTextVisibility === "Nascondi profilo"){
+        setButtontextVisibility("Mostra profilo");
+        closePopUp(3);
+      }else{
+        setButtontextVisibility("Nascondi profilo")
+        closePopUp(4);
+      }
   }
 
   return (
@@ -71,7 +82,7 @@ const Settings = () => {
                           textClicked ={'ATTIVA PROFILO'}
                           wg = {'semibold'} />
                           <div style={{width: "100%", display:"flex", justifyContent:"center", paddingTop:"20px"}}>
-
+      <button onClick={changeText}>{buttonTextVisibility}</button>
       <Button submit text={'ELIMINA ACCOUNT'} textColor={'black'} bgColor={'yellow'} wd={'266px'} hg={'50px'} wg={'bold'} onClickFunction={()=>{closePopUp(2)}}/>
                           </div>
 
