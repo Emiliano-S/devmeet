@@ -25,12 +25,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "auth": "node ./server/server.js",
-    "server": "json-server ./server/users.json"
+    "server": "json-server ./server/users.json --port 8000"
   },
   "eslintConfig": {
     "extends": [
