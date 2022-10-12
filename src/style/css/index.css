@@ -129,7 +129,7 @@ body {
 }
 
 .landingPage {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   background-position: middle;
@@ -321,11 +321,60 @@ body {
   -o-transition: transform 1s ease-in-out;
 }
 .skillsPageContainer .skillList .skillRow.skillRemoved, .skillsPageContainer .skillList .skillRow.lingueRemoved, .skillsPageContainer .skillList .lingueRow.skillRemoved, .skillsPageContainer .skillList .lingueRow.lingueRemoved, .skillsPageContainer .lingueList .skillRow.skillRemoved, .skillsPageContainer .lingueList .skillRow.lingueRemoved, .skillsPageContainer .lingueList .lingueRow.skillRemoved, .skillsPageContainer .lingueList .lingueRow.lingueRemoved {
-  transform: translateX(-1000px);
-  -webkit-transform: translateX(-1000px);
-  -moz-transform: translateX(-1000px);
-  -ms-transform: translateX(-1000px);
-  -o-transform: translateX(-1000px);
+  animation: skillFade 1.5s ease-in-out;
+  -webkit-animation: skillFade 1.5s ease-in-out;
+}
+@-webkit-keyframes skillFade {
+  0%, 20%, 40%, 50% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
+    -moz-transform: scale(1, 1) translateX(0);
+    -ms-transform: scale(1, 1) translateX(0);
+    -o-transform: scale(1, 1) translateX(0);
+  }
+  10%, 30% {
+    opacity: 1;
+    -webkit-transform: scale(1.01, 1.1) translateX(0);
+    transform: scale(1.01, 1.1) translateX(0);
+    -moz-transform: scale(1.01, 1.1) translateX(0);
+    -ms-transform: scale(1.01, 1.1) translateX(0);
+    -o-transform: scale(1.01, 1.1) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1) translateX(-900%);
+    transform: scale(1, 1) translateX(-900%);
+    -moz-transform: scale(1, 1) translateX(-900%);
+    -ms-transform: scale(1, 1) translateX(-900%);
+    -o-transform: scale(1, 1) translateX(-900%);
+  }
+}
+@keyframes skillFade {
+  0%, 60% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1) translateX(0);
+    transform: scale(1, 1) translateX(0);
+    -moz-transform: scale(1, 1) translateX(0);
+    -ms-transform: scale(1, 1) translateX(0);
+    -o-transform: scale(1, 1) translateX(0);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: scale(1.05, 1.05) translateX(0px);
+    transform: scale(1.05, 1.05) translateX(0px);
+    -moz-transform: scale(1.05, 1.05) translateX(0px);
+    -ms-transform: scale(1.05, 1.05) translateX(0px);
+    -o-transform: scale(1.05, 1.05) translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1, 1) translateX(-900%);
+    transform: scale(1, 1) translateX(-900%);
+    -moz-transform: scale(1, 1) translateX(-900%);
+    -ms-transform: scale(1, 1) translateX(-900%);
+    -o-transform: scale(1, 1) translateX(-900%);
+  }
 }
 .skillsPageContainer .skillList .skillRow .skill, .skillsPageContainer .skillList .skillRow .lingue, .skillsPageContainer .skillList .lingueRow .skill, .skillsPageContainer .skillList .lingueRow .lingue, .skillsPageContainer .lingueList .skillRow .skill, .skillsPageContainer .lingueList .skillRow .lingue, .skillsPageContainer .lingueList .lingueRow .skill, .skillsPageContainer .lingueList .lingueRow .lingue {
   display: flex;

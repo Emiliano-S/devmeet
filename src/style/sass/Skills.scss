@@ -1,3 +1,5 @@
+@use "./animations/fadeLeft" as *;
+
 .skillsPageContainer {
   width: 100%;
   height: calc(100vh - 50px);
@@ -78,11 +80,12 @@
       -o-transition: transform 1s ease-in-out;
 
       &.skillRemoved, &.lingueRemoved {
-        transform: translateX(-1000px);
-        -webkit-transform: translateX(-1000px);
-        -moz-transform: translateX(-1000px);
-        -ms-transform: translateX(-1000px);
-        -o-transform: translateX(-1000px);
+        // transform: translateX(-1000px);
+        // -webkit-transform: translateX(-1000px);
+        // -moz-transform: translateX(-1000px);
+        // -ms-transform: translateX(-1000px);
+        // -o-transform: translateX(-1000px);
+        @include fadeLeft(skillFade, 1.5s);
       }
       .skill, .lingue {
         display: flex;
