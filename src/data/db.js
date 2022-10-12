@@ -26,11 +26,15 @@ export default [
         }],
         available_for: "Remote",
         user_picture: MarioVerde,
+<<<<<<< HEAD
         city: "Como",
         linkedin: "https://linkedin.com/",
         github: "https://github.com/",
         website: "https://google.com/",
         cv: "...",
+=======
+        show_button: false
+>>>>>>> feature/calendar
     },
     {
         id: 2,
@@ -55,10 +59,14 @@ export default [
         }],
         available_for: "Remote & On-site",
         user_picture: MaryRose,
+<<<<<<< HEAD
         city: "Roma",
         linkedin: "https://linkedin.com/",
         github: "https://github.com/",
         website: "https://google.com/",
         cv: "...",
+=======
+        show_button: false
+>>>>>>> feature/calendar
     }
 ]

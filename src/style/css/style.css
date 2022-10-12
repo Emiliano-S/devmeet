@@ -1,7 +1,17 @@
 @import './index.css';
 @import './BottomNavbar.css';
 
+<<<<<<< HEAD
 @import './Card.css';
+=======
+@import './LandingPage.css';
+@import './form.css';
+@import './SignUp.css';
+@import './Calendar.css';
+@import './AppNotifications.css';
+@import './Appointments.css';
+
+>>>>>>> feature/calendar
 
 @font-face {
     font-family: 'DM Sans Regular';
