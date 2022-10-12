@@ -28,7 +28,7 @@ const PopUpAppointment = () =>{
                   type="submit"
                   form="user-info"
                   value="Submit"
-                  bgColor={"yellow"}
+                  bgColor={"#fcf347"}
                   wd={"100%"}
                   hg={"3em"}
                   text={"INVIA"}
@@ -44,8 +44,22 @@ const PopUpDeleteAccount = () =>{
   return(
     <>
     <span className="PopUpTitle">Elimina account</span>
-     <div>
-      
+     <div className="PopUpText">
+      <p style={{fontFamily: 'DM Sans Bold'}}>Attenzione sei sicuro di voler eliminare il tuo account?</p>
+      <p> Puoi prenderti una pausa e puoi <strong>nascondere</strong> il tuo profilo momentaneamente. </p>
+     </div>
+     <div className="PopUpText">
+        <Button
+            submit
+            type="submit"
+            form="user-info"
+            value="Submit"
+            bgColor={"#fcf347"}
+            wd={"100%"}
+            hg={"3em"}
+            text={"ELIMINA ACCOUNT"}
+            textColor={"rgb(54,71,100)"}
+          />
      </div>
     </>
   )
@@ -53,7 +67,26 @@ const PopUpDeleteAccount = () =>{
 
 const PopUpDeactivateAccount = () =>{
   return(
-    <></>
+    <>
+    <span className="PopUpTitle">Nascondi profilo</span>
+     <div className="PopUpText">
+      <p style={{fontFamily: 'DM Sans Bold'}}>Hai già trovato un lavoro e non vuoi più ricevere nuove proposte?</p>
+      <p> Nascondi il tuo profilo e riattivalo in un secondo memento in modo tale da non perdere i tuoi dati. </p>
+     </div>
+     <div className="PopUpText">
+        <Button
+            submit
+            type="submit"
+            form="user-info"
+            value="Submit"
+            bgColor={"#fcf347"}
+            wd={"100%"}
+            hg={"3em"}
+            text={"ELIMINA ACCOUNT"}
+            textColor={"rgb(54,71,100)"}
+          />
+     </div>
+    </>
   )
 }
 

@@ -645,10 +645,11 @@ body .CardContainer .Card {
   }
 }
 .PopUpContainer {
-  position: absolute;
+  position: fixed;
   width: 100vw;
-  top: 50px;
-  height: calc(100vh - 80px);
+  top: 0px;
+  height: 100%;
+  z-index: 100;
   background-color: rgba(54, 71, 100, 0.6);
   display: flex;
   justify-content: center;
@@ -691,6 +692,16 @@ body .CardContainer .Card {
   text-align: center;
   font-size: 20px;
   font-family: "DM Sans Bold";
+}
+.PopUpContainer .PopUp .PopUpText {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+}
+.PopUpContainer .PopUp .PopUpText button {
+  font-family: "DM Sans Bold";
+  font-size: 14px;
 }
 .PopUpContainer .PopUp form {
   display: flex;
