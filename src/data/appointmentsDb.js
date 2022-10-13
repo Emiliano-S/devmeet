@@ -3,13 +3,14 @@ import meta from '../components/assets/calendarImages/meta.png';
 
 import Andrea from '../components/assets/calendarImages/Andrea.jpeg';
 import Vince from '../components/assets/calendarImages/Vince.jpg';
+import Emiliano from '../components/assets/calendarImages/Emiliano.jpg';
 
 const notificationsDb = [
     {
         id: 1,
-        logo: Andrea,
-        name: "Andrea Sabato",
-        appointment: "Lunedi 24 Ottobre - Ore 15:45",
+        logo: Emiliano,
+        name: "Emiliano Gabriele Scanga",
+        appointment: "Lunedi 17 Ottobre - Ore 18:00",
         held: false,
         accepted: false,
         declined: false,
@@ -23,6 +24,5 @@ const notificationsDb = [
         accepted: false,
         declined: false
     },
-    
 ]
 export default notificationsDb;

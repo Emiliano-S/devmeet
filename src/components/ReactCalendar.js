@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import notificationsDb from "../data/notificationsDb";
+import notificationsDb from "../data/appointmentsDb";
 //library npm react-calendar
 
 const ReactCalendar = () => {
   const [value, onChange] = useState(new Date());
+  const [notification, setNotification] = useState(notificationsDb);
 
   return (
     <>
@@ -19,37 +20,25 @@ const ReactCalendar = () => {
           {/* sezione notifica appuntamento-------------*/}
 
           <div className="containerAppuntamenti">
-            <div className="appuntamento" key={notificationsDb[0].id}>
-              <div id="placeholderJob">
-                <img
-                  src={notificationsDb[0].logo}
-                  id="foto-azienda"
-                  alt="azienda"
-                />
-              </div>
-              <div className="texts">
-                <p>
-                  <b>{notificationsDb[0].name}</b>
-                </p>
-                <p style={{ fontSize: 13 }}>{notificationsDb[0].appointment}</p>
-              </div>
-            </div>
-
-            <div className="appuntamento" key={notificationsDb[1].id}>
-              <div id="placeholderJob">
-                <img
-                  src={notificationsDb[1].logo}
-                  id="foto-azienda"
-                  alt="azienda"
-                />
-              </div>
-              <div className="texts">
-                <p>
-                  <b>{notificationsDb[1].name}</b>
-                </p>
-                <p style={{ fontSize: 13 }}>{notificationsDb[1].appointment}</p>
-              </div>
-            </div>
+          {notification.map((element, id) => {
+            return (
+              <>
+                <div
+                  className="appuntamento"
+                  key={id}
+                >
+                  <div id="placeholderJob" style={{backgroundImage: `url(${element.logo})`, backgroundSize: "cover", }}>
+                  </div>
+                  <div className="texts">
+                    <p>
+                      <b>{element.name}</b>
+                    </p>
+                    <p style={{ fontSize: 13 }}>{element.appointment}</p>
+                  </div>
+                </div>
+              </>
+            );
+          })}
           </div>
 
           {/* -------------------------------*/}

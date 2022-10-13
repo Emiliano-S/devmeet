@@ -31,6 +31,7 @@ const AppNotifications = () => {
 
   const declineAppointment = (id) => {
     setNotification(notification.filter((item) => item.id !== id));
+    setShow(-1);
   };
 
   return (
@@ -59,8 +60,7 @@ const AppNotifications = () => {
                     buttonsShower(id);
                   }}
                 >
-                  <div id="placeholderJob">
-                    <img src={element.logo} id="foto-azienda" alt="azienda" />
+                  <div id="placeholderJob" style={{backgroundImage: `url(${element.logo})`, backgroundSize: "cover", }}>
                   </div>
                   <div className="texts">
                     <p>
@@ -120,8 +120,8 @@ const AppNotifications = () => {
             appointment.map((element, id) => {
               return (
                 <div className="appuntamento" key={element.id}>
-                  <div id="placeholderJob">
-                    <img src={element.logo} id="foto-azienda" alt="azienda" />
+                  <div id="placeholderJob" style={{backgroundImage: `url(${element.logo})`, backgroundSize: "cover", }}>
+
                   </div>
                   <div className="texts">
                     <p>

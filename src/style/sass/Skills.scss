@@ -127,7 +127,7 @@
     }
   }
 
-  .comuniList {
+  .cittàList {
     display: flex;
     justify-content: flex-start;
     align-content: center;
@@ -136,9 +136,9 @@
     padding: 10px 20px;
     overflow: scroll;
     overflow-x: hidden;
-    .comuniRow {
+    .cittàRow {
       position: relative;
-      .comuni {
+      .città {
         display: flex;
         width: max-content;
         justify-content: flex-start;
@@ -155,7 +155,7 @@
           flex-grow: 2;
         }
       }
-      .comuniRemove {
+      .cittàRemove {
         width: 24px;
         height: 24px;
         position: absolute;

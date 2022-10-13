@@ -59,7 +59,6 @@ function FormRow({
           <div className="form-title-style">{text}</div>
           <input
             type="text"
-            pattern="[A-Za-z\s]+"
             className="input-form-style"
             id={id}
             name={name}

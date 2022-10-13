@@ -111,11 +111,11 @@ export function NavBarBottom() {
                     }
                     alt="Le tue notifiche"
                   />
-                  {notificationsAmount > 0 && (
+                  {/* {notificationsAmount > 0 && (
                     <span className="notificationNumber">
                       {notificationsAmount}
                     </span>
-                  )}
+                  )} */}
                   <span>notifiche</span>
                 </div>
               </Link>

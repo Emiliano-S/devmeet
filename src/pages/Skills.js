@@ -42,7 +42,7 @@ export function Skills({ user, company }) {
           <h3>Sede di lavoro</h3>
           <InputArrayFilter
             array={comuniArray}
-            contentType="comuni"
+            contentType="città"
             showAges={false}
             toPopulate={setToPopulate}
             objKey="sedeLavoro"

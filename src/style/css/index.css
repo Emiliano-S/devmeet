@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #F9F9F9;
 }
@@ -414,7 +415,7 @@ body {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-.skillsPageContainer .comuniList {
+.skillsPageContainer .cittàList {
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -424,10 +425,10 @@ body {
   overflow: scroll;
   overflow-x: hidden;
 }
-.skillsPageContainer .comuniList .comuniRow {
+.skillsPageContainer .cittàList .cittàRow {
   position: relative;
 }
-.skillsPageContainer .comuniList .comuniRow .comuni {
+.skillsPageContainer .cittàList .cittàRow .città {
   display: flex;
   width: max-content;
   justify-content: flex-start;
@@ -441,10 +442,10 @@ body {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
-.skillsPageContainer .comuniList .comuniRow .comuni span {
+.skillsPageContainer .cittàList .cittàRow .città span {
   flex-grow: 2;
 }
-.skillsPageContainer .comuniList .comuniRow .comuniRemove {
+.skillsPageContainer .cittàList .cittàRow .cittàRemove {
   width: 24px;
   height: 24px;
   position: absolute;
