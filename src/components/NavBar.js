@@ -3,11 +3,12 @@ import navBackArrowWhite from "../assets/svg/backNavWhite.svg";
 import navOption from "../assets/svg/optionsNav.svg";
 import remove from "../assets/svg/xRemoveWhite.svg";
 import navOptionWhite from "../assets/svg/navOptionWhite.svg";
-import navLogo from "../assets/img/logoNav.png";
+import navLogo from "../assets/img/logoNavFix.png";
 import navLogoWhite from "../assets/svg/logoNav.svg";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import devmeet from "../assets/img/userPicture/devmeet.png";
 
 export function NavBar({ options, back }) {
   const navigate = useNavigate();
@@ -16,17 +17,26 @@ export function NavBar({ options, back }) {
   const [logo, setLogo] = useState(navLogo);
   const [backFill, setBackFill] = useState(navBackArrow);
   const [optFill, setOptFill] = useState(navOption);
+  const [profile, setProfile] = useState(false);
   useEffect(() => {
     if (location.pathname === "/ProfileSettings") {
       setBgColor("#364764");
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
       setOptFill(navOptionWhite);
+      setProfile(false);
     } else if (location.pathname === "/settings") {
       setBgColor("#364764");
       setLogo(navLogoWhite);
       setBackFill(navBackArrowWhite);
       setOptFill(remove);
+      setProfile(false);
+    } else if (location.pathname === "/card") {
+      setBgColor("white");
+      setLogo(navLogo);
+      setBackFill(navBackArrow);
+      setOptFill(navOption);
+      setProfile(true);
     } else if (
       location.pathname === "/signUp" ||
       location.pathname === "/login" ||
@@ -44,11 +54,13 @@ export function NavBar({ options, back }) {
       setLogo(navLogo);
       setBackFill(navBackArrow);
       setOptFill(null);
+      setProfile(false);
     } else {
       setBgColor("White");
       setLogo(navLogo);
       setBackFill(navBackArrow);
       setOptFill(navOption);
+      setProfile(false);
     }
   }, [location]);
 
@@ -59,21 +71,39 @@ export function NavBar({ options, back }) {
 
   return (
     <div className="NavBar" style={{ backgroundColor: `${bgColor}` }}>
-      <div className="NavBarBackContainer">
-        {back && (
-          <button
-            onClick={() => navigate(-1, { replace: true })}
-            style={{
-              border: "none",
-              backgroundColor: `${bgColor}`,
-              cursor: "pointer",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            <img className="NavBarBackArrow" src={backFill} alt="Go back!" />
-          </button>
-        )}
-      </div>
+      {profile && (
+        <div className="ProfileImage">
+          <Link to="/profilesettings">
+            <img
+              src={devmeet}
+              // src={user_picture}
+              style={{
+                height: "24px",
+                width: "24px",
+                borderRadius: "50%",
+              }}
+              alt="Profile"
+            />
+          </Link>
+        </div>
+      )}
+      {!profile && (
+        <div className="NavBarBackContainer">
+          {back && (
+            <button
+              onClick={() => navigate(-1, { replace: true })}
+              style={{
+                border: "none",
+                backgroundColor: `${bgColor}`,
+                cursor: "pointer",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <img className="NavBarBackArrow" src={backFill} alt="Go back!" />
+            </button>
+          )}
+        </div>
+      )}
       <div className="NavBarLogoContainer">
         <img className="NavBarLogo" src={logo} alt="devmeet" />
       </div>
