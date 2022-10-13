@@ -17,9 +17,7 @@ import "./App.css";
 import { CardContainer } from "./pages/CardContainer";
 import LandingPage from "./pages/LandingPage";
 import { NavBar } from "./components/NavBar";
-import Login from "./pages/Login";
 import ReactCalendar from "./components/ReactCalendar";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
 import AppNotifications from "./components/AppNotifications";
 // import AppNotifications from "./components/AppNotifications";
 
