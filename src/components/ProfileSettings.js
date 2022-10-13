@@ -5,21 +5,17 @@ import MarioVerde from "../assets/img/userPicture/MarioVerde.png";
 import { Link, useNavigate } from "react-router-dom";
 
 export function ProfileSettings({ data, user, company }) {
-  const {
-    first_name,
-    last_name,
-    email,
-    sex,
-    bio,
-    profession,
-    skills,
-    open_to_work,
-    language,
-    available_for,
-    user_picture,
-    date,
-    id,
-  } = user;
+  const companyData = {
+    company_name: "Devemeet",
+    first_name: "Emiliano",
+    last_name: "Scanga",
+    cel: "+3412345678",
+    city: "Milano",
+    work_type: 2,
+    website: "https://devmeet.dev",
+    sector: "Digital Agency",
+    description: "Devmeet è un'applicazione che connette professionisti con aziende  e viceversa, da tutto il mondo."
+  } 
 
   return (
     <>
@@ -73,7 +69,7 @@ export function ProfileSettings({ data, user, company }) {
             }}
           >
             {/* {first_name} {last_name} */}
-            <h2 style={{ fontWeight: "bold", color: "white" }}>Devmeet</h2>
+            <h2 style={{ fontWeight: "bold", color: "white" }}>{companyData.company_name}</h2>
           </div>
           <div
             className="ProfileJob"
@@ -85,7 +81,7 @@ export function ProfileSettings({ data, user, company }) {
           >
             <div>
               {/* {profession} */}
-              <p style={{ fontWeight: "500", color: "white" }}>Web Developer</p>
+              <p style={{ fontWeight: "500", color: "white" }}>{companyData.sector}</p>
             </div>
           </div>
         </div>
@@ -111,7 +107,7 @@ export function ProfileSettings({ data, user, company }) {
           height: "142vh",
         }}
       >
-        <Form company />
+        <Form company companyData={companyData}/>
       </div>
     </>
   );

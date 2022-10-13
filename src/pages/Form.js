@@ -9,7 +9,7 @@ import { NavBar } from "../components/NavBar";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Form({ user, company, userArr }) {
+export default function Form({ user, company, userArr , companyData}) {
   const [arrUser, setArrUser] = useState(userArr);
   const navigate = useNavigate();
 
@@ -43,12 +43,14 @@ export default function Form({ user, company, userArr }) {
             text={"Nome"}
             name={"nome"}
             handleChange={handleChange}
+            ph={companyData && companyData.first_name}
           />
           <FormRow
             textType
             text={"Cognome"}
             name={"Cognome"}
             handleChange={handleChange}
+            ph={companyData && companyData.last_name}
           />
           {user && (
             <FormRow
@@ -59,7 +61,7 @@ export default function Form({ user, company, userArr }) {
             />
           )}
           {company && (
-            <FormRow textType text={"Nome Azienda"} name={"Nome_Compagnia"} />
+            <FormRow textType text={"Nome Azienda"} name={"Nome_Compagnia"} ph={companyData && companyData.company_name}/>
           )}
           {user && (
             <div>
@@ -100,12 +102,14 @@ export default function Form({ user, company, userArr }) {
             text={"Recapito telefonico"}
             name={"recTel"}
             handleChange={handleChange}
+            ph={companyData && companyData.cel}
           />
           <FormRow
             text={"Città"}
             textType
             name={"citta"}
             handleChange={handleChange}
+            ph={companyData && companyData.city}
           />
           {user && (
             <div className="form-title-style">Sono in cerca di lavoro:</div>
@@ -144,7 +148,7 @@ export default function Form({ user, company, userArr }) {
             <div>
               <FormRow
                 site
-                ph={"https://www.example.com"}
+                ph={companyData && companyData.website}
                 text={"Sito Aziendale"}
                 name={"Sito Aziendale"}
               />
@@ -167,6 +171,7 @@ export default function Form({ user, company, userArr }) {
                 textType
                 text={"Settore attività aziendale"}
                 name={"Settore attività aziendale"}
+                ph={companyData && companyData.sector}
               />
             </div>
           )}
@@ -222,6 +227,7 @@ export default function Form({ user, company, userArr }) {
                 borderRadius: "6px",
                 borderColor: "white",
               }}
+              placeholder={companyData && companyData.description}
               onChange={handleChange}
             ></textarea>
           </div>
