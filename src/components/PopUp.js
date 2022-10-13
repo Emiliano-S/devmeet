@@ -1,6 +1,9 @@
+import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import closer from "../assets/svg/xRemove.svg";
 import Button from "./Button";
+import { Loading } from "./Loading";
 
 const PopUpAppointment = () => {
   return (
@@ -199,6 +202,38 @@ const PopUpRefuse = () => {
   );
 };
 
+const PopUpLogout = () => {
+  return (
+    <>
+      <span className="PopUpTitle">Logout</span>
+      <div className="PopUpText">
+        <p style={{ fontFamily: "DM Sans Bold" }}>
+          Sei sicuro di voler uscire?
+        </p>
+        <p>
+          {" "}
+          Se decidi di uscire, verrai reindirizzato alla schermata di accesso.{" "}
+        </p>
+      </div>
+      <Link style={{ textDecoration: "none" }} to="/">
+        <div className="PopUpText">
+          <Button
+            submit
+            type="submit"
+            form="user-info"
+            value="Submit"
+            bgColor={"#fcf347"}
+            wd={"100%"}
+            hg={"3em"}
+            text={"DISCONNETTI"}
+            textColor={"rgb(54,71,100)"}
+          />
+        </div>
+      </Link>
+    </>
+  );
+};
+
 export function PopUp({ type, handleChange, propFunction }) {
   return (
     <div className="PopUpContainer">
@@ -208,6 +243,7 @@ export function PopUp({ type, handleChange, propFunction }) {
         {type === 3 && <PopUpDeactivateAccount />}
         {type === 4 && <PopUpReactivateAccount />}
         {type === 5 && <PopUpRefuse />}
+        {type === 6 && <PopUpLogout />}
         <div className="PopUpCloser" onClick={handleChange}>
           <img src={closer} alt="Chiudi PopUp" />
         </div>

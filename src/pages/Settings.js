@@ -113,6 +113,7 @@ const Settings = () => {
             flexDirection: "column",
             justifyContent: "center",
             paddingTop: "20px",
+            gap: "5px",
           }}
         >
           <div
@@ -136,16 +137,31 @@ const Settings = () => {
           </div>
           <Button
             submit
-            text={"ELIMINA ACCOUNT"}
-            textColor={"black"}
+            text={"ESCI"}
+            textColor={"#364764"}
             bgColor={"yellow"}
             wd={"266px"}
             hg={"50px"}
             wg={"bold"}
             onClickFunction={() => {
-              closePopUp(2);
+              closePopUp(6);
             }}
           />
+          <div
+            style={{
+              marginTop: "15px",
+              textAlign: "center",
+              textDecorationLine: "underline",
+              color: "#364764",
+              fontSize: "14px",
+              fontWeight: "500",
+            }}
+            onClick={() => {
+              closePopUp(2);
+            }}
+          >
+            Elimina Account
+          </div>
         </div>
       </div>
     </>
