@@ -69,7 +69,7 @@ export function AddPhoto({ user, company }) {
               display: "flex",
               width: "100%",
               justifycontent: "flex-start",
-              marginBottom: "50px",
+              marginTop: "50px",
             }}
           >
             <div>

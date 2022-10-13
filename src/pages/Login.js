@@ -18,6 +18,7 @@ function Login({ registration, user }) {
           )}
           {!registration && (
             <div className="registration-container">
+              <Link to="/card">
               <Button
                 submit
                 name={"SubmitLogin"}
@@ -28,6 +29,7 @@ function Login({ registration, user }) {
                 wg={"bold"}
                 textColor={"#364764"}
               />
+              </Link>
               <div className="text-login-registration">
                 <p>
                   Sei un nuovo utente?{" "}

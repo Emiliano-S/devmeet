@@ -90,7 +90,6 @@ function FormRow({
           <div className="form-title-style">{text}</div>
           <input
             type="password"
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
             className="input-form-style"
             id={id}
             name={name}
