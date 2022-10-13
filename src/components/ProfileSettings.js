@@ -1,5 +1,6 @@
 import devArrowBg from "../assets/svg/devArrowBg.svg";
 import Form from "../pages/Form";
+import Devmeet from "../assets/img/userPicture/devmeet.png";
 import MarioVerde from "../assets/img/userPicture/MarioVerde.png";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -49,20 +50,19 @@ export function ProfileSettings({ data, user }) {
               marginTop: "10%",
             }}
           >
-            <div>
-              <Link to="/signUp/RegUser/Addphoto">
-                <img
-                  src={MarioVerde}
-                  // src={user_picture}
-                  style={{
-                    height: "64px",
-                    width: "64px",
-                    borderRadius: "50%",
-                  }}
-                  alt="Profile"
-                />
-              </Link>
-            </div>
+            <Link to="/signUp/RegUser/Addphoto">
+              <div
+                style={{
+                  height: "64px",
+                  width: "64px",
+                  borderRadius: "50%",
+                  border: "3px solid white",
+                  backgroundImage: `url(${Devmeet})`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "none",
+                }}
+              />
+            </Link>
           </div>
           <div
             className="ProfileName"
@@ -108,8 +108,9 @@ export function ProfileSettings({ data, user }) {
           width: "100%",
           borderTopLeftRadius: "25px",
           borderTopRightRadius: "25px",
-          height: "100%",
           top: "250px",
+          bottom: "250px",
+          height: "142vh",
         }}
       >
         <Form user />

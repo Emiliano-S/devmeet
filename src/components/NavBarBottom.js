@@ -22,10 +22,14 @@ export function NavBarBottom() {
     "/login",
     "/signUp/regUser",
     "/signUp/user",
-    "/singUp/regUser/skills",
-    "/singUp/regUser/workExperiences",
-    "/singUp/regUser/linksLanguages",
+    "/signUp/regCompany",
+    "/signUp/company",
+    "/signUp/regUser/skills",
+    "/signUp/regUser/workExperiences",
+    "/signUp/regUser/linksLanguages",
     "/signUp/regUser/addPhoto",
+    "/signUp/regCompany/skills",
+    "/signUp/regCompany/addLogo",
     "/settings",
   ];
   const notificationsAmount = useSelector(

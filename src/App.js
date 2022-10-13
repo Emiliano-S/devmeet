@@ -62,6 +62,10 @@ function App({ user }) {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signUp/company" element={<Form company />} />
+          <Route
+            path="/signUp/regCompany/skills"
+            element={<Skills company />}
+          />
           <Route path="/card" element={<CardContainer />} />
           <Route
             path="/signUp/user"
@@ -70,13 +74,13 @@ function App({ user }) {
           <Route path="/signUp/regUser" element={<Login registration user />} />
           <Route path="/signUp/regCompany" element={<Login registration />} />
           <Route path="/filterBy" element={<Filterby />} />
-          <Route path="/singUp/regUser/skills" element={<Skills />} />
+          <Route path="/signUp/regUser/skills" element={<Skills user />} />
           <Route
-            path="/singUp/regUser/workExperiences"
-            element={<WorkExperiences />}
+            path="/signUp/regUser/workExperiences"
+            element={<WorkExperiences user />}
           />
           <Route
-            path="/singUp/regUser/linksLanguages"
+            path="/signUp/regUser/linksLanguages"
             element={<LinksLanguages />}
           />
           <Route

@@ -23,8 +23,13 @@ export default function Form({ user, company, userArr }) {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/singUp/regUser/skills", { state: { arr: arrUser } });
+    if (user) {
+      e.preventDefault();
+      navigate("/signUp/regUser/skills", { state: { arr: arrUser } });
+    } else {
+      e.preventDefault();
+      navigate("/signUp/regCompany/skills", { state: { arr: arrUser } });
+    }
   };
 
   return (
@@ -32,20 +37,19 @@ export default function Form({ user, company, userArr }) {
       {/* <NavBar back/> */}
       <div className="form-container">
         <form id="user-info" onSubmit={handleSubmit}>
+          {" "}
           <FormRow
             textType
             text={"Nome"}
             name={"nome"}
             handleChange={handleChange}
           />
-
           <FormRow
             textType
             text={"Cognome"}
             name={"Cognome"}
             handleChange={handleChange}
           />
-
           {user && (
             <FormRow
               data
@@ -57,7 +61,6 @@ export default function Form({ user, company, userArr }) {
           {company && (
             <FormRow textType text={"Nome Azienda"} name={"Nome_Compagnia"} />
           )}
-
           {user && (
             <div>
               <div className="form-title-style">Sesso</div>
@@ -92,21 +95,18 @@ export default function Form({ user, company, userArr }) {
               </div>
             </div>
           )}
-
           <FormRow
             number
             text={"Recapito telefonico"}
             name={"recTel"}
             handleChange={handleChange}
           />
-
           <FormRow
             text={"Città"}
             textType
             name={"citta"}
             handleChange={handleChange}
           />
-
           {user && (
             <div className="form-title-style">Sono in cerca di lavoro:</div>
           )}
@@ -143,7 +143,8 @@ export default function Form({ user, company, userArr }) {
           {company && (
             <div>
               <FormRow
-                textType
+                site
+                ph={"https://www.example.com"}
                 text={"Sito Aziendale"}
                 name={"Sito Aziendale"}
               />
@@ -186,7 +187,6 @@ export default function Form({ user, company, userArr }) {
               />
             </div>
           )}
-
           <div
             style={{
               width: "100%",
@@ -225,7 +225,6 @@ export default function Form({ user, company, userArr }) {
               onChange={handleChange}
             ></textarea>
           </div>
-
           <div
             className="container-continue-button"
             style={{ paddingBottom: "10%" }}

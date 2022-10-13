@@ -28,9 +28,9 @@ export function NavBar({ options, back }) {
     } else if (location.pathname === "/settings") {
       setBgColor("#364764");
       setLogo(navLogoWhite);
-      setBackFill(navBackArrowWhite);
+
       setOptFill(remove);
-      setProfile(false);
+      setProfile(true);
     } else if (location.pathname === "/card") {
       setBgColor("white");
       setLogo(navLogo);

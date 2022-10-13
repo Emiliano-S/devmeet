@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Button from "../components/Button";
 
-export function Skills() {
+export function Skills({ user, company }) {
   const { state } = useLocation();
   const { arr } = state;
   const [toPopulate, setToPopulate] = useState(arr);
@@ -13,14 +13,23 @@ export function Skills() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/singUp/regUser/workExperiences", { state: { arr: toPopulate } });
+    if (user) {
+      navigate("/signUp/regUser/workExperiences", {
+        state: { arr: toPopulate },
+      });
+    } else {
+      navigate("/signUp/regCompany/addLogo", {
+        state: { arr: toPopulate },
+      });
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="skillsPageContainer">
         <div className="skillsContainer">
-          <h3>Le tue skill</h3>
+          {user && <h3>Le tue skill</h3>}
+          {company && <h3>Competenze ricercate</h3>}
           <InputArrayFilter
             array={skillsArray}
             contentType="skill"

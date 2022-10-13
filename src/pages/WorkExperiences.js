@@ -9,7 +9,7 @@ export function WorkExperiences() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    navigate("/singUp/regUser/linksLanguages", { state: { arr: toPopulate } });
+    navigate("/signUp/regUser/linksLanguages", { state: { arr: toPopulate } });
   };
 
   return (
