@@ -101,6 +101,7 @@ const PopUpDeactivateAccount = (handleChange) => {
           hg={"3em"}
           text={"NASCONDI PROFILO"}
           textColor={"rgb(54,71,100)"}
+          onClick={handleChange}
         />
       </div>
     </>
@@ -182,7 +183,7 @@ const PopUpRefuse = () => {
             textColor={"rgb(54,71,100)"}
           />
           <Button
-            submit
+            lowOp
             type="submit"
             form="user-info"
             value="Submit"
@@ -198,7 +199,7 @@ const PopUpRefuse = () => {
   );
 };
 
-export function PopUp({ type, handleChange }) {
+export function PopUp({ type, handleChange, propFunction }) {
   return (
     <div className="PopUpContainer">
       <div className="PopUp">

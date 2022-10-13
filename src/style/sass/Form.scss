@@ -1,54 +1,51 @@
-
 .container-radio-button {
-    display: flex;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 13px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    width:100%;
-    input {
-        position: absolute;
-  opacity: 0;
+  display: flex;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
   cursor: pointer;
-    }
-    .checkmark-radio-button {
-        position: absolute;
-        display:flex;
-        top: 0;
-        left: 0;
-        background-color: #eee;
-        border-radius: 6px;
-        text-align:center;
-        align-items:center;
-        justify-content:center;
-        
-    }
-    
+  font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
   }
-
+  .checkmark-radio-button {
+    font-size: 12px;
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 .container-radio-button:hover input ~ .checkmark-radio-button {
   background-color: #ccc;
 }
 
 .container-radio-button input:checked ~ .checkmark-radio-button {
-    background-color: yellow;
-  }
+  background-color: #fcf347;
+}
 
 body {
   background-color: #f9f9f9;
   height: auto;
-  padding-bottom:170px;
-
+  padding-bottom: 170px;
 }
 .form-container {
   width: 90%;
   margin: 5%;
+  color: #364764;
 }
 .form-title-style {
   padding: 0.8em 0em;
@@ -60,7 +57,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap:5%;
+  gap: 5%;
 }
 .input-form-style {
   width: 100%;
@@ -68,41 +65,43 @@ body {
   outline: none;
   border-color: transparent;
   border-radius: 0.8em;
+  color: #364764;
+  font-size: 12px;
 }
 
 .container-continue-button {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height:3rem;
-  margin:auto;
+  height: 3rem;
+  margin: auto;
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin-top:15%;
-  padding:auto;
+  margin-top: 15%;
+  padding: auto;
 }
 
 .pass-forgot {
   display: flex;
   justify-content: end;
-  margin-top:5px;
+  margin-top: 5px;
   a {
-   color:black;
-   text-decoration-color: yellow;
-   -moz-text-decoration-color: yellow;
-}
+    color: #364764;
+    text-decoration-color: #fcf347;
+    -moz-text-decoration-color: #fcf347;
+  }
 }
 
 .text-login-registration {
   display: flex;
   justify-content: center;
-  margin-top:10px;
-  p a  {
-    color:black;
-    text-decoration-color: yellow;
-    -moz-text-decoration-color: yellow;
-}
+  margin-top: 10px;
+  p a {
+    color: #364764;
+    text-decoration-color: #fcf347;
+    -moz-text-decoration-color: #fcf347;
+  }
 }
 .registration-container {
   margin-top: 70px;

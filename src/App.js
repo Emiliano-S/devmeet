@@ -1,8 +1,4 @@
-import { useState } from "react";
 import "./App.css";
-import { CardContainer } from "./pages/CardContainer";
-import LandingPage from "./pages/LandingPage";
-import { NavBar } from "./components/NavBar";
 import SignUp from "./pages/SignUp";
 import Form from "./pages/Form";
 import Login from "./pages/Login";
@@ -15,6 +11,17 @@ import { LinksLanguages } from "./pages/LinksLanguages";
 import Settings from "./pages/Settings";
 import { ProfileSettings } from "./components/ProfileSettings";
 import { NavBarBottom } from "./components/NavBarBottom";
+import { Loading } from "./components/Loading";
+import { useState } from "react";
+import "./App.css";
+import { CardContainer } from "./pages/CardContainer";
+import LandingPage from "./pages/LandingPage";
+import { NavBar } from "./components/NavBar";
+import Login from "./pages/Login";
+import ReactCalendar from "./components/ReactCalendar";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import AppNotifications from "./components/AppNotifications";
+// import AppNotifications from "./components/AppNotifications";
 
 const userSignUp = {
   email: "",
@@ -87,7 +94,13 @@ function App({ user }) {
             path="/ProfileSettings"
             element={<ProfileSettings id user />}
           />
+          <Route path="/loading" element={<Loading />} />
+          <Route path="/calendar" element={<ReactCalendar />} />
+          <Route path="/notifiche" element={<AppNotifications />} />
+          {/* navbar con le notifiche */}
+          {/* <Route path="/bottomNavbar1" element={<BottomNavbar1 />} /> */}
         </Routes>
+
         {/*
         <CardContainer data={dbCard}/>
 
