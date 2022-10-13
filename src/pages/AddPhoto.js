@@ -5,6 +5,7 @@ export function AddPhoto({ user, company }) {
       style={{
         paddingLeft: "5%",
         paddingRight: "5%",
+        paddingBottom: "20%",
         display: "flex",
         flexDirection: "column",
         height: "90%",
@@ -68,7 +69,7 @@ export function AddPhoto({ user, company }) {
               display: "flex",
               width: "100%",
               justifycontent: "flex-start",
-              marginBottom: "50px",
+              marginTop: "50px",
             }}
           >
             <div>

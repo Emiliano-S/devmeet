@@ -12,7 +12,7 @@ export function LinksLanguages() {
 
   const handleSubmit = (e) => {
     console.log(toPopulate);
-    //navigate("/singUp/regUser/linksLanguages", { state: { arr: toPopulate } });
+    navigate("/signUp/regUser/addPhoto");
   };
   return (
     <div className="skillsPageContainer">

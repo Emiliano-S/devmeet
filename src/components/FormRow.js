@@ -4,14 +4,25 @@ import useSWR from "swr";
 import data from "../data/db";
 import { useDispatch } from "react-redux";
 
-function FormRow({ text, textType, id, name, ph, data, password, number, email, dropdown, options, handleChange, notRequired = false }) {
-    const [value, setValue] = useState();
-    
+function FormRow({
+  text,
+  textType,
+  id,
+  name,
+  ph,
+  data,
+  password,
+  number,
+  email,
+  dropdown,
+  options,
+  site,
+  handleChange,
+  notRequired = false,
+}) {
+  const [value, setValue] = useState();
 
- 
-
-
-    /* Esempio:
+  /* Esempio:
     <FormRow 
     password
     text = {'Password'}
@@ -48,7 +59,6 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email, 
           <div className="form-title-style">{text}</div>
           <input
             type="text"
-            pattern="[A-Za-z\s]+"
             className="input-form-style"
             id={id}
             name={name}
@@ -59,12 +69,27 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email, 
         </>
       )}
 
+      {site && (
+        <>
+          <div className="form-title-style">{text}</div>
+          <input
+            type="url"
+            pattern="https://.*"
+            className="input-form-style"
+            id={id}
+            name={name}
+            required={!notRequired}
+            placeholder={ph}
+            onChange={handleChange}
+          />
+        </>
+      )}
+
       {password && (
         <>
           <div className="form-title-style">{text}</div>
           <input
-            type='password'
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+            type="password"
             className="input-form-style"
             id={id}
             name={name}
@@ -78,7 +103,7 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email, 
         <>
           <div className="form-title-style">{text}</div>
           <input
-            type='email'
+            type="email"
             className="input-form-style"
             id={id}
             name={name}
@@ -88,19 +113,19 @@ function FormRow({ text, textType, id, name, ph, data, password, number, email, 
           ></input>
         </>
       )}
-        {number && (
+      {number && (
         <>
-            <div className="form-title-style">{text}</div>
-            <PhoneInput
-                        placeholder=''
-                        name={value}
-                        onChange={setValue}
-                    /> </>)}
+          <div className="form-title-style">{text}</div>
+          <PhoneInput placeholder="" name={value} onChange={setValue} />{" "}
+        </>
+      )}
 
-        {dropdown && (<div>
-          <div className= "form-title-style">{text}</div>
-            {options}
-          </div>)}
+      {dropdown && (
+        <div>
+          <div className="form-title-style">{text}</div>
+          {options}
+        </div>
+      )}
     </div>
   );
 }

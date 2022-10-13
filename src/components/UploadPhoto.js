@@ -38,6 +38,7 @@ const UploadAndDisplayImage = ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center"
           }}
         >
           {selectedImage ? (
@@ -46,7 +47,8 @@ const UploadAndDisplayImage = ({
                 style={{
                   display: "flex",
                   width: "100%",
-                  justifyContent: "flex-end",
+                  justifyContent: "flex-start",
+                  gap: "30px",
                 }}
               >
                 <button
@@ -112,6 +114,7 @@ const UploadAndDisplayImage = ({
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
           }}
         >
           {selectedImage ? (
@@ -187,7 +190,8 @@ const UploadAndDisplayImage = ({
             display: "flex",
             flexDirection: "column",
             height: "100%",
-            justifyContent: "space-between",
+            justifyContent: "flex-start",
+            gap: "30px",
           }}
         >
           <label
@@ -227,7 +231,7 @@ const UploadAndDisplayImage = ({
               style={{ display: "none" }}
               type="file"
               name="myImage"
-              accept= "image/*"
+              accept="image/*"
               onChange={(event) => {
                 console.log(event.target.files[0]);
                 setSelectedImage(event.target.files[0]);
@@ -236,7 +240,7 @@ const UploadAndDisplayImage = ({
             />
           </label>
           <div>
-            <Link to="/FilterBy">
+            <Link to="/card">
               <Button
                 lowOp
                 text={"CARICA IN SEGUITO"}
@@ -251,7 +255,7 @@ const UploadAndDisplayImage = ({
         </div>
       ) : (
         <div>
-          <Link to="/FilterBy">
+          <Link to="/card">
             <Button
               lowOp
               text={"REGISTRATI"}

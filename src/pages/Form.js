@@ -7,11 +7,12 @@ import FormRow from "../components/FormRow";
 import UploadButton from "../components/UploadButton";
 import { NavBar } from "../components/NavBar";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
-export default function Form({ user, company, userArr }) {
+export default function Form({ user, company, userArr , companyData}) {
   const [arrUser, setArrUser] = useState(userArr);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,8 +24,13 @@ export default function Form({ user, company, userArr }) {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate("/singUp/regUser/skills", { state: {arr: arrUser} })
+    if (user) {
+      e.preventDefault();
+      navigate("/signUp/regUser/skills", { state: { arr: arrUser } });
+    } else {
+      e.preventDefault();
+      navigate("/signUp/regCompany/skills", { state: { arr: arrUser } });
+    }
   };
 
   return (
@@ -32,13 +38,32 @@ export default function Form({ user, company, userArr }) {
       {/* <NavBar back/> */}
       <div className="form-container">
         <form id="user-info" onSubmit={handleSubmit}>
-          <FormRow textType text={"Nome e Cognome"} name={"nomeCognome"} handleChange={handleChange} />
-
-          {user && <FormRow data text={"Data di nascita"} name={"dataNascita"} handleChange={handleChange}/>}
-          {company && (
-            <FormRow textType text={"Nome Azienda"} name={"Nome_Compagnia"} />
+          {" "}
+          <FormRow
+            textType
+            text={"Nome"}
+            name={"nome"}
+            handleChange={handleChange}
+            ph={companyData && companyData.first_name}
+          />
+          <FormRow
+            textType
+            text={"Cognome"}
+            name={"Cognome"}
+            handleChange={handleChange}
+            ph={companyData && companyData.last_name}
+          />
+          {user && (
+            <FormRow
+              data
+              text={"Data di nascita"}
+              name={"dataNascita"}
+              handleChange={handleChange}
+            />
           )}
-
+          {company && (
+            <FormRow textType text={"Nome Azienda"} name={"Nome_Compagnia"} ph={companyData && companyData.company_name}/>
+          )}
           {user && (
             <div>
               <div className="form-title-style">Sesso</div>
@@ -73,11 +98,20 @@ export default function Form({ user, company, userArr }) {
               </div>
             </div>
           )}
-
-          <FormRow number text={"Recapito telefonico"} name={"recTel"} handleChange={handleChange} />
-
-          <FormRow text={"Stato e città"} textType name={"citta"} handleChange={handleChange}/>
-
+          <FormRow
+            textType
+            text={"Recapito telefonico"}
+            name={"recTel"}
+            handleChange={handleChange}
+            ph={companyData && companyData.cel}
+          />
+          <FormRow
+            text={"Città"}
+            textType
+            name={"citta"}
+            handleChange={handleChange}
+            ph={companyData && companyData.city}
+          />
           {user && (
             <div className="form-title-style">Sono in cerca di lavoro:</div>
           )}
@@ -100,6 +134,7 @@ export default function Form({ user, company, userArr }) {
               hg={"3em"}
               text={"In sede"}
               handleChange={handleChange}
+              checked= {companyData && companyData.work_type}
             />
             <Button
               selectButton
@@ -114,7 +149,8 @@ export default function Form({ user, company, userArr }) {
           {company && (
             <div>
               <FormRow
-                textType
+                site
+                ph={companyData && companyData.website}
                 text={"Sito Aziendale"}
                 name={"Sito Aziendale"}
               />
@@ -137,12 +173,18 @@ export default function Form({ user, company, userArr }) {
                 textType
                 text={"Settore attività aziendale"}
                 name={"Settore attività aziendale"}
+                ph={companyData && companyData.sector}
               />
             </div>
           )}
           {user && (
             <div>
-              <FormRow textType text={"Qualifica"} name={"qualifica"} handleChange={handleChange} />
+              <FormRow
+                textType
+                text={"Qualifica"}
+                name={"qualifica"}
+                handleChange={handleChange}
+              />
 
               <UploadButton
                 bgColor={"#364764"}
@@ -152,7 +194,6 @@ export default function Form({ user, company, userArr }) {
               />
             </div>
           )}
-
           <div
             style={{
               width: "100%",
@@ -175,7 +216,7 @@ export default function Form({ user, company, userArr }) {
                 for="textArea"
                 style={{ display: "block", fontWeight: "bold" }}
               >
-                Descrivi la tua azienda (possibile RAL e benefit)
+                Descrivi la tua azienda
               </label>
             )}
 
@@ -187,23 +228,30 @@ export default function Form({ user, company, userArr }) {
                 resize: "none",
                 borderRadius: "6px",
                 borderColor: "white",
+                padding:"10px",
+                fontSize: "12px"
               }}
+              placeholder={companyData && companyData.description}
               onChange={handleChange}
             ></textarea>
           </div>
-
-          <div className="container-continue-button" style = {{paddingBottom : '10%'}}>
-              <Button
-                submit
-                type="submit"
-                form="user-info"
-                value="Submit"
-                bgColor={"yellow"}
-                wd={"50%"}
-                hg={"3em"}
-                text={"CONTINUA"}
-                textColor={"rgb(54,71,100)"}
-              />
+          <div
+            className="container-continue-button"
+            style={{ paddingBottom: "10%" }}
+          >
+            <Button
+              submit
+              type="submit"
+              form="user-info"
+              value="Submit"
+              bgColor={"#fcf347"}
+              wd={"50%"}
+              hg={"3em"}
+              text={
+                location.pathname === "/profilesettings" ? "SALVA" : "CONTINUA"
+              }
+              textColor={"rgb(54,71,100)"}
+            />
           </div>
         </form>
       </div>

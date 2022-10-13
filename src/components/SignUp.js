@@ -12,7 +12,7 @@ const SignUp = () => {
             </div>
             <div className="signUp-buttons">
                 <div className="signUp-button">
-                <Button lowOp text={'AZIENDA'} bgColor={'yellow'} textColor={'black'} wd={'266px'} hg={'50px'} wg={'bold'}/>
+                <Button lowOp text={'AZIENDA'} bgColor={'yellow'} textColor={'#364764'} wd={'266px'} hg={'50px'} wg={'bold'}/>
                 </div>
                 <div className="signUp-button">
                 <Button lowOp text={'PRIVATO'} bgColor={'black'} textColor={'white'} wd={'266px'} hg={'50px'} wg={'bold'}/>

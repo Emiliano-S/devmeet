@@ -13,6 +13,7 @@ const Button = ({
   name,
   handleChange,
   onClickFunction,
+  checked,
 }) => {
   // USARE lowOp PER I PULSANTI CHE FANNO CAMBIARE PAGINA
   // USARE selectButton PER I PULSANTI A SCELTA MULTIPLA (Da fixare)
@@ -26,6 +27,7 @@ const Button = ({
 
   function handleButtonClickReset(event) {
     event.target.style.opacity = 0.5;
+    if (onClickFunction !== undefined) onClickFunction();
     setTimeout(() => {
       event.target.disabled = true;
       setTimeout(() => {
@@ -66,7 +68,7 @@ const Button = ({
                             text={''} /> */}
       {selectButton && (
         <label className="container-radio-button" style={{}}>
-          <input type="radio" name={name} value={text} onClick={handleChange} />
+          <input type="radio" name={name} value={text} onClick={handleChange} checked={checked} />
           <span
             className="checkmark-radio-button"
             style={{

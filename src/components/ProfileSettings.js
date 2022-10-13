@@ -1,24 +1,21 @@
 import devArrowBg from "../assets/svg/devArrowBg.svg";
 import Form from "../pages/Form";
+import Devmeet from "../assets/img/userPicture/devmeet.png";
 import MarioVerde from "../assets/img/userPicture/MarioVerde.png";
 import { Link, useNavigate } from "react-router-dom";
 
-export function ProfileSettings({ data, user }) {
-  const {
-    first_name,
-    last_name,
-    email,
-    sex,
-    bio,
-    profession,
-    skills,
-    open_to_work,
-    language,
-    available_for,
-    user_picture,
-    date,
-    id,
-  } = user;
+export function ProfileSettings({ data, user, company }) {
+  const companyData = {
+    company_name: "Devemeet",
+    first_name: "Emiliano Gabriele",
+    last_name: "Scanga",
+    cel: "+3412345678",
+    city: "Milano",
+    work_type: true,
+    website: "https://devmeet.dev",
+    sector: "Digital Agency",
+    description: "Devmeet è un'applicazione che connette professionisti con aziende  e viceversa, da tutto il mondo."
+  } 
 
   return (
     <>
@@ -49,19 +46,19 @@ export function ProfileSettings({ data, user }) {
               marginTop: "10%",
             }}
           >
-            <div>
-              <Link to="/signUp/RegUser/Addphoto">
-                <img
-                  src={MarioVerde}
-                  // src={user_picture}
-                  style={{
-                    height: "64px",
-                    width: "64px",
-                    borderRadius: "50%",
-                  }}
-                />
-              </Link>
-            </div>
+            <Link to="/signUp/RegUser/Addphoto">
+              <div
+                style={{
+                  height: "64px",
+                  width: "64px",
+                  borderRadius: "50%",
+                  border: "3px solid white",
+                  backgroundImage: `url(${Devmeet})`,
+                  backgroundSize: "cover",
+                  backgroundRepeat: "none",
+                }}
+              />
+            </Link>
           </div>
           <div
             className="ProfileName"
@@ -72,7 +69,7 @@ export function ProfileSettings({ data, user }) {
             }}
           >
             {/* {first_name} {last_name} */}
-            <h2 style={{ fontWeight: "bold", color: "white" }}>Mario Verde</h2>
+            <h2 style={{ fontWeight: "bold", color: "white" }}>{companyData.company_name}</h2>
           </div>
           <div
             className="ProfileJob"
@@ -84,9 +81,7 @@ export function ProfileSettings({ data, user }) {
           >
             <div>
               {/* {profession} */}
-              <p style={{ fontWeight: "500", color: "white" }}>
-                Full Stack Developer
-              </p>
+              <p style={{ fontWeight: "500", color: "white" }}>{companyData.sector}</p>
             </div>
           </div>
         </div>
@@ -107,11 +102,11 @@ export function ProfileSettings({ data, user }) {
           width: "100%",
           borderTopLeftRadius: "25px",
           borderTopRightRadius: "25px",
-          height: "100%",
           top: "250px",
+          bottom: "250px",
         }}
       >
-        <Form user />
+        <Form company companyData={companyData}/>
       </div>
     </>
   );
