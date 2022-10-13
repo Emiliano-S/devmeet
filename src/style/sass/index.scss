@@ -1,6 +1,9 @@
 @use "./animations/fadeLeft" as *;
 @use "./animations/fadeRight" as *;
 @use "./animations/fadeIn" as *;
+@use "./animations/popIn" as *;
+@use "./animations/popOut" as *;
+
 @import "./Filterby.scss";
 @import "./Form.scss";
 @import "./LandingPage.scss";
@@ -28,4 +31,12 @@
 
 .goIn{
     @include fadeIn(goIn, 1.5s);
+}
+
+.pupIn{
+    @include popIn(popIn, .5s);
+}
+
+.pupOut{
+    @include popOut(popOut, .5s);
 }

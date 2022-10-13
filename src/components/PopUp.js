@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@ import { Loading } from "./Loading";
 const PopUpAppointment = () => {
   return (
     <>
-      <span className="PopUpTitle">Fissa un appuntamento</span>
+      <span className="PopUpTitle ">Fissa un appuntamento</span>
       <form>
         <div className="formAppointRow">
           <div className="formAppointInput">
@@ -235,16 +236,26 @@ const PopUpLogout = () => {
 };
 
 export function PopUp({ type, handleChange, propFunction }) {
+    const ref = useRef();
+
+    const closePopUp = () =>{
+      ref.current.className += " pupOut";
+      const removeTimer = setTimeout(()=>{
+        handleChange();
+        clearTimeout(removeTimer);
+      }, 310);
+    }
+
   return (
     <div className="PopUpContainer">
-      <div className="PopUp">
+      <div className="PopUp pupIn" ref={ref}>
         {type === 1 && <PopUpAppointment />}
         {type === 2 && <PopUpDeleteAccount />}
         {type === 3 && <PopUpDeactivateAccount />}
         {type === 4 && <PopUpReactivateAccount />}
         {type === 5 && <PopUpRefuse />}
         {type === 6 && <PopUpLogout />}
-        <div className="PopUpCloser" onClick={handleChange}>
+        <div className="PopUpCloser" onClick={closePopUp}>
           <img src={closer} alt="Chiudi PopUp" />
         </div>
       </div>
