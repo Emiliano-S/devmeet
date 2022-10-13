@@ -28,10 +28,9 @@ export function NavBarBottom() {
     "/signUp/regUser/addPhoto",
     "/settings",
   ];
-  const notificationsAmount = useSelector(
-    (state) => state.notifications.length
-  );
-
+   const notificationsAmount = useSelector(
+     (state) => state.appointments[0].notifications.length
+   );
   const [popUpVisibility, setPopUpVisibility] = useState(false);
 
   const closePopUp = () => {

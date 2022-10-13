@@ -6,15 +6,7 @@ import { createStore } from "redux";
 const store = createStore(() => ({
   first_card_loading: true,
   appointments: [
-    {
-      id: 1,
-      logo: google,
-      name: "Google",
-      appointment: "Lunedi 22 Settembre - Ore 15:45",
-      held: false,
-      accepted: true,
-      declined: false,
-    },
+
   ],
   notifications: [
     {

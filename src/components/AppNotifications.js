@@ -1,16 +1,16 @@
-import notificationsDb from "../data/notificationsDb";
 import { useState } from "react";
 import { PopUp } from "../components/PopUp";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addAppointment } from "../store/appointments/appointments";
+import { useEffect } from "react";
+
 
 const AppNotifications = () => {
   // for the on click of the buttons
-  const [notification, setNotification] = useState(
-    useSelector((state) => state.notifications)
-  );
-  const [appointment, setAppointment] = useState(
-    useSelector((state) => state.appointments)
-  );
+  const notification = useSelector((state) => state.appointments[0].notifications);
+  const appointment = useSelector((state) => state.appointments[0].appointments);
+  const dispatch = useDispatch();
+
   const [show, setShow] = useState(-1);
   const [popUpVisibility, setPopUpVisibility] = useState(false);
   const [popUpType, setPopUpType] = useState(0);
@@ -20,9 +20,12 @@ const AppNotifications = () => {
   };
 
   const acceptAppointment = (accepted, index, notificationId) => {
-    setAppointment((prev) => {
-      return [...prev, notification[index]];
-    });
+    // setAppointment((prev) => {
+    //   return [...prev, notification[index]];
+    // });
+    console.log(notification[index])
+    dispatch(addAppointment(notification[index]));
+
     declineAppointment(notificationId);
   };
 
@@ -35,7 +38,7 @@ const AppNotifications = () => {
   };
 
   const declineAppointment = (id) => {
-    setNotification(notification.filter((item) => item.id !== id));
+    // setNotification(notification.filter((item) => item.id !== id));
   };
 
   return (

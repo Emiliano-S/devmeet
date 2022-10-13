@@ -15,15 +15,7 @@ const defaultAppointments = [
   {
     first_card_loading: true,
     appointments: [
-      {
-        id: 1,
-        logo: google,
-        name: "Google",
-        appointment: "Lunedi 22 Settembre - Ore 15:45",
-        held: false,
-        accepted: true,
-        declined: false,
-      },
+      
     ],
     notifications: [
       {
@@ -55,8 +47,8 @@ function appointments(state = defaultAppointments, action) {
         ...state,
         {
           logo: "",
-          name: state.name,
-          appointment: state.appointment,
+          name: action.name,
+          appointment: action.appointment,
           held: false,
           accepted: true,
           declined: false,
