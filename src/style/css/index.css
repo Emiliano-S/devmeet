@@ -846,6 +846,7 @@ body .CardContainer .Card {
   flex-wrap: wrap;
   gap: 20px 15px;
   padding: 20px 0px;
+  margin-top: 10px;
 }
 .CardContainer .Card .CardProfileDescriptionContainer .SkillsCards,
 .CardContainer .Card .CardProfileDescriptionContainer .LanguageCards {
