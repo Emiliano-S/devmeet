@@ -11,7 +11,7 @@ export function ProfileSettings({ data, user, company }) {
     last_name: "Scanga",
     cel: "+3412345678",
     city: "Milano",
-    work_type: 2,
+    work_type: true,
     website: "https://devmeet.dev",
     sector: "Digital Agency",
     description: "Devmeet è un'applicazione che connette professionisti con aziende  e viceversa, da tutto il mondo."

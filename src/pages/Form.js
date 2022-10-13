@@ -99,7 +99,7 @@ export default function Form({ user, company, userArr , companyData}) {
             </div>
           )}
           <FormRow
-            number
+            textType
             text={"Recapito telefonico"}
             name={"recTel"}
             handleChange={handleChange}
@@ -134,6 +134,7 @@ export default function Form({ user, company, userArr , companyData}) {
               hg={"3em"}
               text={"In sede"}
               handleChange={handleChange}
+              checked= {companyData && companyData.work_type}
             />
             <Button
               selectButton
@@ -215,7 +216,7 @@ export default function Form({ user, company, userArr , companyData}) {
                 for="textArea"
                 style={{ display: "block", fontWeight: "bold" }}
               >
-                Descrivi la tua azienda (possibile RAL e benefit)
+                Descrivi la tua azienda
               </label>
             )}
 
@@ -227,6 +228,8 @@ export default function Form({ user, company, userArr , companyData}) {
                 resize: "none",
                 borderRadius: "6px",
                 borderColor: "white",
+                padding:"10px",
+                fontSize: "12px"
               }}
               placeholder={companyData && companyData.description}
               onChange={handleChange}
