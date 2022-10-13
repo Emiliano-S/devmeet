@@ -1,6 +1,8 @@
 import notificationsDb from "../data/notificationsDb";
 import { useState } from "react";
 import { PopUp } from "../components/PopUp";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const AppNotifications = () => {
   // for the on click of the buttons
@@ -9,16 +11,23 @@ const AppNotifications = () => {
   const [show, setShow] = useState(-1);
   const [popUpVisibility, setPopUpVisibility] = useState(false);
   const [popUpType, setPopUpType] = useState(0);
+  const elementRef = useRef([]);
+
   const closePopUp = (type) => {
     setPopUpType(type);
     setPopUpVisibility(!popUpVisibility);
   };
 
-  const acceptAppointment = (accepted, index, notificationId) => {
-    setAppointment((prev) => {
-      return [...prev, notification[index]];
-    });
-    declineAppointment(notificationId);
+  const acceptAppointment = (accepted, id, notificationId) => {
+    elementRef.current[id].className += ` accepted`;
+    const remove = setTimeout(() => {
+      setNotification(notification.filter((item, index) => index !== id));
+      setAppointment((prev) => {
+        return [...prev, notification[id]];
+      });
+      clearTimeout(remove);
+    }, 1400);
+    setShow(-1);
   };
 
   const buttonsShower = (id) => {
@@ -29,8 +38,14 @@ const AppNotifications = () => {
     }
   };
 
+  useEffect(() =>{console.log(elementRef);})
+
   const declineAppointment = (id) => {
-    setNotification(notification.filter((item) => item.id !== id));
+    elementRef.current[id].className += ` removed`;
+    const remove = setTimeout(() => {
+      setNotification(notification.filter((item, index) => index !== id));
+      clearTimeout(remove);
+    }, 1300);
     setShow(-1);
   };
 
@@ -55,9 +70,12 @@ const AppNotifications = () => {
               <>
                 <div
                   className="appuntamento"
-                  key={id}
+                  key={element.name}
                   onClick={() => {
                     buttonsShower(id);
+                  }}
+                  ref={(refElement) => {
+                    elementRef.current[id] = refElement;
                   }}
                 >
                   <div id="placeholderJob" style={{backgroundImage: `url(${element.logo})`, backgroundSize: "cover", }}>
@@ -101,7 +119,7 @@ const AppNotifications = () => {
                         cursor: "pointer",
                       }}
                       onClick={() => {
-                        declineAppointment(element.id);
+                        declineAppointment(id);
                       }}
                     >
                       RIFIUTA
@@ -119,7 +137,7 @@ const AppNotifications = () => {
           {appointment.length > 0 ? (
             appointment.map((element, id) => {
               return (
-                <div className="appuntamento" key={element.id}>
+                <div className="appuntamento goIn" key={element.id}>
                   <div id="placeholderJob" style={{backgroundImage: `url(${element.logo})`, backgroundSize: "cover", }}>
 
                   </div>

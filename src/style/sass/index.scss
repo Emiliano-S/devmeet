@@ -1,3 +1,6 @@
+@use "./animations/fadeLeft" as *;
+@use "./animations/fadeRight" as *;
+@use "./animations/fadeIn" as *;
 @import "./Filterby.scss";
 @import "./Form.scss";
 @import "./LandingPage.scss";
@@ -13,3 +16,16 @@
 // @import "./Appointments.scss";
 @import "./PopUp.scss";
 @import "./Card.scss";
+
+
+.removed{
+    @include fadeLeft(removed, 1.5s);
+}
+
+.accepted{
+    @include fadeRight(accepted, 1.5s);
+}
+
+.goIn{
+    @include fadeIn(goIn, 1.5s);
+}

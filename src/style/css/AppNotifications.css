@@ -7,6 +7,7 @@
 } */
 body .container13 {
   width: 100vw;
+  overflow: hidden;
 }
 body .container13 #firstP {
   padding: 45px 0 20px 20px;
