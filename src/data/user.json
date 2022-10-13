@@ -16,12 +16,8 @@
       "cv": "./cv/cv.pdf",
       "skills": [
         {
-          "skill_name": "React",
+          "skill_name": "React.js",
           "skill_level": "Mid."
-        },
-        {
-          "skill_name": "JavaScript",
-          "skill_level": "Snr."
         },
         {
           "skill_name": "Php",
@@ -33,6 +29,10 @@
         },
         {
           "skill_name": "CSS",
+          "skill_level": "Snr."
+        },
+        {
+          "skill_name": "JavaScript",
           "skill_level": "Snr."
         },
         {
@@ -70,6 +70,85 @@
       "notifications": [],
       "appointments": [],
       "profile_picture": "./img/userPicture/MarioVerde.png",
+      "is_profile_visible": true,
+      "linkedin": "https://www.linkedin.com",
+      "github": "https://github.com",
+      "website": "https://google.com"
+    },
+    {
+      "id": 1,
+      "email": "maryrose@gmail.com",
+      "password": "MaryRose123",
+      "first_name": "Mary",
+      "last_name": "Rose",
+      "birth_date": "1994-04-20",
+      "sex": "donna",
+      "phone_number": "+3412345678",
+      "city": "Napoli",
+      "job_type": "Remote & On-site",
+      "role": "Senior Front-end Web Developer",
+      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur. Blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat.",
+      "cv": "./cv/cv.pdf",
+      "skills": [
+        {
+          "skill_name": "React.js",
+          "skill_level": "Snr."
+        },
+        {
+          "skill_name": "JavaScript",
+          "skill_level": "Snr."
+        },
+        {
+          "skill_name": "BootStrap",
+          "skill_level": "Snr."
+        },
+        {
+          "skill_name": "HTML",
+          "skill_level": "Snr."
+        },
+        {
+          "skill_name": "CSS",
+          "skill_level": "Snr."
+        },
+        {
+          "skill_name": "SASS",
+          "skill_level": "Snr."
+        },
+        {
+          "skill_name": "Node.js",
+          "skill_level": "Jr."
+        }
+      ],
+      "work_place": [],
+      "work_experience": [
+        {
+          "society": "Develhope",
+          "start_date": "01-01-2022",
+          "end_date": "in corso"
+        },
+        {
+          "society": "Google",
+          "start_date": "22-10-2021",
+          "end_date": "15-12-2021"
+        }
+      ],
+      "languages": [
+        {
+          "language": "Italiano",
+          "language_level": "C2"
+        },
+        {
+          "language": "Inglese",
+          "language_level": "C1"
+        },
+        {
+          "language": "Spagnolo",
+          "language_level": "C2"
+        }
+      ],
+      "notifications": [],
+      "appointments": [],
+      "profile_picture": "./img/userPicture/MaryRose.png",
       "is_profile_visible": true,
       "linkedin": "https://www.linkedin.com",
       "github": "https://github.com",
