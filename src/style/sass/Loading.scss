@@ -1,28 +1,43 @@
 .LoadingContainer {
   width: 100vw;
-  height: 100vh;
-  top: 0;
-  position: absolute;
-  z-index: 10000;
+  height: calc(100vh + 50px);
+  top: -50px;
+  position: fixed;
+  z-index: 102;
   background-color: #364764;
   display: flex;
   justify-content: center;
   align-items: center;
-  .LoadingAnimationContainer {
-    min-width: 95px;
-    height: 71px;
-    position: relative;
-    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
-    animation: heartbeat 1.5s ease-in-out infinite both;
-    #LoadingWhiteArrow {
-      position: absolute;
-      top: 3px;
-      left: 0;
+  animation: disappear 3.5s 2.5s;
+  -webkit-animation: disappear 3.5s 2.5s;
+  .LoadingContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    .LoadingAnimationContainer {
+      min-width: 95px;
+      height: 71px;
+      position: relative;
+      -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+      animation: heartbeat 1.5s ease-in-out infinite both;
+      #LoadingWhiteArrow {
+        position: absolute;
+        top: 3px;
+        left: 0;
+      }
+      #LoadingYellowArrow {
+        position: absolute;
+        bottom: -3px;
+        right: 0;
+      }
     }
-    #LoadingYellowArrow {
-      position: absolute;
-      bottom: -3px;
-      right: 0;
+    .LoadingText {
+      color: #ffffff;
+      width: 70%;
+      font-size: 14px;
+      text-align: center;
     }
   }
 }
@@ -93,5 +108,15 @@
     transform: scale(1);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

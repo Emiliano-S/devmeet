@@ -5,7 +5,6 @@ import LandingPage from "./pages/LandingPage";
 import { NavBar } from "./components/NavBar";
 import SignUp from "./pages/SignUp";
 import Form from "./pages/Form";
-import data from "./data/db";
 import Login from "./pages/Login";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Filterby } from "./pages/Filterby";
@@ -34,20 +33,20 @@ const userSignUp = {
   work_experience: [],
   languages: [],
   notifications: [],
-  appointments:[],
-  links: [{
-    linkedin: "",
-    github: "",
-    website: ""
-  }],
+  appointments: [],
+  links: [
+    {
+      linkedin: "",
+      github: "",
+      website: "",
+    },
+  ],
   cv: "",
   profile_picture: "",
-  is_profile_visible: true
+  is_profile_visible: true,
 };
 
 function App({ user }) {
-  const [dbCard, setdbCard] = useState(data);
-
   return (
     <div className="App">
       <BrowserRouter>
@@ -58,7 +57,7 @@ function App({ user }) {
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signUp/company" element={<Form company />} />
-          <Route path="/card" element={<CardContainer data={data} />} />
+          <Route path="/card" element={<CardContainer />} />
           <Route
             path="/signUp/user"
             element={<Form user userArr={userSignUp} />}
@@ -88,7 +87,6 @@ function App({ user }) {
             path="/ProfileSettings"
             element={<ProfileSettings id user />}
           />
-
         </Routes>
         {/*
         <CardContainer data={dbCard}/>
