@@ -496,6 +496,7 @@ body {
 .navBarBottomContainer .navBarBottom .navBarBottomButtons {
   width: 20%;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -509,6 +510,7 @@ body {
   min-width: 44px;
   height: 44px;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -523,6 +525,30 @@ body {
 .navBarBottomContainer .navBarBottom .navBarBottomButtons .navBarBottomButtonsActive.active {
   background-color: #fcf347;
   color: #364764;
+}
+.navBarBottomContainer .navBarBottom .navBarBottomButtons .navBarBottomButtonsActive.active .notificationNumber {
+  background-color: #ffffff;
+}
+.navBarBottomContainer .navBarBottom .navBarBottomButtons .navBarBottomButtonsActive .notificationNumber {
+  background-color: #fcf347;
+}
+
+.notificationNumber {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -6px;
+  right: 0px;
+  color: #364764;
+  font-family: "DM Sans Bold";
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
 }
 
 body {
