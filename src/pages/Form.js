@@ -7,11 +7,12 @@ import FormRow from "../components/FormRow";
 import UploadButton from "../components/UploadButton";
 import { NavBar } from "../components/NavBar";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Form({ user, company, userArr , companyData}) {
   const [arrUser, setArrUser] = useState(userArr);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -243,7 +244,9 @@ export default function Form({ user, company, userArr , companyData}) {
               bgColor={"#fcf347"}
               wd={"50%"}
               hg={"3em"}
-              text={"CONTINUA"}
+              text={
+                location.pathname === "/profilesettings" ? "SALVA" : "CONTINUA"
+              }
               textColor={"rgb(54,71,100)"}
             />
           </div>
