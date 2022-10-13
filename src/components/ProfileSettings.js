@@ -108,7 +108,6 @@ export function ProfileSettings({ data, user, company }) {
           borderTopRightRadius: "25px",
           top: "250px",
           bottom: "250px",
-          height: "142vh",
         }}
       >
         <Form company />

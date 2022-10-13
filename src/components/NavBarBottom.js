@@ -30,6 +30,7 @@ export function NavBarBottom() {
     "/signUp/regUser/addPhoto",
     "/signUp/regCompany/skills",
     "/signUp/regCompany/addLogo",
+    "/profilesettings",
     "/settings",
   ];
   const notificationsAmount = useSelector(
