@@ -82,7 +82,7 @@ function FormRow({
             required={!notRequired}
             placeholder={ph}
             onChange={handleChange}
-          ></input>
+          />
         </>
       )}
 

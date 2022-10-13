@@ -4,7 +4,7 @@ import Devmeet from "../assets/img/userPicture/devmeet.png";
 import MarioVerde from "../assets/img/userPicture/MarioVerde.png";
 import { Link, useNavigate } from "react-router-dom";
 
-export function ProfileSettings({ data, user }) {
+export function ProfileSettings({ data, user, company }) {
   const {
     first_name,
     last_name,
@@ -73,7 +73,7 @@ export function ProfileSettings({ data, user }) {
             }}
           >
             {/* {first_name} {last_name} */}
-            <h2 style={{ fontWeight: "bold", color: "white" }}>Mario Verde</h2>
+            <h2 style={{ fontWeight: "bold", color: "white" }}>Devmeet</h2>
           </div>
           <div
             className="ProfileJob"
@@ -85,9 +85,7 @@ export function ProfileSettings({ data, user }) {
           >
             <div>
               {/* {profession} */}
-              <p style={{ fontWeight: "500", color: "white" }}>
-                Full Stack Developer
-              </p>
+              <p style={{ fontWeight: "500", color: "white" }}>Web Developer</p>
             </div>
           </div>
         </div>
@@ -113,7 +111,7 @@ export function ProfileSettings({ data, user }) {
           height: "142vh",
         }}
       >
-        <Form user />
+        <Form company />
       </div>
     </>
   );
