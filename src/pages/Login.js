@@ -26,6 +26,7 @@ function Login({ registration, user }) {
                 hg={"50px"}
                 text={"ACCEDI"}
                 wg={"bold"}
+                textColor={"#364764"}
               />
               <div className="text-login-registration">
                 <p>
@@ -46,6 +47,7 @@ function Login({ registration, user }) {
                   hg={"50px"}
                   text={"CONTINUA"}
                   wg={"bold"}
+                  textColor={"#364764"}
                 />{" "}
               </Link>
             </div>
@@ -61,6 +63,7 @@ function Login({ registration, user }) {
                   hg={"50px"}
                   text={"CONTINUA"}
                   wg={"bold"}
+                  textColor={"#364764"}
                 />{" "}
               </Link>
             </div>

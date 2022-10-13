@@ -58,7 +58,7 @@ function App({ user }) {
         <NavBar back options />
 
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signUp/company" element={<Form company />} />

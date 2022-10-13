@@ -8,18 +8,18 @@ const SignUp = () => {
           {/* <NavBar back/> */}
           <div className="signUp-profile-choice">
             <div className="signUp-text">
-                <h3>Scegli il profilo</h3>
+                <h3 style={{color:"#364764"}}>Scegli il profilo</h3>
             </div>
             <div className="signUp-buttons">
                 <div className="signUp-button">
-                <Link to='/signUp/regCompany'><Button lowOp text={'AZIENDA'} bgColor={'yellow'} textColor={'black'} wd={'266px'} hg={'50px'} wg={'bold'}/></Link>
+                <Link to='/signUp/regCompany'><Button lowOp text={'AZIENDA'} bgColor={'yellow'} textColor={"#364764"} wd={'266px'} hg={'50px'} wg={'bold'}/></Link>
                 </div>
                 <div className="signUp-button">
                 <Link to='/signUp/regUser'><Button lowOp text={'PRIVATO'} bgColor={'#364764'} textColor={'white'} wd={'266px'} hg={'50px'} wg={'bold'}/></Link>
                 </div>
             </div>
             <div className="signUp-already-signed">
-                <p>Hai già un account? <Link to='/login'>Accedi</Link></p>
+                <p style={{color:"#364764"}}>Hai già un account? <Link to='/login'>Accedi</Link></p>
             </div>
           </div>
         </div>

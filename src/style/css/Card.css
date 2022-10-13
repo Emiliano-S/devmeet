@@ -100,7 +100,6 @@
   justify-content: start;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 10px;
   padding: 20px 0px;
 }
 .CardContainer .Card .CardProfileDescriptionContainer .SkillsCards, .CardContainer .Card .CardProfileDescriptionContainer .LanguageCards {

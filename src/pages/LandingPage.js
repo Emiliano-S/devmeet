@@ -24,7 +24,7 @@ const LandingPage = () => {
                 text={"ACCEDI"}
                 wd={"266px"}
                 bgColor={"yellow"}
-                textColor={"black"}
+                textColor={"#364764"}
                 wg={"bold"}
                 hg={"50px"}
               />
@@ -37,7 +37,7 @@ const LandingPage = () => {
                 text={"CREA ACCOUNT"}
                 wd={"266px"}
                 bgColor={"white"}
-                textColor={"black"}
+                textColor={"#364764"}
                 wg={"bold"}
                 hg={"50px"}
               />

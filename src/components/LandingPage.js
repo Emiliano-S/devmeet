@@ -1,8 +1,5 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import devmeetLogo1 from "./assets/devmeet-logo1.svg";
 import Button from "./Button";
-import { Loading } from "./Loading";
 
 const LandingPage = () => {
   return (
@@ -25,7 +22,7 @@ const LandingPage = () => {
               text={"ACCEDI"}
               wd={"266px"}
               bgColor={"yellow"}
-              textColor={"black"}
+              textColor={"#364764"}
               wg={"bold"}
               hg={"50px"}
             />
@@ -36,12 +33,11 @@ const LandingPage = () => {
               text={"CREA ACCOUNT"}
               wd={"266px"}
               bgColor={"white"}
-              textColor={"black"}
+              textColor={"#364764"}
               wg={"bold"}
               hg={"50px"}
             />
           </div>
-          {isLoading && <Loading />}
         </div>
       </div>
     </div>
