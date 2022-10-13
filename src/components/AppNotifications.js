@@ -1,11 +1,16 @@
 import notificationsDb from "../data/notificationsDb";
 import { useState } from "react";
 import { PopUp } from "../components/PopUp";
+import { useSelector } from "react-redux";
 
 const AppNotifications = () => {
   // for the on click of the buttons
-  const [notification, setNotification] = useState(notificationsDb);
-  const [appointment, setAppointment] = useState([]);
+  const [notification, setNotification] = useState(
+    useSelector((state) => state.notifications)
+  );
+  const [appointment, setAppointment] = useState(
+    useSelector((state) => state.appointments)
+  );
   const [show, setShow] = useState(-1);
   const [popUpVisibility, setPopUpVisibility] = useState(false);
   const [popUpType, setPopUpType] = useState(0);
@@ -36,10 +41,7 @@ const AppNotifications = () => {
   return (
     <>
       {popUpVisibility ? (
-        <PopUp
-          type={popUpType}
-          handleChange={closePopUp}
-        />
+        <PopUp type={popUpType} handleChange={closePopUp} />
       ) : (
         ""
       )}
