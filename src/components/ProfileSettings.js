@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export function ProfileSettings({ data, user, company }) {
   const companyData = {
-    company_name: "Devemeet",
+    company_name: "Devmeet",
     first_name: "Emiliano Gabriele",
     last_name: "Scanga",
     cel: "+3412345678",

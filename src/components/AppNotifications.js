@@ -3,11 +3,20 @@ import { useState } from "react";
 import { PopUp } from "../components/PopUp";
 import { useRef } from "react";
 import { useEffect } from "react";
+import Emiliano from '../components/assets/calendarImages/Emiliano.jpg';
 
 const AppNotifications = () => {
   // for the on click of the buttons
   const [notification, setNotification] = useState(notificationsDb);
-  const [appointment, setAppointment] = useState([]);
+  const [appointment, setAppointment] = useState([{
+    id: 1,
+    logo: Emiliano,
+    name: "Emiliano Gabriele Scanga",
+    appointment: "Lunedi 17 Ottobre - Ore 18:00",
+    held: false,
+    accepted: false,
+    declined: false,
+}]);
   const [show, setShow] = useState(-1);
   const [popUpVisibility, setPopUpVisibility] = useState(false);
   const [popUpType, setPopUpType] = useState(0);
@@ -65,7 +74,8 @@ const AppNotifications = () => {
         {/* <Appointments /> */}
 
         <div className="containerAppuntamenti">
-          {notification.map((element, id) => {
+          {notification.length > 0 ? (
+            notification.map((element, id) => {
             return (
               <>
                 <div
@@ -128,7 +138,7 @@ const AppNotifications = () => {
                 )}
               </>
             );
-          })}
+          })): (<p style={{ color: "#000" }}>Non ci sono appuntamenti</p>)}
         </div>
 
         <p id="firstP">Prossimi appuntamenti</p>
